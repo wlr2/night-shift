@@ -1,9 +1,7 @@
 # Presentation pass: status and handoff
 
-Branch: `claude/presentation-pass`. This was made in Claude Code cloud **without
-Roblox Studio**: no Studio MCP is reachable from a cloud container. Nothing
-here has been playtested in Studio. Use `docs/STUDIO_TEST_CHECKLIST.md`
-locally.
+Branch: `claude/presentation-pass`. The first part was made in Claude Code cloud without Studio. The map cleanup
+and the Studio checks below were done locally through the Studio MCP.
 
 ## Done (static + headless verified)
 
@@ -23,38 +21,38 @@ Checks (all clean): `luau-lsp` strict in two passes (with and without the
 sourcemap), selene, `tools/check_ui_props.py`, `tools/check_presentation.py`,
 the rojo build, and `bash tools/smoke/run.sh` (15/15 scenarios pass).
 
-## Not done: map cleanup (next step)
+## Map cleanup (done, local session with Studio MCP)
 
-The map agent was stopped by the usage limit before editing `MapBuilder`. The
-headless audit (`bash tools/audit/run.sh --label current`; see
-`docs/presentation/layout-audit-current.md` and `plan-current.png`) lists the
-remaining work:
+Measured with `bash tools/audit/run.sh --label after --baseline before-local`
+(see `docs/presentation/layout-audit-after.md`, `plan-after.png`).
 
-1. **Off-centre art (bug from before this pass):** `urban__*` models and
-   `concrete_retro_bollard_light` keep their source-scene origins and render
-   49–121 studs from their anchors. Examples: the alley trash bag renders
-   inside the office, and the kitchen bin and dumpster render far from their
-   prompts. Fix it in `tools/convert_assets.py` (re-centre the origin, or set
-   `targetHeight`), then regenerate with
-   `python3 tools/fetch_assets.py --key …` and
-   `python3 tools/convert_assets.py --library assets/library --out src/art`.
-2. **Chairs face backwards:** add `ART_YAW` 180 for
-   office_chair_black/grey/blue/black_alt and about −90 for grey_alt, and lift
-   them by about 0.55 (they sit below the floor).
-3. Overlaps: lounge armchair vs bookcase, whiteboard and door; fridge inside
-   the counter; the coffee machine is too big (scale ~0.23); couch, wall clock
-   and desktop_brick go into walls.
-4. Camera clip: the hall panels, breaker panel, kitchen panel and fire
-   extinguisher need collision or must sit flush in the wall.
-5. Sunk props: door_brown_a (+3.3), metal rack (+1.34), yellow posts (+2.4),
-   paper sheet on desk 6 (+0.5).
-6. Materials: switch window glass from `Glass` to `SmoothPlastic`
-   (Roblox's Glass hides the exterior fog behind it). Use a muted emergency
-   red (196,110,96). Use cleaner ceiling tiles (the current ones look dark and
-   grimy in `view-current-*.png`). Shrink or remove the red NO SMOKING sign.
+| Metric | before | after |
+|---|---|---|
+| Props into walls / glass / ceiling | 20 | 0 |
+| Props sunk below floor or desk | 13 | 0 |
+| Camera-clip props | 4 | 0 |
+| Meshes rendering far from their anchor | 20 | 0 |
+| Mesh-confirmed prop overlaps (deepest) | 21 (1.75) | 4 (0.13, partitions touching desk edges) |
+| Chairs not facing their desk | 6 | 0 |
+| Targets reachable | 22/22 | 22/22 |
 
-Routes are already fine: all 22 interactables are reachable, and every
-route except the rear door is ≥ 3.5 studs wide.
+- `convert_assets.py`: `recenter` for every `urban__*` model; ceiling uses the clean speckled `horror_wall_03`.
+- `MapBuilder`: chair `ART_YAW`; automatic ground lift for vertically centred models; collision on hall, kitchen and extinguisher panels; removed armchair, second workstation PC, NO SMOKING sign, duplicate open breaker panel, hall ducts and pipes, alley trash pile.
+- SmoothPlastic glass, muted emergency red, softer fluorescent panels with a ceiling spill light, desaturated status greens, muted dumpster.
+- Remaining by design: the rear door is 2.8 studs wide (Layout), the kitchen bin is a trash asset because the trash task needs it.
+
+## Verified live in Studio (MCP, Play Solo, 1174x753 viewport)
+
+Sources were synced into the open `NightShift.rbxlx` with `tools/devsync`.
+- Server and client start with no errors or warnings in the log.
+- First person: `LockFirstPerson`, mouse `LockCenter`, cursor hidden, zoom 0.5.
+- E prompt: Roblox's default prompt UI never showed; one custom card with an E keycap "Sit down" plus an F row "Dock drive"; looking at the dock promotes "Dock drive".
+- Sit with a real E keypress: desktop opens, Scriptable camera, cursor free and visible. A real mouse click opened Procedures.txt. Space leaves and restores locked first person.
+- Caught while seated (figure from DoorUnlatch): checkpoint restore returned to locked first person with a hidden cursor.
+- Power failure: readable with muted emergency light. Alley shows cold blue-grey fog.
+- Fixed after Studio screenshots: HUD threat plates grew down the whole screen (scale-height badge inside an AutomaticSize parent), charcoal ceiling, blurry DOCK label, upside-down OUT TRAY label, saturated green door light flooding the hall.
+
+Not verified in Studio: multi-client co-op, gamepad, touch, phone-size viewports (headless smoke only), every minigame.
 
 ## Tools added
 
