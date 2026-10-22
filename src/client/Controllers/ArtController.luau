@@ -152,8 +152,15 @@ local function newChunk(): Chunk?
 	if meshesUsed >= MAX_MESHES then
 		return nil
 	end
-	local em = AssetService:CreateEditableMesh()
-	if not em then
+	-- throws when the device's editable-memory budget is spent or the API is
+	-- unavailable; a missing chunk just means fewer props, never a dead thread
+	local ok, em = pcall(function()
+		return AssetService:CreateEditableMesh()
+	end)
+	if not ok or not em then
+		if not ok then
+			warn("[Art] CreateEditableMesh failed", em)
+		end
 		return nil
 	end
 	meshesUsed += 1
