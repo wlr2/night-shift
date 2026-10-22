@@ -119,7 +119,7 @@ local function refreshVisual(d: Drive)
 	d.labelText.Text = if erased then d.id .. "\nERASED" else d.id .. "\n" .. d.name
 	d.labelText.BackgroundColor3 = if erased then Color3.fromRGB(40, 150, 70) else d.color
 	d.led.Color = if erased
-		then Color3.fromRGB(60, 255, 90)
+		then Color3.fromRGB(110, 200, 130)
 		elseif d.state == "Processing" then Color3.fromRGB(255, 190, 40)
 		else Color3.fromRGB(255, 60, 50)
 	d.part:SetAttribute("State", d.state)

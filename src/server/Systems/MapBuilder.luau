@@ -72,7 +72,7 @@ local C = {
 	brick = Color3.fromRGB(92, 84, 78),
 	asphalt = Color3.fromRGB(44, 46, 50),
 	glass = Color3.fromRGB(120, 140, 155),
-	fluorescent = Color3.fromRGB(222, 224, 214), -- fixture panel (neon, kept soft)
+	fluorescent = Color3.fromRGB(200, 202, 194), -- fixture panel (neon, kept soft: little bloom)
 	fluorescentLight = Color3.fromRGB(238, 234, 220), -- light cast by the panels
 	amber = Color3.fromRGB(200, 166, 107), -- practicals: desk lamps, hall bulbs
 	cold = Color3.fromRGB(168, 186, 195), -- exterior: pale blue-grey
@@ -305,7 +305,7 @@ local function label(p: BasePart, face: Enum.NormalId, text: string, color: Colo
 	local sg = Instance.new("SurfaceGui")
 	sg.Face = face
 	sg.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
-	sg.PixelsPerStud = 50
+	sg.PixelsPerStud = 100
 	sg.LightInfluence = 0.6
 	sg.Parent = p
 	local t = Instance.new("TextLabel")
@@ -320,6 +320,16 @@ local function label(p: BasePart, face: Enum.NormalId, text: string, color: Colo
 	end
 	t.TextWrapped = true
 	t.Text = text
+	-- keep pixel glyphs inside the face with a margin (they clip when scaled to fill)
+	local pad = Instance.new("UIPadding")
+	pad.PaddingLeft = UDim.new(0.08, 0)
+	pad.PaddingRight = UDim.new(0.08, 0)
+	pad.PaddingTop = UDim.new(0.18, 0)
+	pad.PaddingBottom = UDim.new(0.18, 0)
+	pad.Parent = t
+	local cap = Instance.new("UITextSizeConstraint")
+	cap.MaxTextSize = 42
+	cap.Parent = t
 	t.Parent = sg
 	return t
 end
@@ -346,12 +356,21 @@ local function fluorescent(groupName: string, pos: Vector3, ceiling: number, col
 	light.Face = Enum.NormalId.Bottom
 	light.Angle = 120
 	light.Range = 15
-	light.Brightness = brightness or 0.8
+	light.Brightness = brightness or 0.7
 	light.Color = color or C.fluorescentLight
 	light.Shadows = true
 	light.Parent = fixture
+	-- soft spill onto the ceiling tiles so the ceiling reads as painted, not charcoal
+	local spill = Instance.new("PointLight")
+	spill.Name = "CeilingSpill"
+	spill.Range = 8
+	spill.Brightness = 0.28
+	spill.Color = color or C.fluorescentLight
+	spill.Shadows = false
+	spill.Parent = fixture
 	lightGroups[groupName] = lightGroups[groupName] or {}
 	table.insert(lightGroups[groupName], light)
+	table.insert(lightGroups[groupName], spill)
 	fixtures[groupName] = fixtures[groupName] or {}
 	table.insert(fixtures[groupName], fixture)
 end
@@ -563,7 +582,7 @@ local function buildDesks(refs: Refs)
 			prop(item.key, d.pos + f * item.dz + right * item.dx + Vector3.new(0, top, 0), f, { yaw = item.yaw })
 		end
 		if lampDesks[i] then
-			pointLight("lamps", d.pos - f * 0.6 - right * 3.0 + Vector3.new(0, top + 1.2, 0), C.amber, 8, 0.7)
+			pointLight("lamps", d.pos - f * 0.6 - right * 3.0 + Vector3.new(0, top + 0.9, 0), C.amber, 7, 0.7)
 		end
 
 		-- source computer tower (holds the drive) on the desk's right side
@@ -669,7 +688,7 @@ local function buildWorkstation(refs: Refs)
 		material = Enum.Material.Neon,
 		collide = false,
 	})
-	refs.outbox = part("Outbox", Vector3.new(1.4, 0.3, 1.0), CFrame.new(Layout.OUTBOX + Vector3.new(0, 0.15, 0)), group("Interactive"), {
+	refs.outbox = part("Outbox", Vector3.new(1.4, 0.3, 1.0), CFrame.new(Layout.OUTBOX + Vector3.new(0, 0.15, 0)) * CFrame.Angles(0, math.rad(180), 0), group("Interactive"), {
 		color = Color3.fromRGB(90, 90, 96),
 	})
 	label(refs.outbox, Enum.NormalId.Top, "OUT TRAY", Color3.new(0.9, 0.9, 0.9))
@@ -694,14 +713,14 @@ local function buildWorkstation(refs: Refs)
 
 	-- door status light visible from the workstation chair
 	refs.doorLight = part("DoorStatusLight", Vector3.new(0.5, 0.5, 0.2), CFrame.new(Layout.DOOR_LIGHT), group("Interactive"), {
-		color = Color3.fromRGB(60, 255, 90),
+		color = Color3.fromRGB(110, 200, 130),
 		material = Enum.Material.Neon,
 		collide = false,
 	})
 	local dl = Instance.new("PointLight")
-	dl.Range = 6
-	dl.Brightness = 0.6
-	dl.Color = Color3.fromRGB(60, 255, 90)
+	dl.Range = 4
+	dl.Brightness = 0.3
+	dl.Color = Color3.fromRGB(110, 200, 130)
 	dl.Parent = refs.doorLight
 	local dlSign = part("DoorStatusSign", Vector3.new(2.6, 0.6, 0.1), CFrame.new(Layout.DOOR_LIGHT + Vector3.new(0, -0.7, 0)) * CFrame.Angles(0, math.rad(90), 0), group("Interactive"), {
 		color = C.dark,
@@ -832,7 +851,7 @@ local function buildRooms(refs: Refs)
 		})
 		refs.breakerSwitches[sw.id] = s
 		local lamp = part("BreakerLamp_" .. sw.id, Vector3.new(0.22, 0.22, 0.1), CFrame.new(sw.pos + Vector3.new(0, 0.75, 0)), group("Interactive"), {
-			color = Color3.fromRGB(60, 255, 90),
+			color = Color3.fromRGB(110, 200, 130),
 			material = Enum.Material.Neon,
 			collide = false,
 		})
@@ -897,7 +916,7 @@ end
 local function buildAlley(refs: Refs)
 	local A = Layout.ALLEY
 	local D = Layout.DUMPSTER
-	prop("urban__litter__dumpsters__dumpster_lid_closed", D, Vector3.new(1, 0, 0), { collide = true, pad = 0.2, scale = 0.7 })
+	prop("urban__litter__dumpsters__dumpster_lid_closed", D, Vector3.new(1, 0, 0), { collide = true, pad = 0.2, scale = 0.7, tint = Color3.new(0.85, 0.62, 0.78) })
 	refs.dumpster = part("DumpsterPrompt", Vector3.new(7, 6, 3), CFrame.new(D + Vector3.new(0, 3, -2.4)), group("Interactive"), {
 		transparency = 1,
 		collide = false,

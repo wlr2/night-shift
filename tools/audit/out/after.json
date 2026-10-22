@@ -1,7 +1,7 @@
 {
  "label": "after",
  "src": "C:\\Users\\legen\\Documents\\Codex\\2026-10-22\\wr\\outputs\\night-shift-repo\\src",
- "srcDisplay": "src @ ed1c404+local changes",
+ "srcDisplay": "src @ c6f0124+local changes",
  "walk": {
   "grid": {
    "x0": -33,
@@ -10547,7 +10547,7 @@
   }
  ],
  "lights": {
-  "count": 26,
+  "count": 36,
   "byRegion": {
    "Alley": {
     "amber": 1,
@@ -10560,14 +10560,14 @@
    },
    "Kitchen": {
     "emergency": 1,
-    "neutral": 1
+    "neutral": 2
    },
    "Lobby": {
-    "neutral": 1
+    "neutral": 2
    },
    "Office": {
     "emergency": 4,
-    "neutral": 8,
+    "neutral": 16,
     "amber": 3
    },
    "Outside": {
@@ -10747,6 +10747,27 @@
     "holder": "Bulb"
    },
    {
+    "class": "PointLight",
+    "kind": "neutral",
+    "groups": [
+     "lobby"
+    ],
+    "pos": [
+     13,
+     10.3699951171875,
+     18.5
+    ],
+    "range": 8,
+    "brightness": 0.2800000011920929,
+    "color": [
+     236,
+     232,
+     220
+    ],
+    "region": "Lobby",
+    "holder": "Fluorescent"
+   },
+   {
     "class": "SurfaceLight",
     "kind": "neutral",
     "groups": [
@@ -10765,6 +10786,27 @@
      220
     ],
     "region": "Lobby",
+    "holder": "Fluorescent"
+   },
+   {
+    "class": "PointLight",
+    "kind": "neutral",
+    "groups": [
+     "kitchen"
+    ],
+    "pos": [
+     -26.5,
+     9.3699951171875,
+     -8.5
+    ],
+    "range": 8,
+    "brightness": 0.2800000011920929,
+    "color": [
+     240,
+     232,
+     212
+    ],
+    "region": "Kitchen",
     "holder": "Fluorescent"
    },
    {
@@ -10789,6 +10831,27 @@
     "holder": "Fluorescent"
    },
    {
+    "class": "PointLight",
+    "kind": "neutral",
+    "groups": [
+     "main"
+    ],
+    "pos": [
+     16,
+     10.3699951171875,
+     9
+    ],
+    "range": 8,
+    "brightness": 0.2800000011920929,
+    "color": [
+     238,
+     234,
+     220
+    ],
+    "region": "Office",
+    "holder": "Fluorescent"
+   },
+   {
     "class": "SurfaceLight",
     "kind": "neutral",
     "groups": [
@@ -10800,7 +10863,28 @@
      9
     ],
     "range": 15,
-    "brightness": 0.800000011920929,
+    "brightness": 0.699999988079071,
+    "color": [
+     238,
+     234,
+     220
+    ],
+    "region": "Office",
+    "holder": "Fluorescent"
+   },
+   {
+    "class": "PointLight",
+    "kind": "neutral",
+    "groups": [
+     "main"
+    ],
+    "pos": [
+     16,
+     10.3699951171875,
+     0
+    ],
+    "range": 8,
+    "brightness": 0.2800000011920929,
     "color": [
      238,
      234,
@@ -10821,7 +10905,28 @@
      0
     ],
     "range": 15,
-    "brightness": 0.800000011920929,
+    "brightness": 0.699999988079071,
+    "color": [
+     238,
+     234,
+     220
+    ],
+    "region": "Office",
+    "holder": "Fluorescent"
+   },
+   {
+    "class": "PointLight",
+    "kind": "neutral",
+    "groups": [
+     "main"
+    ],
+    "pos": [
+     6,
+     10.3699951171875,
+     8
+    ],
+    "range": 8,
+    "brightness": 0.2800000011920929,
     "color": [
      238,
      234,
@@ -10842,7 +10947,28 @@
      8
     ],
     "range": 15,
-    "brightness": 0.800000011920929,
+    "brightness": 0.699999988079071,
+    "color": [
+     238,
+     234,
+     220
+    ],
+    "region": "Office",
+    "holder": "Fluorescent"
+   },
+   {
+    "class": "PointLight",
+    "kind": "neutral",
+    "groups": [
+     "main"
+    ],
+    "pos": [
+     6,
+     10.3699951171875,
+     -8
+    ],
+    "range": 8,
+    "brightness": 0.2800000011920929,
     "color": [
      238,
      234,
@@ -10863,7 +10989,28 @@
      -8
     ],
     "range": 15,
-    "brightness": 0.800000011920929,
+    "brightness": 0.699999988079071,
+    "color": [
+     238,
+     234,
+     220
+    ],
+    "region": "Office",
+    "holder": "Fluorescent"
+   },
+   {
+    "class": "PointLight",
+    "kind": "neutral",
+    "groups": [
+     "main"
+    ],
+    "pos": [
+     -4,
+     10.3699951171875,
+     8
+    ],
+    "range": 8,
+    "brightness": 0.2800000011920929,
     "color": [
      238,
      234,
@@ -10884,7 +11031,28 @@
      8
     ],
     "range": 15,
-    "brightness": 0.800000011920929,
+    "brightness": 0.699999988079071,
+    "color": [
+     238,
+     234,
+     220
+    ],
+    "region": "Office",
+    "holder": "Fluorescent"
+   },
+   {
+    "class": "PointLight",
+    "kind": "neutral",
+    "groups": [
+     "main"
+    ],
+    "pos": [
+     -4,
+     10.3699951171875,
+     -8
+    ],
+    "range": 8,
+    "brightness": 0.2800000011920929,
     "color": [
      238,
      234,
@@ -10905,7 +11073,28 @@
      -8
     ],
     "range": 15,
-    "brightness": 0.800000011920929,
+    "brightness": 0.699999988079071,
+    "color": [
+     238,
+     234,
+     220
+    ],
+    "region": "Office",
+    "holder": "Fluorescent"
+   },
+   {
+    "class": "PointLight",
+    "kind": "neutral",
+    "groups": [
+     "main"
+    ],
+    "pos": [
+     -14,
+     10.3699951171875,
+     8
+    ],
+    "range": 8,
+    "brightness": 0.2800000011920929,
     "color": [
      238,
      234,
@@ -10926,7 +11115,28 @@
      8
     ],
     "range": 15,
-    "brightness": 0.800000011920929,
+    "brightness": 0.699999988079071,
+    "color": [
+     238,
+     234,
+     220
+    ],
+    "region": "Office",
+    "holder": "Fluorescent"
+   },
+   {
+    "class": "PointLight",
+    "kind": "neutral",
+    "groups": [
+     "main"
+    ],
+    "pos": [
+     -14,
+     10.3699951171875,
+     -8
+    ],
+    "range": 8,
+    "brightness": 0.2800000011920929,
     "color": [
      238,
      234,
@@ -10947,7 +11157,7 @@
      -8
     ],
     "range": 15,
-    "brightness": 0.800000011920929,
+    "brightness": 0.699999988079071,
     "color": [
      238,
      234,
@@ -11050,10 +11260,10 @@
     ],
     "pos": [
      -2.600006103515625,
-     4.3000030517578125,
+     4,
      2
     ],
-    "range": 8,
+    "range": 7,
     "brightness": 0.699999988079071,
     "color": [
      200,
@@ -11072,10 +11282,10 @@
     ],
     "pos": [
      -0.1999969482421875,
-     4.3000030517578125,
+     4,
      -2
     ],
-    "range": 8,
+    "range": 7,
     "brightness": 0.699999988079071,
     "color": [
      200,
@@ -11115,12 +11325,12 @@
      8.199996948242188,
      6
     ],
-    "range": 6,
-    "brightness": 0.6000000238418579,
+    "range": 4,
+    "brightness": 0.30000001192092896,
     "color": [
-     60,
-     255,
-     90
+     110,
+     200,
+     130
     ],
     "region": "Hall",
     "holder": "DoorStatusLight"
@@ -11342,12 +11552,12 @@
   "minFreeBehindChair": 4.15,
   "reachableArea": 1167.1,
   "pocketArea": 4.6,
-  "lights": 26,
+  "lights": 36,
   "amberLights": 6,
   "coldLights": 3,
   "collisionProxies": 46,
   "issues": 15
  },
  "harnessWarnings": [],
- "seconds": 3.47
+ "seconds": 3.33
 }

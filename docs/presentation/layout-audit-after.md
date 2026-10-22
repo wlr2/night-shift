@@ -1,6 +1,6 @@
 # Layout audit: after
 
-Source: `src @ ed1c404+local changes`. Generated headlessly by `tools/audit/run.sh` from the real `MapBuilder.luau` (Lune) and the converted meshes. 
+Source: `src @ c6f0124+local changes`. Generated headlessly by `tools/audit/run.sh` from the real `MapBuilder.luau` (Lune) and the converted meshes. 
 This is an offline approximation (boxes + sampled meshes, no physics, prompts measured from a 3-stud root height); confirm in a Studio playtest.
 
 ![plan](plan-after.png)
@@ -41,7 +41,7 @@ This is an offline approximation (boxes + sampled meshes, no physics, prompts me
 | Chairs not facing their desk (> 45 deg) | 6 | 0 |
 | Walkable area reachable from spawn (sq studs) | 1337.1 | 1167.1 |
 | Standable but unreachable area (sq studs) | 0.0 | 4.6 |
-| Lights | 26 | 26 |
+| Lights | 26 | 36 |
 | Amber lights | 6 | 6 |
 | Cold lights | 3 | 3 |
 | Collision proxies | 41 | 46 |
@@ -278,9 +278,9 @@ Surface textures used indoors (blotch = pixels darker than 70% of the median lum
 |---|---|---|---|---|---|
 | Alley | 1 | 0 | 1 | 0 | 0 |
 | Hall | 2 | 0 | 0 | 1 | 1 |
-| Kitchen | 0 | 1 | 0 | 1 | 0 |
-| Lobby | 0 | 1 | 0 | 0 | 0 |
-| Office | 3 | 8 | 0 | 4 | 0 |
+| Kitchen | 0 | 2 | 0 | 1 | 0 |
+| Lobby | 0 | 2 | 0 | 0 | 0 |
+| Office | 3 | 16 | 0 | 4 | 0 |
 | Outside | 0 | 0 | 1 | 0 | 0 |
 | Street | 0 | 0 | 1 | 0 | 0 |
 
@@ -304,4 +304,4 @@ Surface textures used indoors (blotch = pixels darker than 70% of the median lum
 | src\server\Systems\Workstation.luau:341 | refs.seatPromptPart | Sit down | E | 0.2 | 9 |
 | src\server\Util\Prompts.luau:29 | parent: Instance | ? | E | 0 | 10 |
 
-_Analysis took 3.47 s._
+_Analysis took 3.33 s._

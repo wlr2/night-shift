@@ -53,7 +53,7 @@ local function apply()
 		local fixtures: { BasePart } = refs.fixtures[groupName] or {}
 		for _, f in fixtures do
 			f.Material = if lights then Enum.Material.Neon else Enum.Material.SmoothPlastic
-			f.Color = if lights then Color3.fromRGB(226, 240, 255) else Color3.fromRGB(70, 72, 76)
+			f.Color = if lights then Color3.fromRGB(200, 202, 194) else Color3.fromRGB(70, 72, 76)
 		end
 	end
 	refs.workstationLamp.Enabled = ws
@@ -65,7 +65,7 @@ local function apply()
 	for id, ok in breakers do
 		local lamp = refs.breakerLamps[id]
 		if lamp then
-			lamp.Color = if ok then Color3.fromRGB(60, 255, 90) else Color3.fromRGB(255, 50, 40)
+			lamp.Color = if ok then Color3.fromRGB(110, 200, 130) else Color3.fromRGB(255, 50, 40)
 		end
 		local sw = refs.breakerSwitches[id]
 		if sw then

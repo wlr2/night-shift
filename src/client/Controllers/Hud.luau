@@ -275,7 +275,21 @@ local function threatRow(t: Types.ThreatInfo): ThreatRow
 		Parent = threatList,
 	})
 	local stroke = UiKit.stroke(plate, if urgent then C.bad else C.hudLine, if urgent then 0 else 0.45)
-	local badge = UiKit.frame({ Name = "Badge", Size = UDim2.new(0, 22, 1, 0), BackgroundColor3 = if urgent then C.bad else C.warn, Parent = plate })
+	-- offset height synced to the plate: a scale height inside an
+	-- AutomaticSize parent feeds back and grows the plate every frame
+	local badge = UiKit.frame({ Name = "Badge", Size = UDim2.fromOffset(22, 20), BackgroundColor3 = if urgent then C.bad else C.warn, Parent = plate })
+	local function syncBadge()
+		local y = plate.AbsoluteSize.Y
+		if y ~= y or y < 0 or y > 4096 then
+			return
+		end
+		local hgt = math.floor(y + 0.5)
+		if math.abs(badge.Size.Y.Offset - hgt) >= 1 then
+			badge.Size = UDim2.fromOffset(22, hgt)
+		end
+	end
+	plate:GetPropertyChangedSignal("AbsoluteSize"):Connect(syncBadge)
+	task.defer(syncBadge)
 	UiKit.text("key", {
 		Text = if urgent then "!" else "i",
 		Size = UDim2.fromScale(1, 1),

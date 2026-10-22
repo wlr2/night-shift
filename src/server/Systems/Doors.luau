@@ -63,7 +63,7 @@ local function place(animated: boolean)
 		RD.CFrame = target
 	end
 	local light = refs.doorLight
-	local color = if state == "Latched" then Color3.fromRGB(60, 255, 90) else Color3.fromRGB(255, 50, 40)
+	local color = if state == "Latched" then Color3.fromRGB(110, 200, 130) else Color3.fromRGB(255, 50, 40)
 	light.Color = color
 	light:SetAttribute("Alert", state ~= "Latched")
 	local pl = light:FindFirstChildOfClass("PointLight")
