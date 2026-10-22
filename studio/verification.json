@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-22",
+  "sourcePlace": "NightShift.rbxlx",
+  "nativeScriptCount": 195,
+  "liveStudioSourceComparison": "passed after CRLF/LF normalization",
+  "rojoBuild": "passed",
+  "rebuiltScriptsComparedToNativeSnapshot": "all 195 match",
+  "selene": {"errors": 0, "warnings": 20, "parseErrors": 0},
+  "assetReleaseFileCount": 6402,
+  "providedArchiveCount": 21,
+  "providedLooseFileCount": 105,
+  "preparedModelSceneCount": 1069,
+  "rangeDownloaderLocalIntegration": "passed with actual package offsets for GLB, FBX, linked PNG and original ZIP; cache, traversal and checksum handling checked",
+  "nativeSnapshotPreserved": true,
+  "differentLooseSourceRevisionPreserved": "studio/local-working-tree/",
+  "presentationChangesImplementedByThisExport": false,
+  "newStudioGameplayPlaytestClaimed": false
+}

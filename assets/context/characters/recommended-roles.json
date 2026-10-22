@@ -1,0 +1,19 @@
+{
+  "officeWorker": {
+    "key": "characters__male__character_01",
+    "appearance": "White long-sleeved shirt and dark trousers; checked in source preview."
+  },
+  "supervisor": {
+    "key": "characters__male__character_05",
+    "appearance": "Light blue long-sleeved shirt and dark trousers; checked in source preview."
+  },
+  "formerEmployeePursuer": {
+    "key": "characters__male__character_04",
+    "appearance": "Brown jacket and muted trousers; checked in source preview. Use lighting and behavior for threat."
+  },
+  "notes": [
+    "Visual-role suggestions only, not installed NPCs or verified Roblox animations.",
+    "Retain the established fictional former-employee story.",
+    "Default player avatars need not be replaced to use these characters as NPCs."
+  ]
+}

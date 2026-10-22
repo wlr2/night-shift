@@ -1,0 +1,12 @@
+*.luau text eol=lf
+*.lua text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.rbxlx -text
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.zip -text

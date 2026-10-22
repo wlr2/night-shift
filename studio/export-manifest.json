@@ -1,0 +1,1570 @@
+{
+  "sourcePlace": "NightShift.rbxlx",
+  "sourceWasPlaytesting": true,
+  "playtestStoppedWithUserAuthorization": true,
+  "lineEndingNormalization": "CRLF converted to LF for XML/source comparison",
+  "nativeSaveMatchesAllLiveScriptFingerprints": true,
+  "scriptCount": 195,
+  "diskSourcesUpdatedFromStudio": [
+    "src/client/Controllers/Atmosphere.luau",
+    "src/client/Controllers/WorkstationCamera.luau",
+    "src/client/Ui/UiKit.luau",
+    "src/art/Index.luau",
+    "src/art/Models/characters__male__character_01.luau",
+    "src/art/Models/characters__male__character_04.luau",
+    "src/art/Models/characters__male__character_05.luau",
+    "src/art/Models/classic64__blend__book_blue_01.luau",
+    "src/art/Models/classic64__blend__book_brown_02.luau",
+    "src/art/Models/classic64__blend__book_red_01.luau",
+    "src/art/Models/classic64__blend__box_01.luau",
+    "src/art/Models/classic64__blend__box_02.luau",
+    "src/art/Models/classic64__blend__box_03.luau",
+    "src/art/Models/classic64__blend__box_04.luau",
+    "src/art/Models/classic64__blend__catalog_01.luau",
+    "src/art/Models/classic64__blend__commerical_shelf_short.luau",
+    "src/art/Models/classic64__blend__door_brown_a.luau",
+    "src/art/Models/classic64__blend__door_pushbar.luau",
+    "src/art/Models/urban__vents__vent_cover.luau",
+    "src/art/Models/urban__vents__duct_long.luau",
+    "src/art/Models/classic64__blend__electrical_junctionbox_small.luau",
+    "src/art/Models/classic64__blend__fire_extenguisher_case.luau",
+    "src/art/Models/urban__vents__duct_corner_rounded.luau",
+    "src/art/Models/urban__traffic_lights__street_light.luau",
+    "src/art/Models/urban__pipes__pipe_corner_rusted.luau",
+    "src/art/Models/classic64__blend__manhole_cover.luau",
+    "src/art/Models/classic64__blend__metal_rack_stackable.luau",
+    "src/art/Models/classic64__blend__metal_rack_stackable_small.luau",
+    "src/art/Models/classic64__blend__panel_electric.luau",
+    "src/art/Models/classic64__blend__panel_electrical_closed.luau",
+    "src/art/Models/classic64__blend__panel_electrical_open.luau",
+    "src/art/Models/classic64__blend__panel_heater.luau",
+    "src/art/Models/classic64__blend__panel_thermostat.luau",
+    "src/art/Models/classic64__blend__papers_envolope_redacted.luau",
+    "src/art/Models/classic64__blend__papers_log_1_stack.luau",
+    "src/art/Models/urban__pipes__valve_red_with_handle.luau",
+    "src/art/Models/classic64__blend__sign_chemical_rusty.luau",
+    "src/art/Models/classic64__blend__sign_nosmoking.luau",
+    "src/art/Models/classic64__blend__window_boarded.luau",
+    "src/art/Models/classic64__blend__wood_pallet.luau",
+    "src/art/Models/classic64__blend__yellow_post.luau",
+    "src/art/Models/cute3d__blend__fridge.luau",
+    "src/art/Models/office__book_things__book_case_with_back_small.luau",
+    "src/art/Models/office__book_things__books.luau",
+    "src/art/Models/office__book_things__books_alt.luau",
+    "src/art/Models/office__book_things__file_binder.luau",
+    "src/art/Models/office__book_things__file_binder_alt.luau",
+    "src/art/Models/office__book_things__file_binder_alt2.luau",
+    "src/art/Models/office__carpet_floor__floor_3x3.luau",
+    "src/art/Models/office__chairs__conference_chair_grey.luau",
+    "src/art/Models/office__chairs__office_chair_black.luau",
+    "src/art/Models/office__chairs__office_chair_black_alt.luau",
+    "src/art/Models/office__chairs__office_chair_blue.luau",
+    "src/art/Models/office__chairs__office_chair_blue_alt.luau",
+    "src/art/Models/office__chairs__office_chair_grey.luau",
+    "src/art/Models/office__chairs__office_chair_grey_alt.luau",
+    "src/art/Models/office__chairs__office_chair_orange.luau",
+    "src/art/Models/office__computers__computer_keyboard.luau",
+    "src/art/Models/office__computers__computer_monitor.luau",
+    "src/art/Models/office__computers__computer_mouse.luau",
+    "src/art/Models/office__computers__computer_tower.luau",
+    "src/art/Models/office__computers__computer_tower_alt.luau",
+    "src/art/Models/office__computers__desktop_brick.luau",
+    "src/art/Models/office__computers__horizontal_desktop.luau",
+    "src/art/Models/office__computers__tv.luau",
+    "src/art/Models/office__couches__armchair_pattern.luau",
+    "src/art/Models/office__couches__couch_pattern.luau",
+    "src/art/Models/office__desks__desk1_alt2_weathered.luau",
+    "src/art/Models/office__desks__desk1_alt_weathered.luau",
+    "src/art/Models/office__desks__desk1_corner_weathered.luau",
+    "src/art/Models/office__desks__desk1_weathered.luau",
+    "src/art/Models/office__desks__desk2_alt3_weathered.luau",
+    "src/art/Models/office__desks__desk2_alt_weathered.luau",
+    "src/art/Models/office__desks__desk2_weathered.luau",
+    "src/art/Models/office__dividers__divider_veneer_half.luau",
+    "src/art/Models/office__dividers__divider_veneer_low.luau",
+    "src/art/Models/office__dividers__divider_veneer_low_half.luau",
+    "src/art/Models/office__dividers__divider_wood_low.luau",
+    "src/art/Models/office__extras__circular_desklamp.luau",
+    "src/art/Models/office__extras__circular_desklamp_alt.luau",
+    "src/art/Models/office__extras__coffee_machine.luau",
+    "src/art/Models/office__extras__desk_phone.luau",
+    "src/art/Models/office__extras__desk_phone_with_cable.luau",
+    "src/art/Models/office__extras__glass.luau",
+    "src/art/Models/office__extras__mug.luau",
+    "src/art/Models/office__extras__mug_alt.luau",
+    "src/art/Models/office__extras__mug_alt2.luau",
+    "src/art/Models/office__extras__mug_alt3.luau",
+    "src/art/Models/office__extras__square_desklamp.luau",
+    "src/art/Models/office__extras__square_desklamp_alt.luau",
+    "src/art/Models/office__extras__wall_clock.luau",
+    "src/art/Models/office__extras__water_cooler_bottle_attached.luau",
+    "src/art/Models/office__extras__whiteboard.luau",
+    "src/art/Models/office__file_cabinets__file_cabinet_larger_open.luau",
+    "src/art/Models/office__file_cabinets__file_cabinet_largest.luau",
+    "src/art/Models/office__file_cabinets__file_cabinet_small.luau",
+    "src/art/Models/office__file_cabinets__file_cabinet_smaller_with_shelfs.luau",
+    "src/art/Models/office__stationary__paper_single_sheet.luau",
+    "src/art/Models/office__stationary__paper_stack.luau",
+    "src/art/Models/office__stationary__paper_stack_large.luau",
+    "src/art/Models/office__stationary__pen.luau",
+    "src/art/Models/office__stationary__pen2.luau",
+    "src/art/Models/office__stationary__pen3.luau",
+    "src/art/Models/oldstuff__barrel.luau",
+    "src/art/Models/oldstuff__telephone.luau",
+    "src/art/Models/urban__pipes__pipe.luau",
+    "src/art/Models/urban__litter__trashcan__trash_can.luau",
+    "src/art/Models/urban__litter__trash__trashpile_2.luau",
+    "src/art/Models/urban__cones_barriers__bollards__concrete_retro_bollard_light.luau",
+    "src/art/Models/urban__pipes__pipe_intersection_t.luau",
+    "src/art/Models/urban__fences__plackard_wall__plackard_broken.luau",
+    "src/art/Models/urban__fences__plackard_wall__plackard_closed.luau",
+    "src/art/Models/urban__litter__dumpsters__dumpster_lid_closed.luau",
+    "src/art/Models/urban__litter__dumpsters__dumpster_trashpile_1.luau",
+    "src/art/Models/urban__litter__metal_trashcan__metaltrashcan_closed.luau",
+    "src/art/Models/urban__litter__metal_trashcan__metaltrashcan_overflowing.luau",
+    "src/art/Models/urban__litter__trash__trashbag_1.luau",
+    "src/art/Models/urban__litter__trash__trashbag_2_white.luau",
+    "src/art/Models/urban__litter__trash__trashbag_3.luau",
+    "src/art/Textures/surf_wall_office.luau",
+    "src/art/Textures/surf_stain.luau",
+    "src/art/Textures/surf_metal_corrugated.luau",
+    "src/art/Textures/surf_floor_lobby.luau",
+    "src/art/Textures/surf_floor_concrete.luau",
+    "src/art/Textures/surf_ceiling_tile.luau",
+    "src/art/Textures/surf_asphalt.luau",
+    "src/art/Textures/Atlas_6.luau",
+    "src/art/Textures/Atlas_5.luau",
+    "src/art/Textures/Atlas_4.luau",
+    "src/art/Textures/Atlas_3.luau",
+    "src/art/Textures/Atlas_2.luau",
+    "src/art/Textures/Atlas_1.luau",
+    "src/art/Textures/Atlas_0.luau",
+    "src/shared/Layout.luau",
+    "src/studio/ReplicatedStorage/QAClient.luau",
+    "src/server/Systems/MapBuilder.luau",
+    "src/studio/ServerStorage/DevSync.luau"
+  ],
+  "localWorkingTreePreservedAt": "studio/local-working-tree",
+  "onlyInStudio": [
+    "ReplicatedStorage.ArtData.Models.classic64__blend__book_blue_01",
+    "ReplicatedStorage.ArtData.Models.classic64__blend__book_brown_02",
+    "ReplicatedStorage.ArtData.Models.classic64__blend__book_red_01",
+    "ReplicatedStorage.ArtData.Models.classic64__blend__box_02",
+    "ReplicatedStorage.ArtData.Models.classic64__blend__box_03",
+    "ReplicatedStorage.ArtData.Models.classic64__blend__box_04",
+    "ReplicatedStorage.ArtData.Models.classic64__blend__catalog_01",
+    "ReplicatedStorage.ArtData.Models.classic64__blend__commerical_shelf_short",
+    "ReplicatedStorage.ArtData.Models.classic64__blend__metal_rack_stackable_small",
+    "ReplicatedStorage.ArtData.Models.classic64__blend__sign_chemical_rusty",
+    "ReplicatedStorage.ArtData.Models.office__chairs__office_chair_orange",
+    "ReplicatedStorage.ArtData.Models.office__computers__horizontal_desktop",
+    "ReplicatedStorage.ArtData.Models.office__computers__tv",
+    "ReplicatedStorage.ArtData.Models.office__desks__desk1_alt2_weathered",
+    "ReplicatedStorage.ArtData.Models.office__desks__desk1_alt_weathered",
+    "ReplicatedStorage.ArtData.Models.office__desks__desk1_corner_weathered",
+    "ReplicatedStorage.ArtData.Models.office__desks__desk1_weathered",
+    "ReplicatedStorage.ArtData.Models.office__desks__desk2_alt3_weathered",
+    "ReplicatedStorage.ArtData.Models.office__desks__desk2_alt_weathered",
+    "ReplicatedStorage.ArtData.Models.office__desks__desk2_weathered",
+    "ReplicatedStorage.ArtData.Models.office__dividers__divider_veneer_half",
+    "ReplicatedStorage.ArtData.Models.office__dividers__divider_veneer_low",
+    "ReplicatedStorage.ArtData.Models.office__dividers__divider_veneer_low_half",
+    "ReplicatedStorage.ArtData.Models.office__dividers__divider_wood_low",
+    "ReplicatedStorage.ArtData.Models.office__extras__circular_desklamp_alt",
+    "ReplicatedStorage.ArtData.Models.office__extras__glass",
+    "ReplicatedStorage.ArtData.Models.office__extras__square_desklamp_alt",
+    "ReplicatedStorage.ArtData.Models.office__stationary__pen",
+    "ReplicatedStorage.ArtData.Models.office__stationary__pen3",
+    "ReplicatedStorage.ArtData.Models.urban__litter__trash__trashbag_3",
+    "ReplicatedStorage.ArtData.Models.urban__litter__trash__trashpile_2",
+    "ReplicatedStorage.ArtData.Models.urban__pipes__pipe_corner_rusted",
+    "ReplicatedStorage.ArtData.Models.urban__pipes__pipe_intersection_t",
+    "ReplicatedStorage.ArtData.Models.urban__pipes__valve_red_with_handle",
+    "ReplicatedStorage.ArtData.Textures.Atlas_6",
+    "ReplicatedStorage.ArtData.Textures.surf_asphalt",
+    "ReplicatedStorage.ArtData.Textures.surf_metal_corrugated",
+    "ReplicatedStorage.ArtData.Textures.surf_stain",
+    "ReplicatedStorage.QAClient",
+    "ServerStorage.DevSync"
+  ],
+  "onlyInLocalWorkingTree": [
+    "ReplicatedStorage.ArtData.Models.office__desks__desk2",
+    "ReplicatedStorage.ArtData.Models.office__desks__desk2_alt",
+    "ReplicatedStorage.ArtData.Models.office__desks__desk2_alt2",
+    "ReplicatedStorage.ArtData.Models.office__desks__desk2_alt3",
+    "ReplicatedStorage.ArtData.Models.office__desks__desk2_alt4",
+    "ReplicatedStorage.ArtData.Models.office__desks__desk2_corner",
+    "ReplicatedStorage.ArtData.Models.office__dividers__divider_black_low",
+    "ReplicatedStorage.ArtData.Models.office__dividers__divider_black_low_half",
+    "StarterPlayer.StarterPlayerScripts.Client.Controllers.PromptUi"
+  ],
+  "nativeSnapshot": "studio/NightShift.snapshot.rbxlx",
+  "nativeSnapshotSha256": "0da670d5512ce73617dccc0a9fc15665e57bff98ae24498859fc29163963aa3c",
+  "scripts": [
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Index",
+      "className": "ModuleScript",
+      "file": "src/art/Index.luau",
+      "bytes": 16221,
+      "sha256": "35e493e4466abcfd66428b0977273b3488fb5370d7c7e78ae66864a40d69cd7a"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.characters__male__character_01",
+      "className": "ModuleScript",
+      "file": "src/art/Models/characters__male__character_01.luau",
+      "bytes": 39179,
+      "sha256": "e60be8556faeb8fb77c7f6691dcb28d95082c910dde15fa467965d7ceb59659e"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.characters__male__character_04",
+      "className": "ModuleScript",
+      "file": "src/art/Models/characters__male__character_04.luau",
+      "bytes": 39232,
+      "sha256": "fa528a8f152b99fc6c586c7794aceced90471bf88328b68445d061ca37729e65"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.characters__male__character_05",
+      "className": "ModuleScript",
+      "file": "src/art/Models/characters__male__character_05.luau",
+      "bytes": 39607,
+      "sha256": "42433f758206a4b7c1e1e6d4abcb8285fe60e63309594e3e49a09e1556bc7dc8"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__book_blue_01",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__book_blue_01.luau",
+      "bytes": 5654,
+      "sha256": "573563ba809e63bdea7fd841fb4051329242d497ea02a404316b106e64d83353"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__book_brown_02",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__book_brown_02.luau",
+      "bytes": 5655,
+      "sha256": "7fd430213f7d62527b1c0e9d0d01aa8cf5191d899a08b30bc09dc8e77f7b9aa4"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__book_red_01",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__book_red_01.luau",
+      "bytes": 5653,
+      "sha256": "83e251cab318b19862158a2b5d6995e4ecd90f929ba748ce5355f9c4e4cc0f1e"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__box_01",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__box_01.luau",
+      "bytes": 1001,
+      "sha256": "928d60c5a929c539d4630cb061a74d525148a653713b0a4d28015af21f43a5e9"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__box_02",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__box_02.luau",
+      "bytes": 1001,
+      "sha256": "ccfef58fbdb216a948e3138f5e181f66bb7f289b1db96652fc0e5f5dc41f3abe"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__box_03",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__box_03.luau",
+      "bytes": 1001,
+      "sha256": "9b92f023a97f65d778ee2f1ca4f61084bbbfda472e16f4e92c16a787637d9fa6"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__box_04",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__box_04.luau",
+      "bytes": 1001,
+      "sha256": "899969e63205d9b8cd94efbbf1a2ed50cc054675b3ad6e0fede6b00095e209b2"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__catalog_01",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__catalog_01.luau",
+      "bytes": 1674,
+      "sha256": "e1f970643f60eaac52fb7a7710fad7861863f8d63f66d38c9947e503eb029150"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__commerical_shelf_short",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__commerical_shelf_short.luau",
+      "bytes": 20304,
+      "sha256": "0ac3c01441af4714979783df3d6b8fd0e85a6282041da693ece8bc5bddc6d8eb"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__door_brown_a",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__door_brown_a.luau",
+      "bytes": 1840,
+      "sha256": "7db3786a8a66951ba4ce5bd31de1c7e61b354eb454cb0148c08b89658a99598f"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__door_pushbar",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__door_pushbar.luau",
+      "bytes": 5176,
+      "sha256": "797c8a27801d65b55f2bc2b575ed97ad09c6ab08a26d9555def037bae4f64ce5"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__electrical_junctionbox_small",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__electrical_junctionbox_small.luau",
+      "bytes": 3721,
+      "sha256": "01b8c95392c18a40d181af769a049b7221ce5202a35d373192c78b3159a0f97c"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__fire_extenguisher_case",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__fire_extenguisher_case.luau",
+      "bytes": 1018,
+      "sha256": "1f5f7535bcad01877fb1e19af381d914c0408f1c559b56e7b25ee7ec462c6ec0"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__manhole_cover",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__manhole_cover.luau",
+      "bytes": 2484,
+      "sha256": "66adf95c843c96c3c4bfe84a638f9b6c28f95caaaea0e356972bf9ee101f0b07"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__metal_rack_stackable",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__metal_rack_stackable.luau",
+      "bytes": 12545,
+      "sha256": "06daf2c89d2d87fea584fa7977e6e685b7b1cd74e0f9acefdf126d6fc339829e"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__metal_rack_stackable_small",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__metal_rack_stackable_small.luau",
+      "bytes": 18496,
+      "sha256": "725e58fc9924e746ea9a633de4193d45599ce1dc24df05147454e1886f4c27d2"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__panel_electric",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__panel_electric.luau",
+      "bytes": 5148,
+      "sha256": "c69aa4857ee99b03b9dfeb0f014bf8f1032769bc0e8fbc56923f4182dfdc0f2d"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__panel_electrical_closed",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__panel_electrical_closed.luau",
+      "bytes": 1176,
+      "sha256": "7170dc4fa4b75f3048b46ce71060af4b64e6a225050581502afa5ee5fab97b86"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__panel_electrical_open",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__panel_electrical_open.luau",
+      "bytes": 2782,
+      "sha256": "418ba75c5ce59fb34f31979c4b5b1df48c3d2011e609533aef8bb07388f31a63"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__panel_heater",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__panel_heater.luau",
+      "bytes": 1003,
+      "sha256": "b6e37f15b200adb6a3a158060122ed144f4673142aec00d9ccde0ae0ed5210fa"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__panel_thermostat",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__panel_thermostat.luau",
+      "bytes": 1010,
+      "sha256": "ae110277103c495960e379e92944cdf70495875153a83fdd0267b0da049e5f94"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__papers_envolope_redacted",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__papers_envolope_redacted.luau",
+      "bytes": 1692,
+      "sha256": "9aef4499ae7578d28d981e51a47f7a4dc7fc1700e93c086e47a83f834734b11e"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__papers_log_1_stack",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__papers_log_1_stack.luau",
+      "bytes": 817,
+      "sha256": "89ecb27e207a81ef2fc2e0b460299e67fc88fd109319e3fa3981b7178f4b0f77"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__sign_chemical_rusty",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__sign_chemical_rusty.luau",
+      "bytes": 1012,
+      "sha256": "715177233e7cc282e90f87bf9211cf0f62661368bdb43d0c8c36a8e3440bc0f4"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__sign_nosmoking",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__sign_nosmoking.luau",
+      "bytes": 1838,
+      "sha256": "10da7d1868e7de162b3fd4fa3a12903b38d939c65c23317c7087fc5d00643791"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__window_boarded",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__window_boarded.luau",
+      "bytes": 6644,
+      "sha256": "bf6d7eedea42503bae02daabf1dc9da3903989d5f7515fc2948db59a8815e9f8"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__wood_pallet",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__wood_pallet.luau",
+      "bytes": 6046,
+      "sha256": "3ce84216826863ac98b493643234bbc8a90a516e5901471731ecfc1a2df7975a"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.classic64__blend__yellow_post",
+      "className": "ModuleScript",
+      "file": "src/art/Models/classic64__blend__yellow_post.luau",
+      "bytes": 7391,
+      "sha256": "71e0f5d152f985ee30626092fe1ad35acd274b1122e97b41dd973f7bc4c90b0b"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.cute3d__blend__fridge",
+      "className": "ModuleScript",
+      "file": "src/art/Models/cute3d__blend__fridge.luau",
+      "bytes": 4493,
+      "sha256": "4859d0f6c10dcc5e05ea75fb437a042a4a417711ffa4c0034eaafb306078463a"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__book_things__book_case_with_back_small",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__book_things__book_case_with_back_small.luau",
+      "bytes": 8085,
+      "sha256": "f6567e4dfe169342e03d55e0e452c4d73dc788d34b607d60b74fda9747a96ac3"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__book_things__books",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__book_things__books.luau",
+      "bytes": 35918,
+      "sha256": "b768d640323b04b3a9da997e9aa36be4152cf47a1c39bf735878372a593a8682"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__book_things__books_alt",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__book_things__books_alt.luau",
+      "bytes": 16003,
+      "sha256": "ae2e820a7797e701c201af5f8af99ce295c2b242f3ee5e9ee962b4beed305ec1"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__book_things__file_binder",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__book_things__file_binder.luau",
+      "bytes": 1819,
+      "sha256": "3800e0603a57ede8b56973b0fb9203078be88090efeee1d6849e356420ed2797"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__book_things__file_binder_alt",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__book_things__file_binder_alt.luau",
+      "bytes": 1832,
+      "sha256": "5a3df49aad92555edda11865c27a4ea5f3431890e159f6ddfc034a85d7446182"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__book_things__file_binder_alt2",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__book_things__file_binder_alt2.luau",
+      "bytes": 1826,
+      "sha256": "c29328bc537c46ba7a2e9f6d4bff76d441e1c37cbb5ec1a572ee1b459ca7fcc1"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__carpet_floor__floor_3x3",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__carpet_floor__floor_3x3.luau",
+      "bytes": 629,
+      "sha256": "e90bd1ddc3b4dd7427ef91fe4f9554411bbb374bc749b2227fb7855a4b3a855f"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__chairs__conference_chair_grey",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__chairs__conference_chair_grey.luau",
+      "bytes": 25848,
+      "sha256": "079e3c5c8c1b7b73159ae79746aee3dbfe24fc5e1bcf22e92711f80c0d0b1382"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__chairs__office_chair_black",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__chairs__office_chair_black.luau",
+      "bytes": 16313,
+      "sha256": "c848a080a6b7d1c77b9b5d7636967c3025e8e7058a81bdac82e6517cb1ad78d7"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__chairs__office_chair_black_alt",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__chairs__office_chair_black_alt.luau",
+      "bytes": 45541,
+      "sha256": "1bb53cf90c8e45827dfea6fd1bbf0cb3b95216f54adc0ba7f3f9b5a062915526"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__chairs__office_chair_blue",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__chairs__office_chair_blue.luau",
+      "bytes": 16312,
+      "sha256": "3dd0ea725eac03581ae13f89dad04c352c26fda815a884d878de430df33f36c9"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__chairs__office_chair_blue_alt",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__chairs__office_chair_blue_alt.luau",
+      "bytes": 45542,
+      "sha256": "b084b0796982ef4c5665d0bd2ab2ae46b103d802610adac5054030b92bbb887d"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__chairs__office_chair_grey",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__chairs__office_chair_grey.luau",
+      "bytes": 16312,
+      "sha256": "d047867ea0a19daa7f17d42e18440cc999739b0064761fe4746cca04227c94af"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__chairs__office_chair_grey_alt",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__chairs__office_chair_grey_alt.luau",
+      "bytes": 45541,
+      "sha256": "6f13705b09826f6b8e437cf296c5fc1a472f53ffc6ee2b7df5c7c61377542704"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__chairs__office_chair_orange",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__chairs__office_chair_orange.luau",
+      "bytes": 16314,
+      "sha256": "2ebf2680a2d13fb26d5d5e43b2fc9f1bd913d6acea82cd644e837d8f7c254adf"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__computers__computer_keyboard",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__computers__computer_keyboard.luau",
+      "bytes": 1384,
+      "sha256": "e0173fc1f9ed5ba1ffbee390ce0171d74756689f175e4a6b2e90b8076d8f48cb"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__computers__computer_monitor",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__computers__computer_monitor.luau",
+      "bytes": 5669,
+      "sha256": "6a99fa120a2309ac6e957a2bfc96042899478dd07285650ee670ae9d29be2cd0"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__computers__computer_mouse",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__computers__computer_mouse.luau",
+      "bytes": 1760,
+      "sha256": "7468ffa7ef53acba17d54eac1d66843801269b7996a57dc27a8b87b4943642de"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__computers__computer_tower",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__computers__computer_tower.luau",
+      "bytes": 1310,
+      "sha256": "a5c2eebe3c92158006b6564691f824c5c00879eae69cc1a51fe6de540db6db03"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__computers__computer_tower_alt",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__computers__computer_tower_alt.luau",
+      "bytes": 1314,
+      "sha256": "2a1f5ea9226944f1fe8fe515378d3f2be66c68ca1118677c37a7aafd2f938306"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__computers__desktop_brick",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__computers__desktop_brick.luau",
+      "bytes": 9054,
+      "sha256": "907b388fb6b3050d06396fc693e2a60675ad6f760cf7b526aa4064a0ff5a0574"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__computers__horizontal_desktop",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__computers__horizontal_desktop.luau",
+      "bytes": 1014,
+      "sha256": "bdcb3aec40426ba08c28cdb034294979bc8ebd89c3bac7f702c5f1ceddd1d6cc"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__computers__tv",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__computers__tv.luau",
+      "bytes": 9195,
+      "sha256": "df3ab078042ac84f140c2441bbfa9c706ebabed90fd38355bb09587ac9339262"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__couches__armchair_pattern",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__couches__armchair_pattern.luau",
+      "bytes": 36654,
+      "sha256": "ccdfbd1ffd78edf08b2199b4421e0e27d8b032505abfe6f77e875f5d4a76d240"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__couches__couch_pattern",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__couches__couch_pattern.luau",
+      "bytes": 49125,
+      "sha256": "95d6c13d4f3e611bc05c219dda157964046cba2285f2c0d9b7b2c523eb4a899a"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__desks__desk1_alt2_weathered",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__desks__desk1_alt2_weathered.luau",
+      "bytes": 7266,
+      "sha256": "37f3cd44a4de2bb58025e85484d5de7c07c1323bb88d7d85ace45d8c596c6b55"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__desks__desk1_alt_weathered",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__desks__desk1_alt_weathered.luau",
+      "bytes": 21046,
+      "sha256": "fcaa3b9491b5a7a80af30df910e0c77f620bcd7bc395268aa0df44c7d05ea78c"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__desks__desk1_corner_weathered",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__desks__desk1_corner_weathered.luau",
+      "bytes": 10232,
+      "sha256": "7613a1dcadc990b8a9723aa1aecbe10030282c78c36461f78254e0b528b86401"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__desks__desk1_weathered",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__desks__desk1_weathered.luau",
+      "bytes": 11463,
+      "sha256": "c1025848b5d3bbceb23d350a63359c9420cd2751592e769a279feb6b46059225"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__desks__desk2_alt3_weathered",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__desks__desk2_alt3_weathered.luau",
+      "bytes": 5450,
+      "sha256": "9963fd5bb8530e8a21a510b2eb57fcb5ced244907547f53bb4790b57377410cc"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__desks__desk2_alt_weathered",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__desks__desk2_alt_weathered.luau",
+      "bytes": 21046,
+      "sha256": "18a2926e9825c705d552958e4952a3489ede1282486393fba3f3bc2cd5e4c2a5"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__desks__desk2_weathered",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__desks__desk2_weathered.luau",
+      "bytes": 11463,
+      "sha256": "c116e6c7598c146ffe1009ebd02737d47a7050a52cffe8b6f5cb15529e41205d"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__dividers__divider_veneer_half",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__dividers__divider_veneer_half.luau",
+      "bytes": 4956,
+      "sha256": "6cc24d219e1cde6d9b924bad7a051f8267dab564a448f3eef9c6d614f8ce1b41"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__dividers__divider_veneer_low",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__dividers__divider_veneer_low.luau",
+      "bytes": 4963,
+      "sha256": "b431ff8706110d8bdf3d5919489ebb3322c9f71e696a2343f999d0fc0e353f87"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__dividers__divider_veneer_low_half",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__dividers__divider_veneer_low_half.luau",
+      "bytes": 4967,
+      "sha256": "6c73a252db27415edd5c52d126f08fa5d9def3e6ea8a5a8b370032a14deeee94"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__dividers__divider_wood_low",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__dividers__divider_wood_low.luau",
+      "bytes": 4961,
+      "sha256": "184b6f4e84a9e8c34000fc16b25884374fd93aaedf090731b675527eafa9dba0"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__extras__circular_desklamp",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__extras__circular_desklamp.luau",
+      "bytes": 10598,
+      "sha256": "f7266afbfc612a814eb5b4581a9fb5eb65e8811f05b5eae228ec1e143087efbf"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__extras__circular_desklamp_alt",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__extras__circular_desklamp_alt.luau",
+      "bytes": 10742,
+      "sha256": "cff13c6b5888920826ce02f6357680ea691a68b7f5dab2b0a8120d8205d25f78"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__extras__coffee_machine",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__extras__coffee_machine.luau",
+      "bytes": 10044,
+      "sha256": "1fe50eaf038ec834f5a7dc07aaaa8ae39a2020ddf269374a3d01647488efe9e7"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__extras__desk_phone",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__extras__desk_phone.luau",
+      "bytes": 5399,
+      "sha256": "f2621b318e38f94af95518e5f1961908d8d674d41aff58b87689df499113abed"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__extras__desk_phone_with_cable",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__extras__desk_phone_with_cable.luau",
+      "bytes": 26328,
+      "sha256": "d1677c6d4e701e9f35391769af5c38f62a34cdd40c6c986c03aa979928107564"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__extras__glass",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__extras__glass.luau",
+      "bytes": 2189,
+      "sha256": "99ad31779d95d7e1f3ac89e0c51adaea78c1cbe0057f5251efb50a7b506b3f3c"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__extras__mug",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__extras__mug.luau",
+      "bytes": 10525,
+      "sha256": "46a7ca73d31cfb34544f56117bbd34ef7b7ee1cb90a159eab9bfaf043fd5301d"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__extras__mug_alt",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__extras__mug_alt.luau",
+      "bytes": 10529,
+      "sha256": "f4652cab1660097baa56b04fa6676294241bb800354a0219c2e6a6f89402b2c5"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__extras__mug_alt2",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__extras__mug_alt2.luau",
+      "bytes": 10530,
+      "sha256": "3e3ff95029657fe415074b58fd476b134dbd9cb36e610200834fdeed0f418631"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__extras__mug_alt3",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__extras__mug_alt3.luau",
+      "bytes": 10530,
+      "sha256": "ee4fbec738a8125fe1c20193f8b8b2288d75d054773b308e9f40b5da531c62f2"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__extras__square_desklamp",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__extras__square_desklamp.luau",
+      "bytes": 8672,
+      "sha256": "23139c6a3560afc31dba5df2403cb4eca5451a130aa22795bb00ccb8d65dfdd3"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__extras__square_desklamp_alt",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__extras__square_desklamp_alt.luau",
+      "bytes": 8675,
+      "sha256": "1b9c19a5496596a4118ca5ce7d3a7630d7f5ac66d2b52821cd6e1ea010491a5f"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__extras__wall_clock",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__extras__wall_clock.luau",
+      "bytes": 3303,
+      "sha256": "cd5b747d3c4303463cd7c36ebe2b09bdd7bdc2250cb68be4d74f2465e47fde62"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__extras__water_cooler_bottle_attached",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__extras__water_cooler_bottle_attached.luau",
+      "bytes": 53699,
+      "sha256": "b03bcbf5fe13a489806c2d97a830e97996059237824cd656f835f9acf28b5ae8"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__extras__whiteboard",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__extras__whiteboard.luau",
+      "bytes": 28122,
+      "sha256": "fd84f85505c92fdefe0e572606d7bbecc0f36bbd67d055e51579978f73a7f365"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__file_cabinets__file_cabinet_larger_open",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__file_cabinets__file_cabinet_larger_open.luau",
+      "bytes": 2406,
+      "sha256": "faa743bb2e8df42c0aa8c5be4f2d06df404d2a3ee68c903d1502f8edc5a3cb51"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__file_cabinets__file_cabinet_largest",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__file_cabinets__file_cabinet_largest.luau",
+      "bytes": 1348,
+      "sha256": "7377e6f9fbbc38826ab09e23e389cbed60251c266ded394b163ae39853da2467"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__file_cabinets__file_cabinet_small",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__file_cabinets__file_cabinet_small.luau",
+      "bytes": 1319,
+      "sha256": "f0bb711e1df47202bce5efc57de5ad9e0bda4510d87c762a75262fbf484caf04"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__file_cabinets__file_cabinet_smaller_with_shelfs",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__file_cabinets__file_cabinet_smaller_with_shelfs.luau",
+      "bytes": 19817,
+      "sha256": "a0f52e42245458230c862e140b9903ec79999e2e2fd817bf5eaf5fc180334eb6"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__stationary__paper_single_sheet",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__stationary__paper_single_sheet.luau",
+      "bytes": 1024,
+      "sha256": "e72ec54866cc9e145af1f1e4c47ec11e646fa462984a907fd5a4419f5bf4e0b1"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__stationary__paper_stack",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__stationary__paper_stack.luau",
+      "bytes": 1010,
+      "sha256": "edd054f8ec9bf58cf6e4eae20f9cf5aad2ce32e8b1605ca7ef7423b6d7e5ae2c"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__stationary__paper_stack_large",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__stationary__paper_stack_large.luau",
+      "bytes": 1017,
+      "sha256": "183ea36cccfc08917c06b5d946926bb7543e3145b37e6704366929cb5933e370"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__stationary__pen",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__stationary__pen.luau",
+      "bytes": 2320,
+      "sha256": "63f5e5c84df7b7f97a9a1df2ad61806d0e881a80defe059dc14355615b6eb0cb"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__stationary__pen2",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__stationary__pen2.luau",
+      "bytes": 2150,
+      "sha256": "b1ac9c5dc9180a8d0769ac05b15278571e64e22f2594fa9658fd4c5dd0f7fded"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.office__stationary__pen3",
+      "className": "ModuleScript",
+      "file": "src/art/Models/office__stationary__pen3.luau",
+      "bytes": 2460,
+      "sha256": "9d63b831f50739d94ff91eb59605dca7bc27d14cc7ec30eea92fa3671fa4091d"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.oldstuff__barrel",
+      "className": "ModuleScript",
+      "file": "src/art/Models/oldstuff__barrel.luau",
+      "bytes": 3812,
+      "sha256": "406a987dfe847c9740e7f720d5135e789c69a9ec5554a2390dd774a51801d1d8"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.oldstuff__telephone",
+      "className": "ModuleScript",
+      "file": "src/art/Models/oldstuff__telephone.luau",
+      "bytes": 8611,
+      "sha256": "9b2b1d1237edcc346b710c7eb7ec80dee2c32c51d3f3cc8638c7930726d99647"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__cones_barriers__bollards__concrete_retro_bollard_light",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__cones_barriers__bollards__concrete_retro_bollard_light.luau",
+      "bytes": 8763,
+      "sha256": "0067d9dbff8eb66387a92783da4b0f2c5ca65f8adc4be1a15546d967a2df83e2"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__fences__plackard_wall__plackard_broken",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__fences__plackard_wall__plackard_broken.luau",
+      "bytes": 7382,
+      "sha256": "2fc4212d02e9d9682752680322dc7958c86c83ed3e569e14ea7ce2e886f2890c"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__fences__plackard_wall__plackard_closed",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__fences__plackard_wall__plackard_closed.luau",
+      "bytes": 6942,
+      "sha256": "3c37473032828af2de966baa34ec30049f28397ae62638d719262f0a3eca0f86"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__litter__dumpsters__dumpster_lid_closed",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__litter__dumpsters__dumpster_lid_closed.luau",
+      "bytes": 10735,
+      "sha256": "c6fb1c09571a82a2ae7587dd98e8796a52532adf74cacae775629a61c657692f"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__litter__dumpsters__dumpster_trashpile_1",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__litter__dumpsters__dumpster_trashpile_1.luau",
+      "bytes": 13714,
+      "sha256": "af2d8db892b9b808a1712d7e01f003c6a03eec487f3f1e1216600516786cad9f"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__litter__metal_trashcan__metaltrashcan_closed",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__litter__metal_trashcan__metaltrashcan_closed.luau",
+      "bytes": 14590,
+      "sha256": "9928ae3d265036ba3c66cfd448ae136d586bfcffc3892a7b301d0da5ede672a8"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__litter__metal_trashcan__metaltrashcan_overflowing",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__litter__metal_trashcan__metaltrashcan_overflowing.luau",
+      "bytes": 29301,
+      "sha256": "29611478c06246c14cbe6be207c40dbf4f99cfcf5ef221f905c280726193a75e"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__litter__trash__trashbag_1",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__litter__trash__trashbag_1.luau",
+      "bytes": 5288,
+      "sha256": "e2d774b67bbf1585ce3b39a1dea2ea51bcccda83f4105058066dee0ada9db8b6"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__litter__trash__trashbag_2_white",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__litter__trash__trashbag_2_white.luau",
+      "bytes": 5902,
+      "sha256": "a676c0741342396fdd4fa27eee94f60decc544d92d5ca688db8dc08c24c5a640"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__litter__trash__trashbag_3",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__litter__trash__trashbag_3.luau",
+      "bytes": 7551,
+      "sha256": "7017f9ba25f9967772cd74a92a4c11e481742f050c9195d0607850fcacfa35ad"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__litter__trash__trashpile_2",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__litter__trash__trashpile_2.luau",
+      "bytes": 3819,
+      "sha256": "6ac826437d0505edfc7032e5fb9d05fe2f798057b852b24a92ba59bc266eaf26"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__litter__trashcan__trash_can",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__litter__trashcan__trash_can.luau",
+      "bytes": 21681,
+      "sha256": "1ce7cc8bce083ace1748cee015688223aa2479ca4f51a7f135e84e9f829ff3d1"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__pipes__pipe",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__pipes__pipe.luau",
+      "bytes": 1010,
+      "sha256": "0238df307c2edcea33bac1c778a89eeffd84ea7a0fa5270cd03c172ecc432d2c"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__pipes__pipe_corner_rusted",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__pipes__pipe_corner_rusted.luau",
+      "bytes": 2517,
+      "sha256": "683d92b8284a2ed3a99ba2f6436924fd148e895a1147550fb07833b2f098855d"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__pipes__pipe_intersection_t",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__pipes__pipe_intersection_t.luau",
+      "bytes": 2168,
+      "sha256": "2910043331cd329ef836f506e468c3c1f44207f78f8fbbf00da4e16918fa969f"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__pipes__valve_red_with_handle",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__pipes__valve_red_with_handle.luau",
+      "bytes": 9463,
+      "sha256": "f087f216c22c33651326a37c0454da61abee2d6aa894503140ee1385642c2fed"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__traffic_lights__street_light",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__traffic_lights__street_light.luau",
+      "bytes": 42115,
+      "sha256": "2f74f46fdc2eab94e27ef57d857bb18c9c8df7f57f348b250fdaba54e4101712"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__vents__duct_corner_rounded",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__vents__duct_corner_rounded.luau",
+      "bytes": 3926,
+      "sha256": "b31fff1a541684e6cdbf1b21200438ffe840a8d3cdcf4f15dd6d8619cf514cd9"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__vents__duct_long",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__vents__duct_long.luau",
+      "bytes": 1731,
+      "sha256": "99be0afea99863164bf3557fc0c56a450f19c645d44c361930a21cff80166065"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Models.urban__vents__vent_cover",
+      "className": "ModuleScript",
+      "file": "src/art/Models/urban__vents__vent_cover.luau",
+      "bytes": 2358,
+      "sha256": "bd424448f08ace0883297ab7aca5846d483423d444dee1cf215bbf74bb6a1748"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.Atlas_0",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/Atlas_0.luau",
+      "bytes": 174883,
+      "sha256": "db9151ed7049b860475520579ccc88333807c91862767df7776135c4b6ab8273"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.Atlas_1",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/Atlas_1.luau",
+      "bytes": 174883,
+      "sha256": "4b33809ede4559cbc6c0af3396e92c02de78aa428a961083ffe3d7ea625e2b69"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.Atlas_2",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/Atlas_2.luau",
+      "bytes": 174883,
+      "sha256": "a20fa374cc7f483239962226904e17021e05d41d6e5d058d5f20a3c7bf5c8bd8"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.Atlas_3",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/Atlas_3.luau",
+      "bytes": 174883,
+      "sha256": "fa6920e8140b4c5b1183fd4e14e11958095b885d55dd15ed827cd3f30dd99768"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.Atlas_4",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/Atlas_4.luau",
+      "bytes": 174883,
+      "sha256": "4fafc57a5f9add12510d4a3e826173b1163d16c826b42791e48acc1f0931e44a"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.Atlas_5",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/Atlas_5.luau",
+      "bytes": 174883,
+      "sha256": "69672004b18243e8c038aa367a59dd532a07160c6a006c871802ed0447a869ff"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.Atlas_6",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/Atlas_6.luau",
+      "bytes": 174883,
+      "sha256": "a5fe177bc8349307fa37719e4fd7f625bf37a1cb3952ba6a3e2951fd5e3cf8b0"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_asphalt",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_asphalt.luau",
+      "bytes": 43811,
+      "sha256": "35e6b6c93a3b9b20890759dfeed7d4b8c765d09a18105b9869a93afff65e3792"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_brick_alley",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_brick_alley.luau",
+      "bytes": 43811,
+      "sha256": "a77b8b325b3140bcaabe5d711ed430b8323fb9160e4bcdfdaf14c1b439da0e2e"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_carpet",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_carpet.luau",
+      "bytes": 11041,
+      "sha256": "2b2fb1f4635c0bbb599d15ff102b3d8d0c3b39a71c165e325e1fa617a7dc87dc"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_ceiling_tile",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_ceiling_tile.luau",
+      "bytes": 43811,
+      "sha256": "67a9b7df30f86af155ebaec5a3957128fdc4398a1796b350690db8b9e6e44323"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_floor_concrete",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_floor_concrete.luau",
+      "bytes": 43811,
+      "sha256": "8c666cbccf52f3db3b10c5cacc498ae6b480c73ef368e82312d5814f69584d67"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_floor_lobby",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_floor_lobby.luau",
+      "bytes": 43811,
+      "sha256": "f6d68fac3d04534ac6df743d8140d6ff2cc3e8a40613f9a86f400b8d4c8efa1e"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_floor_tile",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_floor_tile.luau",
+      "bytes": 43811,
+      "sha256": "b8a97b70ca26bfba4fe4b515f85a0c894c9d8b3e5a905f4593729a18a548f17e"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_metal_corrugated",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_metal_corrugated.luau",
+      "bytes": 43811,
+      "sha256": "f3372add75501c70ae84afc3f4e3078a7a1b31320d700b13c0b40a2a844f1b05"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_metal_door",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_metal_door.luau",
+      "bytes": 43811,
+      "sha256": "5b628fad89a519d0a224572a8ade8d08167ab1679bc9edcd3e4053ba847e9283"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_metal_panel",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_metal_panel.luau",
+      "bytes": 43811,
+      "sha256": "9828816e4eb56cda314557154491bea8530e55a939fe2915660c79302ed59e8f"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_paper_note",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_paper_note.luau",
+      "bytes": 43811,
+      "sha256": "3b639b9a830359f976fa50530538f65fadafa1a544d0d3dbd6844f8ba6af1df7"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_stain",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_stain.luau",
+      "bytes": 43811,
+      "sha256": "cec031771827a9576bf0f05271c05c552b68a4c1d7b24ffd5e4c96d29ba8b6e8"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_wall_concrete",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_wall_concrete.luau",
+      "bytes": 43811,
+      "sha256": "1d808d0fa1dffa66512439a1014b70d812713e1252a31cbf23d6109c57ead540"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_wall_kitchen",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_wall_kitchen.luau",
+      "bytes": 43811,
+      "sha256": "15e1c3a38c84fcf589ac96ccdf62bce482c8079d6042fce11c954dac3c32c598"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_wall_lower",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_wall_lower.luau",
+      "bytes": 43811,
+      "sha256": "b1fe7a64a0e4fa523ec487b3962eefaff3fa1290140ffcb13e29aa1da6e9a3ae"
+    },
+    {
+      "instancePath": "ReplicatedStorage.ArtData.Textures.surf_wall_office",
+      "className": "ModuleScript",
+      "file": "src/art/Textures/surf_wall_office.luau",
+      "bytes": 43811,
+      "sha256": "f1177671d298d434beeda6d8f50a74ea1de46dfef2d0d018696d4c5d3e7f87a1"
+    },
+    {
+      "instancePath": "ReplicatedStorage.QAClient",
+      "className": "ModuleScript",
+      "file": "src/studio/ReplicatedStorage/QAClient.luau",
+      "bytes": 1415,
+      "sha256": "5e03d3faa9cc23be65fe033f795e10ead479f046e7dac34c7e0d64c149f1dfeb"
+    },
+    {
+      "instancePath": "ReplicatedStorage.Shared.Config",
+      "className": "ModuleScript",
+      "file": "src/shared/Config.luau",
+      "bytes": 6595,
+      "sha256": "1086abb85b8d34d10d40d32bbe76b22919fea0b63e5bb26132cf739025570cac"
+    },
+    {
+      "instancePath": "ReplicatedStorage.Shared.Dialogue",
+      "className": "ModuleScript",
+      "file": "src/shared/Dialogue.luau",
+      "bytes": 5135,
+      "sha256": "8d41167f859ec6962126dd876d0a77996eeb2f8826fc0e52841d0ab133f74943"
+    },
+    {
+      "instancePath": "ReplicatedStorage.Shared.Layout",
+      "className": "ModuleScript",
+      "file": "src/shared/Layout.luau",
+      "bytes": 6278,
+      "sha256": "2ff7841c11959aa0f8c751f7d9b427027d4dafac84a91c64f32d379e04717488"
+    },
+    {
+      "instancePath": "ReplicatedStorage.Shared.Net",
+      "className": "ModuleScript",
+      "file": "src/shared/Net.luau",
+      "bytes": 1680,
+      "sha256": "2c119d58956c2308e25f0fc0fd3ed1fc98dccd80d30a4ae3f2abc3aec4c83513"
+    },
+    {
+      "instancePath": "ReplicatedStorage.Shared.Types",
+      "className": "ModuleScript",
+      "file": "src/shared/Types.luau",
+      "bytes": 2206,
+      "sha256": "2bc2c590e2925979d685db44e6a3aef9601d30c7bc8b81ca25a6b8ddcb0caf68"
+    },
+    {
+      "instancePath": "ReplicatedStorage.Shared.Util.Base64",
+      "className": "ModuleScript",
+      "file": "src/shared/Util/Base64.luau",
+      "bytes": 1023,
+      "sha256": "686b0704f46a80c4b86824bd634aed3a3505ae72c7e075e87e1cea4ddad06751"
+    },
+    {
+      "instancePath": "ReplicatedStorage.Shared.Util.Signal",
+      "className": "ModuleScript",
+      "file": "src/shared/Util/Signal.luau",
+      "bytes": 1186,
+      "sha256": "349444df833eccdf795424200ecd7b5a25febb25967131efd6d084f7747d9cdc"
+    },
+    {
+      "instancePath": "ServerScriptService.Server",
+      "className": "Script",
+      "file": "src/server/init.server.luau",
+      "bytes": 1386,
+      "sha256": "1a17929b0ab88d2e93946e6df9429173978cb456d6d2c579008a53c8bb8d49e2"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Events.BossRequest",
+      "className": "ModuleScript",
+      "file": "src/server/Events/BossRequest.luau",
+      "bytes": 8638,
+      "sha256": "5a4072048541d95a8b86471b6ded9ec92d6746a18e201879858625a4fd37b518"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Events.DoorUnlatch",
+      "className": "ModuleScript",
+      "file": "src/server/Events/DoorUnlatch.luau",
+      "bytes": 2573,
+      "sha256": "ed047337c87fb40d18de6d2db7199510ec51a92596269a37cc013ba03777a799"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Events.FalseInstruction",
+      "className": "ModuleScript",
+      "file": "src/server/Events/FalseInstruction.luau",
+      "bytes": 4220,
+      "sha256": "93947eefc3c8d9966168f72ab5a19d40823b8095e1b60d05dbde886272c797fd"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Events.Harmless",
+      "className": "ModuleScript",
+      "file": "src/server/Events/Harmless.luau",
+      "bytes": 3595,
+      "sha256": "9e2686c02fbe946f6b16a3a9f86ff815ef0a6cb62366a8d6a07ef8f14448f884"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Events.PhantomWindow",
+      "className": "ModuleScript",
+      "file": "src/server/Events/PhantomWindow.luau",
+      "bytes": 2489,
+      "sha256": "641e33b13c0e30b1710fa67e20875a7a1126221d4dcf4e7cec72dd3891461337"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Events.PowerFailure",
+      "className": "ModuleScript",
+      "file": "src/server/Events/PowerFailure.luau",
+      "bytes": 2472,
+      "sha256": "bee6265104c0a276618262d7822ee22112bc3719323659b197164943f114fe9b"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Minigames",
+      "className": "ModuleScript",
+      "file": "src/server/Minigames/init.luau",
+      "bytes": 4825,
+      "sha256": "265fe85fc26cb6f50c7dcfde6192bde8fd25ec57c36102c3aea2795b710ad8db"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Minigames.Checksum",
+      "className": "ModuleScript",
+      "file": "src/server/Minigames/Checksum.luau",
+      "bytes": 3804,
+      "sha256": "03a7d335d99c70c5bc4253818d1cffc783e6ef36a8b489dfd4ddebad64a3656d"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Minigames.FileSort",
+      "className": "ModuleScript",
+      "file": "src/server/Minigames/FileSort.luau",
+      "bytes": 5687,
+      "sha256": "64ce67d04a6eba6c8319744c60990bfad779d27f67c3d87e74dcc6499249741f"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Minigames.MemorySequence",
+      "className": "ModuleScript",
+      "file": "src/server/Minigames/MemorySequence.luau",
+      "bytes": 2645,
+      "sha256": "547d3b2dfd11429309fed525775a71c5ea64d13c1840ce47a90c78c04891475e"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Minigames.ProcessCleanup",
+      "className": "ModuleScript",
+      "file": "src/server/Minigames/ProcessCleanup.luau",
+      "bytes": 7066,
+      "sha256": "17649044588d9471416ce8de4fdc8be7ea1a74ed7885c954df92b53c6390c6d0"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Minigames.SectorRepair",
+      "className": "ModuleScript",
+      "file": "src/server/Minigames/SectorRepair.luau",
+      "bytes": 3848,
+      "sha256": "5eacc8959a7977955afef00da5507bea4c19f57e4cf031685b684c49f7c2f9fb"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Minigames.SignalRouting",
+      "className": "ModuleScript",
+      "file": "src/server/Minigames/SignalRouting.luau",
+      "bytes": 7240,
+      "sha256": "fe6c0a9caa7cf6fecdb6305742b63928abf73db4f58a1477e02dee9f536ec626"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Systems.Cheats",
+      "className": "ModuleScript",
+      "file": "src/server/Systems/Cheats.luau",
+      "bytes": 11015,
+      "sha256": "e77d2e1f414710eee52ed963a2bf85e513094d50e3df2b522584f71dda19a37f"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Systems.Checkpoints",
+      "className": "ModuleScript",
+      "file": "src/server/Systems/Checkpoints.luau",
+      "bytes": 3139,
+      "sha256": "28ed6f40b35266425c1bbe4cbdb2c2c7acdcf94fafd436bf7f045700c9d27106"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Systems.Doors",
+      "className": "ModuleScript",
+      "file": "src/server/Systems/Doors.luau",
+      "bytes": 4322,
+      "sha256": "b302d35101de2e6d8c2470be87552065a7b92c0d064cb9d8651932386dfaa82b"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Systems.Drives",
+      "className": "ModuleScript",
+      "file": "src/server/Systems/Drives.luau",
+      "bytes": 16521,
+      "sha256": "7cc15f6da9da342419e2d301a4545101318017fd1292a5585a24f76b9784d62b"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Systems.EventDirector",
+      "className": "ModuleScript",
+      "file": "src/server/Systems/EventDirector.luau",
+      "bytes": 10908,
+      "sha256": "70bdca515dd1699893073461ce778b2efdff8f79f9bbcdf96ddb778ad8d40340"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Systems.Finale",
+      "className": "ModuleScript",
+      "file": "src/server/Systems/Finale.luau",
+      "bytes": 12593,
+      "sha256": "a7080454bced4e5db76f7c684c3c5dac197479943dbafb544a807220a01c1eae"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Systems.GameState",
+      "className": "ModuleScript",
+      "file": "src/server/Systems/GameState.luau",
+      "bytes": 6672,
+      "sha256": "787fef1f20ab669df8c41bc9d3fc697c5473271e1d2873e1f0d70c67136385a7"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Systems.MapBuilder",
+      "className": "ModuleScript",
+      "file": "src/server/Systems/MapBuilder.luau",
+      "bytes": 47198,
+      "sha256": "bbb89ba0add3f0b0d84f2672002ba637899f228ad3045362cac8e83492ff3a36"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Systems.Pings",
+      "className": "ModuleScript",
+      "file": "src/server/Systems/Pings.luau",
+      "bytes": 1080,
+      "sha256": "c5205113b756dbf1054aa28b1df6c3a4068a992f71ab09d6b7ebb1c850281653"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Systems.PlayerStatus",
+      "className": "ModuleScript",
+      "file": "src/server/Systems/PlayerStatus.luau",
+      "bytes": 5815,
+      "sha256": "f7536f4d3a962b0ca9bd4a5105e35440c75a8a996a2dc4a67cef0d33ea1cfd05"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Systems.Power",
+      "className": "ModuleScript",
+      "file": "src/server/Systems/Power.luau",
+      "bytes": 4763,
+      "sha256": "d0cb1750340f38617eefa4065157dceb74ba329a31275117a902b2e438c01f85"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Systems.Story",
+      "className": "ModuleScript",
+      "file": "src/server/Systems/Story.luau",
+      "bytes": 4353,
+      "sha256": "12865dafadf55a2e0ff4ead1c1f154901d034d452d6b519489ca70acb403eddf"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Systems.Threat",
+      "className": "ModuleScript",
+      "file": "src/server/Systems/Threat.luau",
+      "bytes": 14278,
+      "sha256": "d8a112d3dd7347b57bcdf359a480c33b6a1a528945ee6ea42c57c375829e7bbb"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Systems.Workstation",
+      "className": "ModuleScript",
+      "file": "src/server/Systems/Workstation.luau",
+      "bytes": 12128,
+      "sha256": "4a4fe70508e2e6e163c653cb8f8d63abe1ad21fd488aec05c79472e684784c4a"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Util.Guard",
+      "className": "ModuleScript",
+      "file": "src/server/Util/Guard.luau",
+      "bytes": 2071,
+      "sha256": "f7244d712ee0713e8386c6f216acb7b02a2fbee59bcdcb9a4c846fa854186168"
+    },
+    {
+      "instancePath": "ServerScriptService.Server.Util.Prompts",
+      "className": "ModuleScript",
+      "file": "src/server/Util/Prompts.luau",
+      "bytes": 3068,
+      "sha256": "f29e94c2eecccff065c9dec6903a6221882e8d63c090cf9ba3aa2ae9dd2dc300"
+    },
+    {
+      "instancePath": "ServerStorage.DevSync",
+      "className": "ModuleScript",
+      "file": "src/studio/ServerStorage/DevSync.luau",
+      "bytes": 2033,
+      "sha256": "cd8fd17f4f84f6b6283dba2c37de66aa4c9b97c0523324c8c1f72bedd38aa695"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client",
+      "className": "LocalScript",
+      "file": "src/client/init.client.luau",
+      "bytes": 1005,
+      "sha256": "9a7103fd566d8b6685826a15525af9776a2822889fb21b40c9a6fb404711d4f3"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Controllers.ArtController",
+      "className": "ModuleScript",
+      "file": "src/client/Controllers/ArtController.luau",
+      "bytes": 11511,
+      "sha256": "e60668cca525ded9b1a5b7cae35625236d453bed03c1c68e9d0aa3f3b042961a"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Controllers.Atmosphere",
+      "className": "ModuleScript",
+      "file": "src/client/Controllers/Atmosphere.luau",
+      "bytes": 11003,
+      "sha256": "50f42bc1ed9e3d7ff1686b8100cd97ce5c80682e382b33d4c4142a28429a8597"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Controllers.Desktop",
+      "className": "ModuleScript",
+      "file": "src/client/Controllers/Desktop.luau",
+      "bytes": 36978,
+      "sha256": "b9edf88c4c4906ae1739b5da9d26c5cdd5edfaecff6be544db893f4ceeff5d9c"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Controllers.Effects",
+      "className": "ModuleScript",
+      "file": "src/client/Controllers/Effects.luau",
+      "bytes": 7163,
+      "sha256": "71f6fd8f370bbea1c7816032dab2183a584a2f4a0cdf49e8456b8ceb222ede7f"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Controllers.Hud",
+      "className": "ModuleScript",
+      "file": "src/client/Controllers/Hud.luau",
+      "bytes": 15754,
+      "sha256": "03dbc487d82338003572ff99e30045221d6eb040730d57841391fdb442265e14"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Controllers.Pings",
+      "className": "ModuleScript",
+      "file": "src/client/Controllers/Pings.luau",
+      "bytes": 3282,
+      "sha256": "20440d280f53bb9e4cfc483772a659c6529d0497d9446c127ad2951b270dbeed"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Controllers.State",
+      "className": "ModuleScript",
+      "file": "src/client/Controllers/State.luau",
+      "bytes": 1819,
+      "sha256": "071c7e662f420cd45eda7248cbee16e1f4eb4c4fe16102ce6be48aeffb233fe9"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Controllers.WorkstationCamera",
+      "className": "ModuleScript",
+      "file": "src/client/Controllers/WorkstationCamera.luau",
+      "bytes": 2825,
+      "sha256": "47768a6250904fd9dfd2c1a3d3b834d2b34e1deffc4225e9f991f09f6316759c"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Ui.Sfx",
+      "className": "ModuleScript",
+      "file": "src/client/Ui/Sfx.luau",
+      "bytes": 1869,
+      "sha256": "9398bf44c71359aaa7de78ce28d1997d9a8fd02bea11760183b60b18a179a1c8"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Ui.UiKit",
+      "className": "ModuleScript",
+      "file": "src/client/Ui/UiKit.luau",
+      "bytes": 7598,
+      "sha256": "89993f20fff6c8bd4aa63f19ec047c068246b9b7b49cb0f6860623089fd148ac"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Views.Checksum",
+      "className": "ModuleScript",
+      "file": "src/client/Views/Checksum.luau",
+      "bytes": 2446,
+      "sha256": "421bf87c4e63d4d71cafd4027de92780f0cbd5973d7feddc9138709475065e5e"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Views.FileSort",
+      "className": "ModuleScript",
+      "file": "src/client/Views/FileSort.luau",
+      "bytes": 3243,
+      "sha256": "e6ff5f1b76185018800211922a59d35f89721f5bd4766d4166374cb2b7879323"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Views.MemorySequence",
+      "className": "ModuleScript",
+      "file": "src/client/Views/MemorySequence.luau",
+      "bytes": 3093,
+      "sha256": "027be2128cda1993461e450239decbdc29ad3d2a73d893b7a47310a9ebeeda6e"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Views.ProcessCleanup",
+      "className": "ModuleScript",
+      "file": "src/client/Views/ProcessCleanup.luau",
+      "bytes": 3478,
+      "sha256": "4154831b987d21eaada202d51a65aefe0fde232d0e910b59de89b216f90a96e5"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Views.SectorRepair",
+      "className": "ModuleScript",
+      "file": "src/client/Views/SectorRepair.luau",
+      "bytes": 3344,
+      "sha256": "2dc17e80ed137dd2e5dd0c758a9b7e774f0cc14e565c0321e4391d3214ec8dd3"
+    },
+    {
+      "instancePath": "StarterPlayer.StarterPlayerScripts.Client.Views.SignalRouting",
+      "className": "ModuleScript",
+      "file": "src/client/Views/SignalRouting.luau",
+      "bytes": 2939,
+      "sha256": "b17ee660569c11e89a6e7427ca82d85809412040a6f7b952d15d46889ed0dab2"
+    }
+  ]
+}

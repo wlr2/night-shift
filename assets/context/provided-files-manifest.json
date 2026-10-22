@@ -1,0 +1,892 @@
+{
+  "sourceFolder": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox",
+  "fileCount": 126,
+  "archiveCount": 21,
+  "looseOriginalFiles": 105,
+  "allCopiesSha256Verified": true,
+  "bytes": 1858400083,
+  "files": [
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\(DEMO) Final Exam - PSX Survival Horror Asset Pack.zip",
+      "includedFile": "provided-files/original-folder/(DEMO) Final Exam - PSX Survival Horror Asset Pack.zip",
+      "bytes": 243546593,
+      "sha256": "db59775d927c8dfe1fc061a67999193e866b612f583d380e50fa2eb34fc93052",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Characters_Extras.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Characters_Extras.fbx",
+      "bytes": 1522844,
+      "sha256": "f6ee9f1161396cb1490aa15056272be77fa2c20fe4f5c20008c8c783b528ca01",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Female\\Character_34_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Female/Character_34_Female.fbx",
+      "bytes": 56220,
+      "sha256": "b38ca124ea4151f2ebe1b0bcd4fb82403be51a71d3fd8826562475f9db8b558e",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Female\\Character_35_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Female/Character_35_Female.fbx",
+      "bytes": 56748,
+      "sha256": "57de4da7a5eebe03b9463f7cb85f830c869c6e6324d7e0b47f7b157127a56bb4",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Female\\Character_36_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Female/Character_36_Female.fbx",
+      "bytes": 54956,
+      "sha256": "41cb087744af486b188eb9e1281bbf3af824f547739f80df080597f36c687a4e",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Female\\Character_37_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Female/Character_37_Female.fbx",
+      "bytes": 57820,
+      "sha256": "6642b60ff35ed92e837beb1915ef08d70dc2445641a0b6a158885933641cba64",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Female\\Character_38_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Female/Character_38_Female.fbx",
+      "bytes": 54572,
+      "sha256": "6bdeddb2ddb2e2b2ec658b5a9ae5e1ec1f9d07d52a4c095bfa7d8a66e7f2bd1c",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Female\\Character_39_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Female/Character_39_Female.fbx",
+      "bytes": 55260,
+      "sha256": "60331722e8a35663e4204db6a6bc2e341d2d809e7fd6fb721013461674aa9b91",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Female\\Character_40_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Female/Character_40_Female.fbx",
+      "bytes": 56108,
+      "sha256": "a8d0b98a3352bac5f0ed8eb4f512c86cf8d1a73b5e5acd59e9c5e9a6673b8e99",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Female\\Character_41_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Female/Character_41_Female.fbx",
+      "bytes": 55884,
+      "sha256": "647ed8f298c1c6db4dedd7c7008ce6bd5066061c0414638b10d49614fe028f05",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Female\\Character_42_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Female/Character_42_Female.fbx",
+      "bytes": 62748,
+      "sha256": "13b62b2110f666f671d24a019e720e3a56c8dbb2fee4f1b1942b17aba0c571ad",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Female\\Character_43_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Female/Character_43_Female.fbx",
+      "bytes": 55292,
+      "sha256": "346b79563d8ee50add4ec20ac71b19b985a5bc5a2e1d339b08b797ca51b03303",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Female\\Character_44_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Female/Character_44_Female.fbx",
+      "bytes": 59164,
+      "sha256": "4fa5a26070d43633ae02ccd1370fa955ae4f61e0a24390657891fc4155c36c7b",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Female\\Character_45_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Female/Character_45_Female.fbx",
+      "bytes": 57964,
+      "sha256": "a447db3ec73386f100d6aa76248810f607ab2d58b255a498db38acf4c78b21d8",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Female\\Character_46_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Female/Character_46_Female.fbx",
+      "bytes": 62796,
+      "sha256": "367cb409f0c58968f468772d4e1c77f45c6fa0954962f85bea03b08648c06682",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Killer_M\\Character_Killer_08.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Killer_M/Character_Killer_08.fbx",
+      "bytes": 58844,
+      "sha256": "93bfde97b733a69b5791dcfed66ffe7f39bbe2f1d87b80c9f00fcd0b7cc1a5bf",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Killer_M\\Character_Killer_09.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Killer_M/Character_Killer_09.fbx",
+      "bytes": 59324,
+      "sha256": "95f78ac5ccff5a47386c5468ff797b2e46995318c58381b268d457721bfa2948",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Killer_M\\Character_Killer_10.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Killer_M/Character_Killer_10.fbx",
+      "bytes": 62300,
+      "sha256": "63dfbc029756251259095748fb55f0141e816f04e303bb786accde4b31849f22",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Killer_M\\Character_Killer_10_01.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Killer_M/Character_Killer_10_01.fbx",
+      "bytes": 54652,
+      "sha256": "475f559b612235123d55d437532ff8b1e83a74a42135ec2b29fe2443aa2b7dce",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Killer_M\\Character_Monster_06.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Killer_M/Character_Monster_06.fbx",
+      "bytes": 57788,
+      "sha256": "b087184dc5da4066b27aea7da459a85ab22166a2e63e1f3b1ec484284e47e149",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Killer_M\\Character_Monster_07.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Killer_M/Character_Monster_07.fbx",
+      "bytes": 54364,
+      "sha256": "9da2d3559c1bf8e251427e220880c5cc124f73dce50ac226ca8c11697714a8db",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Killer_M\\Character_Monster_08.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Killer_M/Character_Monster_08.fbx",
+      "bytes": 58428,
+      "sha256": "a513d2814689d9da940314941229b1c9d2f2da1db98cac77c89328c8c0264b11",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Male\\Character_Male_33.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Male/Character_Male_33.fbx",
+      "bytes": 55484,
+      "sha256": "ec1e94fc3ba59e601aec1dc998f916a78d4abbb6957f2716f6e8c812f8e52878",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Male\\Character_Male_34.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Male/Character_Male_34.fbx",
+      "bytes": 54572,
+      "sha256": "86ba1df9f083e2bb2d091f3e6c572ce22192f11dea8e8226f28d3acf6f68f3c4",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Male\\Character_Male_35.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Male/Character_Male_35.fbx",
+      "bytes": 56316,
+      "sha256": "70140880bca30c55ef33d7ae38f902bca3d90bb7824088a377ce156191c80d99",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Male\\Character_Male_36.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Male/Character_Male_36.fbx",
+      "bytes": 55308,
+      "sha256": "4112f75b4c7a7d760689503798f82a0353b5fb7da3561bef744e21ff466c6e07",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Male\\Character_Male_37.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Male/Character_Male_37.fbx",
+      "bytes": 54844,
+      "sha256": "5a1311790684c1c86328284bc6139493a17afd0b2d95a2ae70102081fe187891",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Male\\Character_Male_38.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Male/Character_Male_38.fbx",
+      "bytes": 54188,
+      "sha256": "d0238d5a7979a738c9e777b6205feff4dc96787e31e4ca903ed0ff0284a9b922",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Male\\Character_Male_39.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Male/Character_Male_39.fbx",
+      "bytes": 53868,
+      "sha256": "707cd01730bcd0d43e17fe4556f25102c91506495336d7c037365b1fc3b93221",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Male\\Character_Male_40.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Male/Character_Male_40.fbx",
+      "bytes": 54236,
+      "sha256": "2e6ae41598b61276c39359e0f46d3931879b5616424e4c5f38b8f1b05b93c1a9",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Male\\Character_Male_41.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Male/Character_Male_41.fbx",
+      "bytes": 54412,
+      "sha256": "7375367b5c626a390c25abc576e9dcc18a522f332e8eaa5c85321e0a60cca446",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Male\\Character_Male_42.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Male/Character_Male_42.fbx",
+      "bytes": 54524,
+      "sha256": "7acd56d96a033caaaa2de282cea878eed567abc03c473ac1fbcb70f28382fa49",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Male\\Character_Male_43.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Male/Character_Male_43.fbx",
+      "bytes": 54332,
+      "sha256": "1ee37e6f61c836d43f6b45c29f9e8a8f6db043fbce809f611473cd156537cd2c",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Male\\Character_Male_44.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Male/Character_Male_44.fbx",
+      "bytes": 54412,
+      "sha256": "db7758b3493996438c7f0f282d136a57164d224e0a9479f85231e72249d757df",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Male\\Character_Male_45.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Male/Character_Male_45.fbx",
+      "bytes": 60476,
+      "sha256": "f3a234e1b5b005e23ecc325ceaff943f0ef899677547890c133bf6a3e215b2d7",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Male\\Character_Sheriff_N.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Male/Character_Sheriff_N.fbx",
+      "bytes": 65532,
+      "sha256": "16c6d68c77625cd5af75df20a191dda81ca10ada8d781555caea5d22abcab6fe",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras\\Male\\Character_Sheriff_N_01.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras/Male/Character_Sheriff_N_01.fbx",
+      "bytes": 63244,
+      "sha256": "3e813452fc2d3e2518265ce2fa5fca969f580af76268a1cdb0d52cd392e7dae9",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Female\\Character_34_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Female/Character_34_Female.fbx",
+      "bytes": 255936,
+      "sha256": "030d46e2756e591a7309a8e652e02569bd8412d8bbc3746edb097c177d2ef11c",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Female\\Character_35_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Female/Character_35_Female.fbx",
+      "bytes": 256240,
+      "sha256": "0fec51638c932546b051ccd8e839d12857d734c7b5c56ed01f844bd33a4ea672",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Female\\Character_36_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Female/Character_36_Female.fbx",
+      "bytes": 253392,
+      "sha256": "505e00f393a2f288dc72d12bbe58f5e8c46d27228393399d3e1964867ea3fec9",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Female\\Character_37_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Female/Character_37_Female.fbx",
+      "bytes": 257152,
+      "sha256": "b4b9abde27805cd90f32c208a73c418de016e92211e18221155821cd643d1dc8",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Female\\Character_38_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Female/Character_38_Female.fbx",
+      "bytes": 253504,
+      "sha256": "1c313a32bcf2fbb2f5616d3360586f63b3c5dab76b1223f9ed1db02d38fb5506",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Female\\Character_39_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Female/Character_39_Female.fbx",
+      "bytes": 254880,
+      "sha256": "f97fef1347e4f1c2268e6b81c3af2ff3a3c861fbcca8fd0c0e73b5da10f6f50f",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Female\\Character_40_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Female/Character_40_Female.fbx",
+      "bytes": 255824,
+      "sha256": "030ee7acaf850dc260d123d1b6b39d51ad27ffe669b787a4f0d041a42b701a1e",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Female\\Character_41_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Female/Character_41_Female.fbx",
+      "bytes": 403632,
+      "sha256": "39400fe6a0c3a293badb607dc1a947ae8b6dd80a07f52d8c09a2b47a8193bbd1",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Female\\Character_42_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Female/Character_42_Female.fbx",
+      "bytes": 414320,
+      "sha256": "329734f957225492f7bfc0b2ef3e804fe7256cf2794a1b0938899122c6b839fe",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Female\\Character_43_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Female/Character_43_Female.fbx",
+      "bytes": 253648,
+      "sha256": "3020c092e188bdf0b40090dbd480d5bfd078bd78c6b36da30c09c3dd0824cb4c",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Female\\Character_44_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Female/Character_44_Female.fbx",
+      "bytes": 408656,
+      "sha256": "c0773a5e8c982e703848c3c9bdd1fa57f1131f68add0f47e85f3ef552f6e06de",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Female\\Character_45_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Female/Character_45_Female.fbx",
+      "bytes": 371440,
+      "sha256": "611d82bc53f19ac2bde0da5cd8f12f79ec5f048ab250cc0a92289edcb945291c",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Female\\Character_46_Female.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Female/Character_46_Female.fbx",
+      "bytes": 413984,
+      "sha256": "e811587a683ed4dd80e87cf83e52c2057ed31ac04081e057e6ca1ca9ff8cbea0",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Killer_M\\Character_Killer_08.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Killer_M/Character_Killer_08.fbx",
+      "bytes": 259056,
+      "sha256": "6f0d18a38ef1621049a10f4c0fdd159e7d132c4337a65968bcfd47c4a9e3d93c",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Killer_M\\Character_Killer_09.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Killer_M/Character_Killer_09.fbx",
+      "bytes": 372944,
+      "sha256": "d4469a8b442d6fe966a03f3ea197f34b6ef8d8618f3357ad76ed66bb7c92fb77",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Killer_M\\Character_Killer_10.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Killer_M/Character_Killer_10.fbx",
+      "bytes": 413968,
+      "sha256": "204830b73502fe48054c8c98995c7de448c70792ce2739850fd81d1341373e99",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Killer_M\\Character_Killer_10_01.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Killer_M/Character_Killer_10_01.fbx",
+      "bytes": 365904,
+      "sha256": "624900f82d0ee6d9fce87abbced1d9c1e0d5d9b4d896ca2c9eb21beb19663c9f",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Killer_M\\Character_Monster_06.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Killer_M/Character_Monster_06.fbx",
+      "bytes": 403728,
+      "sha256": "019360476452a214f0ebdd2b63f3f5cb0ba70f13aaf9df93e965d0bc18017f88",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Killer_M\\Character_Monster_07.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Killer_M/Character_Monster_07.fbx",
+      "bytes": 402432,
+      "sha256": "57aa1ec476f704da291f77a9bd11e7ab1d54639fbe20780b5ab8f6ae73f5f696",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Killer_M\\Character_Monster_08.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Killer_M/Character_Monster_08.fbx",
+      "bytes": 407264,
+      "sha256": "76db930fdb7791eb5e64e619fdf30ef2b8814b282d94b3e18696a505484e13e0",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Male\\Character_Male_33.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Male/Character_Male_33.fbx",
+      "bytes": 254656,
+      "sha256": "586355505fe2e4ec3d7c7a9071f80188ade2761c9595a6cb2abe7c4b20478e77",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Male\\Character_Male_34.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Male/Character_Male_34.fbx",
+      "bytes": 403568,
+      "sha256": "ef3a9d0abcd8fc9b820272a56ad258cfe6481b20d9cddecd1b2f29336b37ab12",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Male\\Character_Male_35.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Male/Character_Male_35.fbx",
+      "bytes": 255840,
+      "sha256": "85282ade4039828131fa884f643ea18aba584da59cab8700cb60fb86e8f61346",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Male\\Character_Male_36.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Male/Character_Male_36.fbx",
+      "bytes": 404016,
+      "sha256": "0dcbef261cc72dedf648acfe1ca0dcc71a6e89d7426dd3d792c0ffa71b5aa61a",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Male\\Character_Male_37.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Male/Character_Male_37.fbx",
+      "bytes": 402928,
+      "sha256": "4211a6b015d8554656fa609da63f23679257ef205febc4ea809046b1cc9556b1",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Male\\Character_Male_38.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Male/Character_Male_38.fbx",
+      "bytes": 252528,
+      "sha256": "6b01da039f0b9befdb90332fff3de8752d3e6a8ab1879450c630efe394f1735b",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Male\\Character_Male_39.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Male/Character_Male_39.fbx",
+      "bytes": 252048,
+      "sha256": "61741a4fe04c759251c268360e83552ceb515d9bf37315be7a78108fd78a3491",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Male\\Character_Male_40.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Male/Character_Male_40.fbx",
+      "bytes": 252720,
+      "sha256": "8359be2576ec8dfa271c6c52ea2f355c4bdb1d66024e523de3d9471933046b41",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Male\\Character_Male_41.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Male/Character_Male_41.fbx",
+      "bytes": 253136,
+      "sha256": "fbb58f10d9a7b335cfacf3b22b8acf31d71ae6f5a9d4c9648dcaad477ae0db60",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Male\\Character_Male_42.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Male/Character_Male_42.fbx",
+      "bytes": 253936,
+      "sha256": "6701ece5b955244acf54aa06fac4bcf636f9dc2045c78cd15bdf498fda1a3417",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Male\\Character_Male_43.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Male/Character_Male_43.fbx",
+      "bytes": 253168,
+      "sha256": "c076e5a4f9f59d521d3e296c2de669e0054f5fe6b841abe2de2267cfeb2dc954",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Male\\Character_Male_44.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Male/Character_Male_44.fbx",
+      "bytes": 253040,
+      "sha256": "53bdf9be1b7571094869a4b164581dca0a065817f9726aa555ad9f6ef31efd4c",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Male\\Character_Male_45.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Male/Character_Male_45.fbx",
+      "bytes": 410304,
+      "sha256": "bad69dd2877cf952c2973490ad8f0acc9480efd24661837324a0c08163ff0ef6",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Male\\Character_Sheriff_N.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Male/Character_Sheriff_N.fbx",
+      "bytes": 416032,
+      "sha256": "c277ef1f1ad9d214d9323cbad0223526ab2ba34e801ebb8b80489969cda41f8f",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Extras_Rig\\Male\\Character_Sheriff_N_01.fbx",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Extras_Rig/Male/Character_Sheriff_N_01.fbx",
+      "bytes": 413376,
+      "sha256": "882a0b354a5fab238b0f095d126777fb3670968ab3919d15cba4ed4b7247ea91",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_34_Female.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_34_Female.png",
+      "bytes": 325383,
+      "sha256": "720aac664fa938b4bd8e33a7eba6325fe4fc610c98791a44fa30b244572cd263",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_35_Female.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_35_Female.png",
+      "bytes": 318641,
+      "sha256": "c0e2b23dc686f2246b254398839793df31154b3f279ab26ee1672ff311d20c59",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_36_Female.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_36_Female.png",
+      "bytes": 317923,
+      "sha256": "66bf8dc0f0e054a294ff10ca0dc741861d4732eb70568846e7fcf42317207a71",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_37_Female.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_37_Female.png",
+      "bytes": 310916,
+      "sha256": "e6c0099f73f89155fa3eda8a9e6192f16b90f5a74633054d8acac3e6cadd36dc",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_38_Female.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_38_Female.png",
+      "bytes": 311676,
+      "sha256": "e9a2cfda924f656472e75f02266f2c31d0427125ff21d221f8dc8d45d22258aa",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_39_Female.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_39_Female.png",
+      "bytes": 323706,
+      "sha256": "10109fea868c51b1998a635f83f84a320344190c695adcecf66ccfe067ac14ee",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_40_Female.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_40_Female.png",
+      "bytes": 276398,
+      "sha256": "3a929fc582e6a0bf0e534b440f04cc3c0a8e8dcbe518a08cfb8d5d228658f8d6",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_41_Female.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_41_Female.png",
+      "bytes": 293881,
+      "sha256": "753c83e79a3b441cc218b0854c0b8d92f190a2e953cf4f4feda9394fd0fbc5ea",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_42_Female.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_42_Female.png",
+      "bytes": 301735,
+      "sha256": "08368ce2fe744297e34d63575158464995e39f1a06e42e491c93077ef6c5cb76",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_43_Female.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_43_Female.png",
+      "bytes": 342563,
+      "sha256": "f401087d327942c70e0b40d7ba24c7ac5d490c2c81ad552aa4c16ca675401a64",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_44_Female.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_44_Female.png",
+      "bytes": 335328,
+      "sha256": "711dadeebbd8480c80ddef09ebf00b953957b9f6f5502c7f8fc15fc786cbebc9",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_45_Female.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_45_Female.png",
+      "bytes": 316097,
+      "sha256": "7dfb8d59a50d43ce7b3c70fd43c7ae6081838a6a1f90f77f4d5eb8d3a3d6cf7d",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_46_Female.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_46_Female.png",
+      "bytes": 329175,
+      "sha256": "21cfeb55d0e6b69aebb32787f3e566e8839359936649a837cc6027b46650be43",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Killer_08.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Killer_08.png",
+      "bytes": 383051,
+      "sha256": "3840e1800ff632d69fc1804f79d641a4ad67daf25cb8462c4150008446ce3c8a",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Killer_09.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Killer_09.png",
+      "bytes": 356813,
+      "sha256": "c6ac593cf784fea1d3b95ce3c3f60ac549660f643f82c82897805ef8446d8c41",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Killer_10.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Killer_10.png",
+      "bytes": 378141,
+      "sha256": "7f5f477714890583cec73d221702fd39507644b26c93100806a70bbe8014b357",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Male_33.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Male_33.png",
+      "bytes": 355056,
+      "sha256": "af31bf6ae604c66a823a6ec0c435f1fa47c18682bc5bbb7669890c7216186685",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Male_34.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Male_34.png",
+      "bytes": 358589,
+      "sha256": "449f281f52854ba7842b85c16919a62adb22f14e2b9ce21db1868175b5826af2",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Male_35.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Male_35.png",
+      "bytes": 337545,
+      "sha256": "0391b26c493421c9259c94dd719c99ca48bf8a9ffef0161f2d8c782b18c5b5c3",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Male_36.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Male_36.png",
+      "bytes": 281154,
+      "sha256": "13e1a07fc5431b33b941d43d988ead20f14097da825ac9cfe7a07ad548d2488b",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Male_37.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Male_37.png",
+      "bytes": 301164,
+      "sha256": "88b16018e033665bdaa193d9c89f80e9f69e50f48bd0df8973d2089432d0fd70",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Male_38.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Male_38.png",
+      "bytes": 324556,
+      "sha256": "770046981d1beeea212cc75c1328374f1d39f6c61cec2be5826c5d9412465ed0",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Male_39.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Male_39.png",
+      "bytes": 325035,
+      "sha256": "eeb4143284250cbcb5c2b87e5361de90b434143fc3aae238940012ebeae3ea86",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Male_40.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Male_40.png",
+      "bytes": 318364,
+      "sha256": "2cedc24861105b26a1c04c2e7bacf340236d13e4498572edd2f98f84902ef21e",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Male_41.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Male_41.png",
+      "bytes": 336567,
+      "sha256": "6c2efacb4f597595c54c2f95dce923c7dfcf17e7fd5a11db85df28d4ce4f30a1",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Male_42.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Male_42.png",
+      "bytes": 341815,
+      "sha256": "16b89f5fa2bb387eb1227f39b591123b07781db635abe90174ff4441268c0e8d",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Male_43.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Male_43.png",
+      "bytes": 319863,
+      "sha256": "76f998f709c01c81c61b68545f2ae4cf082ac032a8512dfe104ff305a373c46d",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Male_44.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Male_44.png",
+      "bytes": 335861,
+      "sha256": "725ee1a94226f723475e77cacc18eecdee60ed2767035d5bc1ed862d0a874ca4",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Male_45.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Male_45.png",
+      "bytes": 341742,
+      "sha256": "d1b721f31afea8ade0f778a49e9808b1a2da1c20a6d3e44f58647dc169a03b9f",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Monster_06.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Monster_06.png",
+      "bytes": 311416,
+      "sha256": "9ccbb57079798eadefd57cd6b76a373862057893a8bc12b80eeb72d174ef22a8",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Monster_07.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Monster_07.png",
+      "bytes": 321622,
+      "sha256": "0bc6c747f247830fa94684c2024543b62baa0ba4397b41a2b1c00a4cf645055a",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Monster_08.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Monster_08.png",
+      "bytes": 322360,
+      "sha256": "1a2a084ec4b330c0f1a4b3377a8b2f65f08293f2dad73f8de8c8b977dfa10d54",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Sheriff_N.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Sheriff_N.png",
+      "bytes": 309287,
+      "sha256": "4cebb8eb3a58b57f38eb5c1ec0c4692bb386d6948d3c00cac3ea19b7d6ac556d",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras\\Textures\\Character_Sheriff_N_01.png",
+      "includedFile": "provided-files/original-folder/Characters_Extras/Textures/Character_Sheriff_N_01.png",
+      "bytes": 363114,
+      "sha256": "ddd73b7b34f4e94a46e6fc63191afa74f4df6a8cef145d18489cf4a37c1289f6",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras.rar",
+      "includedFile": "provided-files/original-folder/Characters_Extras.rar",
+      "bytes": 16847592,
+      "sha256": "48f0909096bbf72d6afd6391f8ee38370aa6a0ec01e1af222eec3f38f3ccbd80",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_Extras_01.zip",
+      "includedFile": "provided-files/original-folder/Characters_Extras_01.zip",
+      "bytes": 12257908,
+      "sha256": "904b1717194e0a1aaa475e4ca4eb3d3f40339ea5ccfe657beea40d82c4fcad69",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_psx.rar",
+      "includedFile": "provided-files/original-folder/Characters_psx.rar",
+      "bytes": 31656535,
+      "sha256": "31bfc81032438528319a70e8d14dd4245b15d4800b996832f4f1358fe25ea155",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Characters_psx_1.2.zip",
+      "includedFile": "provided-files/original-folder/Characters_psx_1.2.zip",
+      "bytes": 60924990,
+      "sha256": "f039d8daf0c839756c5da5d2b31d312c3c77d161cd2dcc764bc7fb057fb9a98c",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\cute3Dassets.zip",
+      "includedFile": "provided-files/original-folder/cute3Dassets.zip",
+      "bytes": 4763767,
+      "sha256": "ce78aaf4e8e0cb5795a1585bdd760f1ef2f7ba7876c55e36c15219918f56e4c8",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\OFFICE.zip",
+      "includedFile": "provided-files/original-folder/OFFICE.zip",
+      "bytes": 21364919,
+      "sha256": "dfee71021bfd3d28819495b7149fe567ff1076de8bc554f0652c03f4f09128d2",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\PSX Ambient Pack.zip",
+      "includedFile": "provided-files/original-folder/PSX Ambient Pack.zip",
+      "bytes": 913243635,
+      "sha256": "ea43efa72e50d3f0d5f26b22392e41d5b9bc0acf433c9d6deef409b1b4f12bb9",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\PSX Graveyard Demo.zip",
+      "includedFile": "provided-files/original-folder/PSX Graveyard Demo.zip",
+      "bytes": 262449253,
+      "sha256": "522e03861aab2f89b574fda1617c4ed814de62ddec28dd289cae570af508dce1",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\PSX Old Stuff Pack.rar",
+      "includedFile": "provided-files/original-folder/PSX Old Stuff Pack.rar",
+      "bytes": 1114419,
+      "sha256": "5c36245fca0b60f0a195c9bc84207f8fff24630dc1138fb28055c290c63d43f8",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\PSX_SNOW_Asset_Collection_byStarkCrafts.zip",
+      "includedFile": "provided-files/original-folder/PSX_SNOW_Asset_Collection_byStarkCrafts.zip",
+      "bytes": 3989974,
+      "sha256": "427d892550c1a86e657b213d990d49e67c226edeba034c91de83838f8317d6a1",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\Retro PSX Style Wilderness Assets.rar",
+      "includedFile": "provided-files/original-folder/Retro PSX Style Wilderness Assets.rar",
+      "bytes": 46502221,
+      "sha256": "eb659eeeaa5d6a428190815d68baa0d4897a7292e40d7b6603316947383636ba",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\OneDrive\\Desktop\\office horror roblox\\URBAN.zip",
+      "includedFile": "provided-files/original-folder/URBAN.zip",
+      "bytes": 88923577,
+      "sha256": "a92eb1f2be095bd63ff5f313f6a2ddf38057975dea830c1683971922f30c894d",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\Downloads\\- Classic 64 Asset Pack 0.6.zip",
+      "includedFile": "provided-files/downloads/- Classic 64 Asset Pack 0.6.zip",
+      "bytes": 27208807,
+      "sha256": "30366f08993abe89477f6453db789d6bae37a13de6cc89f9453621f8e8d17e5e",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\Downloads\\buildings.zip",
+      "includedFile": "provided-files/downloads/buildings.zip",
+      "bytes": 907480,
+      "sha256": "1f44977fca1324f7595777eaff8ac570a68205c08dc12b92b723b0c12de3c2b2",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\Downloads\\skyscraper_pack.zip",
+      "includedFile": "provided-files/downloads/skyscraper_pack.zip",
+      "bytes": 1788618,
+      "sha256": "efafa7bc00424f6e7148ee6e0a5e70e520bd2c37a636b21ca70538cfddabce29",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\Downloads\\SBS - Horror Texture Pack 128x128.rar",
+      "includedFile": "provided-files/downloads/SBS - Horror Texture Pack 128x128.rar",
+      "bytes": 4141431,
+      "sha256": "1fee483ce0253e64096442a2c16833ec9da90bdfa2836e5d54a061f293abf6fb",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\Downloads\\SBS - Horror Texture Pack 256x256.rar",
+      "includedFile": "provided-files/downloads/SBS - Horror Texture Pack 256x256.rar",
+      "bytes": 15599463,
+      "sha256": "6c78d279ce669d548ce77adf6dd768e40e1436498326a0bbce578f82cab6e9f0",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\Downloads\\SBS - Horror Texture Pack 512x512.rar",
+      "includedFile": "provided-files/downloads/SBS - Horror Texture Pack 512x512.rar",
+      "bytes": 68666492,
+      "sha256": "29feed70b77a17b974cce79a4f343f5f4fdf8f56cec0af91335083bf4cceaae4",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\Downloads\\PoliceOfficerSet_v1.0.zip",
+      "includedFile": "provided-files/downloads/PoliceOfficerSet_v1.0.zip",
+      "bytes": 4496291,
+      "sha256": "c54054ae17647e9036058f02731e3a3d4a712e270f331f1727cdb3edfae31b60",
+      "copyVerified": true
+    },
+    {
+      "sourcePath": "C:\\Users\\legen\\Downloads\\psx_paper_textures_32x32px.zip",
+      "includedFile": "provided-files/downloads/psx_paper_textures_32x32px.zip",
+      "bytes": 1950557,
+      "sha256": "7aabd5b40607faaeea4ee514a00f4a8a36244f34df7f8fe1765ff82152625ebd",
+      "copyVerified": true
+    }
+  ]
+}

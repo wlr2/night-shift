@@ -1,0 +1,27 @@
+{
+  "studio": "Place1",
+  "workflow": "select_assets_then_import_on_demand",
+  "bulkImportRequested": false,
+  "history": [
+    {
+      "result": "first_attempt_rejected",
+      "httpStatus": 403,
+      "message": "User is moderated"
+    },
+    {
+      "result": "retry_succeeded",
+      "starterModelCount": 20,
+      "workspaceRoot": "NSBatch_NightShiftStarter_01"
+    },
+    {
+      "result": "starter_deleted_by_user",
+      "evidence": "User stated: its ok i deleted the 20 model starter"
+    }
+  ],
+  "liveTemplatesPromised": false,
+  "verifiedLiveCatalog": null,
+  "notes": [
+    "Do not treat historical upload success as proof that any current template exists.",
+    "No further Studio import is part of this handoff rebuild."
+  ]
+}

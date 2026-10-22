@@ -1,0 +1,29 @@
+{
+  "roles": {
+    "playerCornerDesk": "office__desks__desk1_corner_weathered",
+    "coworkerDesks": "office__desks__desk1_weathered",
+    "chair": "office__chairs__office_chair_grey",
+    "monitor": "office__computers__computer_monitor",
+    "tower": "office__computers__computer_tower",
+    "keyboard": "office__computers__computer_keyboard",
+    "mouse": "office__computers__computer_mouse",
+    "deskLamp": "office__extras__circular_desklamp",
+    "deskPhone": "office__extras__desk_phone_with_cable",
+    "wallClock": "office__extras__wall_clock",
+    "coffeeMachine": "office__extras__coffee_machine",
+    "waterCooler": "office__extras__water_cooler_bottle_attached",
+    "papers": "office__stationary__paper_stack",
+    "filingCabinet": "office__file_cabinets__file_cabinet_large",
+    "carpetTile": "office__carpet_floor__floor_2x2",
+    "partition": "office__dividers__divider_veneer_low",
+    "rearWallWithDoor": "urban__building_parts__brick_wall_metal_door",
+    "wallWithWindow": "urban__building_parts__brick_wall_window_1",
+    "dumpster": "urban__litter__dumpsters__dumpster_lid_closed",
+    "trashCan": "urban__litter__metal_trashcan__metaltrashcan_closed"
+  },
+  "notes": [
+    "Suggestions based on filenames and source previews; verify dimensions and pivots in Studio.",
+    "Hard drives, breaker panel, and time clock can be built from simple Roblox parts.",
+    "A door model may need separation from its static frame before animating it."
+  ]
+}

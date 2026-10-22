@@ -1,0 +1,9 @@
+{
+  "count": 0,
+  "assets": [],
+  "completedCount": 133,
+  "completedCatalog": "converted-blender-scenes.json",
+  "notes": [
+    "All previously pending scenes exported and locally checked. This does not assert live Roblox import or animation playback."
+  ]
+}

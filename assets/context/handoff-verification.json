@@ -1,0 +1,108 @@
+{
+  "sourceFileCount": 126,
+  "sourceArchiveCount": 21,
+  "looseOriginalFileCount": 105,
+  "sourceCopyChecks": "all SHA256 passed",
+  "sourceArchiveChecks": [
+    {
+      "archive": "(DEMO) Final Exam - PSX Survival Horror Asset Pack.zip",
+      "zipCrcCheck": "passed"
+    },
+    {
+      "archive": "Characters_Extras.rar",
+      "sha256CopyCheck": "passed",
+      "memberListing": "indexed"
+    },
+    {
+      "archive": "Characters_Extras_01.zip",
+      "zipCrcCheck": "passed"
+    },
+    {
+      "archive": "Characters_psx.rar",
+      "sha256CopyCheck": "passed",
+      "memberListing": "indexed"
+    },
+    {
+      "archive": "Characters_psx_1.2.zip",
+      "zipCrcCheck": "passed"
+    },
+    {
+      "archive": "cute3Dassets.zip",
+      "zipCrcCheck": "passed"
+    },
+    {
+      "archive": "OFFICE.zip",
+      "zipCrcCheck": "passed"
+    },
+    {
+      "archive": "PSX Ambient Pack.zip",
+      "zipCrcCheck": "passed"
+    },
+    {
+      "archive": "PSX Graveyard Demo.zip",
+      "zipCrcCheck": "passed"
+    },
+    {
+      "archive": "PSX Old Stuff Pack.rar",
+      "sha256CopyCheck": "passed",
+      "memberListing": "indexed"
+    },
+    {
+      "archive": "PSX_SNOW_Asset_Collection_byStarkCrafts.zip",
+      "zipCrcCheck": "passed"
+    },
+    {
+      "archive": "Retro PSX Style Wilderness Assets.rar",
+      "sha256CopyCheck": "passed",
+      "memberListing": "indexed"
+    },
+    {
+      "archive": "URBAN.zip",
+      "zipCrcCheck": "passed"
+    },
+    {
+      "archive": "- Classic 64 Asset Pack 0.6.zip",
+      "zipCrcCheck": "passed"
+    },
+    {
+      "archive": "buildings.zip",
+      "zipCrcCheck": "passed"
+    },
+    {
+      "archive": "skyscraper_pack.zip",
+      "zipCrcCheck": "passed"
+    },
+    {
+      "archive": "SBS - Horror Texture Pack 128x128.rar",
+      "sha256CopyCheck": "passed",
+      "memberListing": "indexed"
+    },
+    {
+      "archive": "SBS - Horror Texture Pack 256x256.rar",
+      "sha256CopyCheck": "passed",
+      "memberListing": "indexed"
+    },
+    {
+      "archive": "SBS - Horror Texture Pack 512x512.rar",
+      "sha256CopyCheck": "passed",
+      "memberListing": "indexed"
+    },
+    {
+      "archive": "PoliceOfficerSet_v1.0.zip",
+      "zipCrcCheck": "passed"
+    },
+    {
+      "archive": "psx_paper_textures_32x32px.zip",
+      "zipCrcCheck": "passed"
+    }
+  ],
+  "preparedModelSceneCount": 1069,
+  "previouslyPendingScenesValidated": 133,
+  "pendingConversions": 0,
+  "textureImageGroups": 1049,
+  "fullAmbientTracks": 10,
+  "browserFilterChecks": "passed",
+  "workflow": "on_demand_imports",
+  "sourceFilesModified": false,
+  "limitations": "See limitations.json; all source originals retained."
+}

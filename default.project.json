@@ -1,0 +1,76 @@
+{
+  "name": "NightShift",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Shared": {
+        "$path": "src/shared"
+      },
+      "ArtData": {
+        "$path": "src/art"
+      },
+      "QAClient": {
+        "$path": "src/studio/ReplicatedStorage/QAClient.luau"
+      }
+    },
+    "ServerScriptService": {
+      "Server": {
+        "$path": "src/server"
+      }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "Client": {
+          "$path": "src/client"
+        }
+      },
+      "$properties": {
+        "CharacterWalkSpeed": 16,
+        "CameraMaxZoomDistance": 14,
+        "CameraMinZoomDistance": 0.5
+      }
+    },
+    "Workspace": {
+      "$properties": {
+        "StreamingEnabled": false
+      }
+    },
+    "Lighting": {
+      "$properties": {
+        "ClockTime": 1.5,
+        "Brightness": 0,
+        "GlobalShadows": true,
+        "Technology": "Future",
+        "Ambient": [
+          0.08,
+          0.08,
+          0.1
+        ],
+        "OutdoorAmbient": [
+          0.06,
+          0.07,
+          0.09
+        ],
+        "EnvironmentDiffuseScale": 0.2,
+        "EnvironmentSpecularScale": 0.2
+      }
+    },
+    "Players": {
+      "$properties": {
+        "CharacterAutoLoads": true,
+        "MaxPlayers": 4
+      }
+    },
+    "SoundService": {
+      "$properties": {
+        "AmbientReverb": "Hallway"
+      }
+    },
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "DevSync": {
+        "$path": "src/studio/ServerStorage/DevSync.luau"
+      }
+    }
+  }
+}

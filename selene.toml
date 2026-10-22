@@ -1,0 +1,7 @@
+std = "roblox"
+exclude = ["src/art/**"]
+
+[lints]
+global_usage = "deny"
+unused_variable = "warn"
+shadowing = "allow"

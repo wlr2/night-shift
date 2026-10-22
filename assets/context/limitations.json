@@ -1,0 +1,32 @@
+{
+  "convertedSceneAppearanceNotes": [
+    {
+      "key": "classic64__blend__shed_01",
+      "kind": "source_appearance_limitation",
+      "detail": "This exported scene has material colors without an embedded texture. Complete source .blend and every supplied image are retained for reference."
+    },
+    {
+      "key": "classic64__blend__door_plain",
+      "kind": "source_appearance_limitation",
+      "detail": "This exported scene has material colors without an embedded texture. Complete source .blend and every supplied image are retained for reference."
+    },
+    {
+      "key": "classic64__blend__bike_vintage_unfinished",
+      "kind": "source_appearance_limitation",
+      "detail": "This exported scene has material colors without an embedded texture. Complete source .blend and every supplied image are retained for reference."
+    },
+    {
+      "key": "classic64__blend__car_parts_brakes_unfinished",
+      "kind": "source_appearance_limitation",
+      "detail": "This exported scene has material colors without an embedded texture. Complete source .blend and every supplied image are retained for reference."
+    }
+  ],
+  "otherKnownLimits": [
+    "Two original archives are packaged Unreal game demos. They are included intact; they do not contain directly reusable source meshes.",
+    "Legacy duplicate character versions remain intact in original archives and original loose folder; 138 canonical character models are prepared separately.",
+    "Six source monster files have no rig. Character_Female_01 lacks its matching supplied character PNG. See characters/catalog.json.",
+    "The older 132 skinned character sources have very short pose clips, not verified walk/run cycles. Police animation-source clips use a different skeleton and need import/retargeting verification.",
+    "CUTE3D DAE-derived GLBs are static geometry versions; original DAE and blend files are retained.",
+    "No automatically created NPC behavior, verified Roblox animations, mesh/audio/image IDs, or local-import bridge is claimed."
+  ]
+}
