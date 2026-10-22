@@ -1,0 +1,44 @@
+{
+  "releaseUrl": "https://github.com/wlr2/night-shift/releases/tag/nightshift-assets-v1",
+  "published": true,
+  "packages": [
+    {
+      "package": "core",
+      "file": "nightshift-assets-core.zip",
+      "bytes": 642773453,
+      "sha256": "9b95169cbcda10ddb4525b1f3efa9016885d9e9feafa934f8a87695b5b28152f",
+      "githubDigestMatches": true
+    },
+    {
+      "package": "audio",
+      "file": "nightshift-assets-audio.zip",
+      "bytes": 952564638,
+      "sha256": "2bcecccd31afb96dee47d16d80584583b475f98590dd9448b9f6e7aed5b7eb77",
+      "githubDigestMatches": true
+    },
+    {
+      "package": "originals",
+      "file": "nightshift-assets-originals.zip",
+      "bytes": 1858436581,
+      "sha256": "71d60b73d45f02b0b8a45065c0ce6a6c70a2eff13c7e05c32c95105feb4645b9",
+      "githubDigestMatches": true
+    }
+  ],
+  "totalLibraryFiles": 6402,
+  "sourceArchives": 21,
+  "sourceLooseFiles": 105,
+  "originalAssetLibraryPreserved": true,
+  "freshGitHubCloneBuild": "passed",
+  "nativeSnapshotAndRebuiltSourceComparison": "195 script sources match",
+  "publicUnauthenticatedRangeDownloads": "passed",
+  "selectedDownloadsVerified": [
+    "office monitor GLB",
+    "character FBX",
+    "linked character PNG",
+    "horror texture PNG",
+    "original buildings.zip"
+  ],
+  "mcpRequiredForAssetDownloads": false,
+  "gameplayPlaytestClaimed": false,
+  "testedCodeCommit": "0b7a1adff8fa93fbb15dd9423dc3169694e03820"
+}
