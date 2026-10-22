@@ -18,6 +18,8 @@ export type BreakerId = "MAIN" | "LIGHTS" | "WORKSTATION"
 local breakers: { [string]: boolean } = { MAIN = true, LIGHTS = true, WORKSTATION = true }
 local warning = false
 local prompts: { [string]: ProximityPrompt } = {}
+-- prompt object line per switch, matching the tags on the panel
+local BREAKER_NAMES = { MAIN = "Main", LIGHTS = "Office lights", WORKSTATION = "Workstation" }
 local tripToken = 0 -- bumped by resetAll so a pending warned trip is cancelled
 
 Power.Changed = Signal.new() :: Signal.Signal<>
@@ -153,7 +155,7 @@ function Power.init()
 	for id, sw in MapBuilder.refs.breakerSwitches do
 		local prompt = Prompts.make(sw, {
 			action = "Reset breaker",
-			object = id,
+			object = BREAKER_NAMES[id] or id,
 			hold = 0.8,
 			distance = 8,
 		})

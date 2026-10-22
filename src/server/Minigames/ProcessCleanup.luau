@@ -182,7 +182,7 @@ function ProcessCleanup.hint(state: any, level: number): (string, any?)
 			end
 		end
 	end
-	return "Hint: check OWNER and CPU columns against each rule. SYSTEM processes are always protected.", nil
+	return "Hint: compare OWNER and CPU with each rule. SYSTEM processes are protected.", nil
 end
 
 return ProcessCleanup

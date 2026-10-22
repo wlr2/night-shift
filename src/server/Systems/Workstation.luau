@@ -10,6 +10,7 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Config = require(ReplicatedStorage.Shared.Config)
+local Fonts = require(ReplicatedStorage.Shared.Fonts)
 local Net = require(ReplicatedStorage.Shared.Net)
 local Signal = require(ReplicatedStorage.Shared.Util.Signal)
 local Types = require(ReplicatedStorage.Shared.Types)
@@ -324,21 +325,21 @@ function Workstation.init()
 	screenText = Instance.new("TextLabel")
 	screenText.Size = UDim2.fromScale(1, 0.55)
 	screenText.BackgroundTransparency = 1
-	screenText.TextColor3 = Color3.fromRGB(190, 230, 255)
-	screenText.Font = Enum.Font.Arcade
+	screenText.TextColor3 = Color3.fromRGB(176, 224, 168) -- soft green phosphor
+	screenText.FontFace = Fonts.PIXEL_BOLD
 	screenText.TextScaled = true
 	screenText.Parent = sg
 	screenSub = Instance.new("TextLabel")
 	screenSub.Size = UDim2.fromScale(1, 0.35)
 	screenSub.Position = UDim2.fromScale(0, 0.6)
 	screenSub.BackgroundTransparency = 1
-	screenSub.TextColor3 = Color3.fromRGB(140, 180, 210)
-	screenSub.Font = Enum.Font.Arcade
+	screenSub.TextColor3 = Color3.fromRGB(126, 176, 128)
+	screenSub.FontFace = Fonts.PIXEL
 	screenSub.TextScaled = true
 	screenSub.Parent = sg
 
 	sitPrompt = Prompts.make(refs.seatPromptPart, {
-		action = "Use workstation",
+		action = "Sit down",
 		object = "Corner workstation",
 		distance = Config.REACH.workstation,
 		hold = 0.2,
