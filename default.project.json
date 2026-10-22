@@ -28,7 +28,9 @@
         "CharacterWalkSpeed": 16,
         "CameraMaxZoomDistance": 0.5,
         "CameraMinZoomDistance": 0.5,
-        "CameraMode": "LockFirstPerson"
+        "CameraMode": "LockFirstPerson",
+        "EnableMouseLockOption": false,
+        "DevComputerMovementMode": "KeyboardMouse"
       }
     },
     "Workspace": {
