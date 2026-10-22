@@ -19,6 +19,11 @@ function Cursor.isFree(): boolean
 	return next(reasons) ~= nil
 end
 
+-- whether `reason` is currently holding the pointer free
+function Cursor.has(reason: string): boolean
+	return reasons[reason] == true
+end
+
 function Cursor.request(reason: string, free: boolean)
 	local before = Cursor.isFree()
 	if free then

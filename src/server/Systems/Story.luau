@@ -83,7 +83,7 @@ local function objective(): string
 	if carried > 0 then
 		return "Bring the drive to the corner workstation DOCK (or stage it on the rack)."
 	elseif staged > 0 then
-		return "Take a staged drive from the rack and connect it to the workstation dock."
+		return "Take a staged drive from the rack and dock it at the workstation."
 	elseif installed > 0 then
 		return string.format("Shut down a desk PC and remove its hard drive (%d left in the desks).", installed)
 	end

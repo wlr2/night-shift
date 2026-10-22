@@ -56,49 +56,48 @@ sel([
     # computers
     "office__computers__computer_monitor", "office__computers__computer_tower",
     "office__computers__computer_tower_alt", "office__computers__computer_keyboard",
-    "office__computers__computer_mouse", "office__computers__desktop_brick",
+    "office__computers__computer_mouse",
     # desk objects + kitchen (a few purposeful pieces per surface)
     "office__extras__circular_desklamp", "office__extras__square_desklamp",
     "office__extras__coffee_machine", "office__extras__water_cooler_bottle_attached",
     "office__extras__mug", "office__extras__mug_alt", "office__extras__mug_alt2",
     "office__extras__mug_alt3", "office__extras__desk_phone_with_cable",
-    "office__extras__desk_phone", "office__extras__wall_clock", "office__extras__whiteboard",
+    "office__extras__wall_clock", "office__extras__whiteboard",
     "office__stationary__paper_stack", "office__stationary__paper_stack_large",
-    "office__stationary__paper_single_sheet", "office__stationary__pen2",
+    "office__stationary__pen2",
     "office__book_things__book_case_with_back_small", "office__book_things__books",
-    "office__book_things__books_alt", "office__book_things__file_binder",
+    "office__book_things__file_binder",
     "office__book_things__file_binder_alt", "office__book_things__file_binder_alt2",
-    "office__file_cabinets__file_cabinet_small", "office__file_cabinets__file_cabinet_smaller_with_shelfs",
-    "office__file_cabinets__file_cabinet_largest", "office__file_cabinets__file_cabinet_larger_open",
+    "office__file_cabinets__file_cabinet_small", "office__file_cabinets__file_cabinet_larger",
+    "office__file_cabinets__file_cabinet_largest",
     "office__dividers__divider_black_low", "office__dividers__divider_black_low_half",
-    "office__couches__armchair_pattern", "office__couches__couch_pattern",
+    "office__couches__couch_green",
     "office__carpet_floor__floor_3x3",
-    # urban exterior / alley
-    "urban__litter__dumpsters__dumpster_lid_closed", "urban__litter__dumpsters__dumpster_trashpile_1",
-    "urban__litter__metal_trashcan__metaltrashcan_closed",
-    "urban__litter__metal_trashcan__metaltrashcan_overflowing",
-    "urban__litter__trash__trashbag_1", "urban__litter__trash__trashbag_2_white",
-    "urban__litter__trashcan__trash_can",
-    "urban__pipes__pipe",
-    "urban__vents__vent_cover", "urban__vents__duct_long", "urban__vents__duct_corner_rounded",
-    "urban__fences__plackard_wall__plackard_closed", "urban__fences__plackard_wall__plackard_broken",
-    "urban__traffic_lights__street_light",
-    "urban__cones_barriers__bollards__concrete_retro_bollard_light",
-    # classic 64 props (utility area, signage, storage door)
-    "classic64__blend__panel_electrical_closed", "classic64__blend__panel_electrical_open",
+    # classic 64 props (utility hall, wall fittings, storage door, alley)
     "classic64__blend__panel_electric", "classic64__blend__panel_thermostat",
     "classic64__blend__panel_heater", "classic64__blend__electrical_junctionbox_small",
-    "classic64__blend__fire_extenguisher_case", "classic64__blend__sign_nosmoking",
-    "classic64__blend__papers_envolope_redacted",
-    "classic64__blend__papers_log_1_stack", "classic64__blend__box_01",
-    "classic64__blend__metal_rack_stackable",
+    "classic64__blend__fire_extenguisher_case",
+    "classic64__blend__papers_envolope_redacted", "classic64__blend__papers_log_1_stack",
+    "classic64__blend__metal_rack_stackable", "classic64__blend__door_brown_a",
+    "classic64__blend__wood_pallet", "classic64__blend__manhole_cover", "classic64__blend__yellow_post",
     # (branded-looking grocery props intentionally left out: original art only)
-    "classic64__blend__door_pushbar", "classic64__blend__door_brown_a",
-    "classic64__blend__window_boarded", "classic64__blend__wood_pallet",
-    "classic64__blend__manhole_cover", "classic64__blend__yellow_post",
     # misc packs
-    "cute3d__blend__fridge", "oldstuff__barrel", "oldstuff__telephone",
+    "oldstuff__barrel", "oldstuff__telephone",
 ])
+
+# Urban exterior / alley / hall services. These source models keep their scene
+# position, so `recenter` moves the origin to the footprint centre at floor level
+# (the same pivot every other prop uses) without changing their metre scale.
+sel([
+    "urban__litter__dumpsters__dumpster_lid_closed",
+    "urban__litter__metal_trashcan__metaltrashcan_closed",
+    "urban__litter__trash__trashbag_1", "urban__litter__trash__trashbag_2_white",
+    "urban__litter__trashcan__trash_can",
+    "urban__pipes__pipe", "urban__vents__duct_long",
+    "urban__fences__plackard_wall__plackard_closed", "urban__fences__plackard_wall__plackard_broken",
+    "urban__traffic_lights__street_light_clean",
+    "urban__cones_barriers__bollards__concrete_retro_bollard_light",
+], recenter=True)
 
 # characters (rest pose, static, normalised height in studs)
 sel(["characters__male__character_04"], targetHeight=6.3)  # the former employee outside
@@ -107,21 +106,21 @@ sel(["characters__male__character_01", "characters__male__character_05"], target
 # Objects whose source units do not match the metre convention get explicit heights.
 SELECTION["oldstuff__barrel"]["targetHeight"] = 3.0
 SELECTION["oldstuff__telephone"]["targetHeight"] = 0.55
-SELECTION["cute3d__blend__fridge"]["targetHeight"] = 6.4
 SELECTION["classic64__blend__wood_pallet"]["targetHeight"] = 0.5
 
 # Standalone surface textures (walls, floors, paper) used on generated parts.
+# The client tints each one toward its palette target (Atmosphere SURFACES), so
+# these are chosen for clean, low-contrast detail: no stains, moss or rust indoors.
 SURFACE_TEXTURES = {
-    # Clean, maintained surfaces: the office is cared for, the grime stays outside.
-    "wall_office": "horror__horror_wall_01",    # clean cream plaster
-    "wall_lower": "horror__horror_wall_04",     # warm plaster (counters only)
-    "wall_concrete": "horror__horror_wall_09",  # utility hall
-    "wall_kitchen": "horror__horror_wall_01",
-    "ceiling_tile": "horror__horror_floor_12",  # grey acoustic tile grid
-    "floor_tile": "horror__horror_floor_12",    # kitchenette tiles
+    "wall_office": "horror__horror_wall_10",    # fine pinstripe wallpaper above the cream wainscot
+    "wall_lower": "horror__horror_wall_04",     # warm plaster (counter and reception fronts)
+    "wall_concrete": "horror__horror_stone_11",  # utility hall: clean painted block, no damp gradient
+    "wall_kitchen": "horror__horror_wall_01",   # clean cream plaster
+    "ceiling_tile": "horror__horror_floor_12",  # grey acoustic tile grid (reads clean once tinted)
+    "floor_tile": "horror__horror_floor_12",    # kitchenette vinyl tiles
     "floor_lobby": "horror__horror_floor_11",   # lobby stone tiles
-    "floor_concrete": "horror__horror_floor_01",
-    "brick_alley": "horror__horror_brick_03",
+    "floor_concrete": "horror__horror_stone_12",  # sealed grey concrete
+    "brick_alley": "horror__horror_brick_11",   # grey brick, no moss
     "metal_door": "horror__horror_metal_11",
     "metal_panel": "horror__horror_metal_05",
     "paper_note": "paper__texture__08773030f66091de",
@@ -560,7 +559,8 @@ def prepare_model(key: str, prims, opts, atlas: Atlas):
     mx = [max(p[i] for p in allp) for i in range(3)]
     height = mx[1] - mn[1]
     scale = opts["targetHeight"] / height if ("targetHeight" in opts and height > 0) else STUDS_PER_METER
-    origin = ((mn[0] + mx[0]) / 2, mn[1], (mn[2] + mx[2]) / 2) if "targetHeight" in opts else (0.0, 0.0, 0.0)
+    centred = "targetHeight" in opts or opts.get("recenter", False)
+    origin = ((mn[0] + mx[0]) / 2, mn[1], (mn[2] + mx[2]) / 2) if centred else (0.0, 0.0, 0.0)
     out = []
     for pr in prims:
         pos = [((p[0] - origin[0]) * scale, (p[1] - origin[1]) * scale, (p[2] - origin[2]) * scale) for p in pr["pos"]]

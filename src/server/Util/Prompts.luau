@@ -37,6 +37,12 @@ function Prompts.make(parent: Instance, opts: PromptOpts): ProximityPrompt
 	p.RequiresLineOfSight = opts.sight == true
 	p.UIOffset = opts.offset or Vector2.zero
 	p.Exclusivity = Enum.ProximityPromptExclusivity.OnePerButton
+	-- the client's PromptUi draws the card; Roblox's own prompt never shows
+	p.Style = Enum.ProximityPromptStyle.Custom
+	-- PromptUi zeroes MaxActivationDistance locally on every prompt it is not
+	-- targeting, so the real reach is mirrored here. Validation below only
+	-- ever reads the server's own MaxActivationDistance.
+	p:SetAttribute("Reach", p.MaxActivationDistance)
 	if opts.style then
 		p:SetAttribute("Style", opts.style)
 	end

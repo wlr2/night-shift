@@ -130,7 +130,7 @@ function Doors.init()
 	GameState.providers.door = Doors.state
 	prompt = Prompts.make(MapBuilder.refs.doorPromptPart, {
 		action = "Open door",
-		object = "Rear service door",
+		object = "Rear door",
 		hold = 0.3,
 		distance = 9,
 	})

@@ -9,6 +9,7 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Config = require(ReplicatedStorage.Shared.Config)
+local Fonts = require(ReplicatedStorage.Shared.Fonts)
 local Layout = require(ReplicatedStorage.Shared.Layout)
 local Signal = require(ReplicatedStorage.Shared.Util.Signal)
 local Types = require(ReplicatedStorage.Shared.Types)
@@ -136,7 +137,7 @@ local function refreshPrompts()
 		end
 		if d and d.state == "Installed" then
 			prompt.Enabled = true
-			prompt.ActionText = if d.pcOff then "Remove drive" else "Shut down PC"
+			prompt.ActionText = if d.pcOff then "Collect drive" else "Shut down PC"
 			prompt.ObjectText = d.id
 			prompt.HoldDuration = if d.pcOff then 1.0 else 0.8
 		else
@@ -146,7 +147,7 @@ local function refreshPrompts()
 	local docked = Drives.dockDrive()
 	if not docked then
 		dockPrompt.Enabled = true
-		dockPrompt.ActionText = "Connect drive"
+		dockPrompt.ActionText = "Dock drive"
 		dockPrompt.ObjectText = "Workstation dock"
 	elseif docked.state == "Docked" then
 		dockPrompt.Enabled = true
@@ -450,11 +451,11 @@ local function makeDrivePart(def: { id: string, name: string, color: Color3 }): 
 	sg.LightInfluence = 0.5
 	sg.Parent = p
 	local t = Instance.new("TextLabel")
-	t.Size = UDim2.fromScale(0.86, 0.6)
-	t.Position = UDim2.fromScale(0.07, 0.2)
+	t.Size = UDim2.fromScale(0.9, 0.76)
+	t.Position = UDim2.fromScale(0.05, 0.12)
 	t.BackgroundColor3 = def.color
 	t.TextColor3 = Color3.fromRGB(20, 20, 20)
-	t.Font = Enum.Font.Arcade
+	t.FontFace = Fonts.PIXEL_BOLD
 	t.TextScaled = true
 	t.Text = def.id
 	t.Parent = sg
@@ -550,7 +551,7 @@ function Drives.init()
 	end)
 
 	-- own key (F / R1) so it never competes with the chair prompt (E) at the cramped desk
-	dockPrompt = Prompts.make(refs.dock, { action = "Connect drive", object = "Workstation dock", distance = 8, hold = 0.5, key = Enum.KeyCode.F, gamepad = Enum.KeyCode.ButtonR1 })
+	dockPrompt = Prompts.make(refs.dock, { action = "Dock drive", object = "Workstation dock", distance = 8, hold = 0.5, key = Enum.KeyCode.F, gamepad = Enum.KeyCode.ButtonR1 })
 	dockPrompt.Triggered:Connect(function(player)
 		if not Prompts.valid(player, dockPrompt, "dock") then
 			return
@@ -561,7 +562,7 @@ function Drives.init()
 		elseif Drives.byId[carrying(player) or ""] then
 			Drives.dock(player)
 		else
-			GameState.notify(player, "Bring a hard drive to connect it.", "info")
+			GameState.notify(player, "Bring a hard drive to dock it.", "info")
 		end
 	end)
 

@@ -9,7 +9,6 @@
 -- Props named "Font" that hold a Font object are applied to FontFace.
 
 local SoundService = game:GetService("SoundService")
-local TweenService = game:GetService("TweenService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Config = require(ReplicatedStorage.Shared.Config)
@@ -53,7 +52,7 @@ UiKit.C = {
 	faceDark = Color3.fromRGB(122, 120, 114),
 	faceLight = Color3.fromRGB(242, 240, 234),
 	text = Color3.fromRGB(26, 28, 30),
-	textDim = Color3.fromRGB(96, 98, 100),
+	textDim = Color3.fromRGB(78, 80, 84), -- 5:1 on face, 7.3:1 on field
 	title1 = Color3.fromRGB(60, 72, 82),
 	title2 = Color3.fromRGB(88, 104, 116),
 	desktop = Color3.fromRGB(64, 84, 92),
@@ -77,6 +76,10 @@ UiKit.C = {
 	fog = Color3.fromRGB(168, 186, 195), -- #A8BAC3
 	slate = Color3.fromRGB(119, 139, 150), -- #778B96
 	burgundy = Color3.fromRGB(96, 73, 77), -- #60494D
+	-- desktop chrome: outer window edge and unfocused title bars
+	edge = Color3.fromRGB(44, 48, 52),
+	titleOff1 = Color3.fromRGB(104, 110, 114),
+	titleOff2 = Color3.fromRGB(136, 140, 142),
 }
 
 export type Props = { [string]: any }
@@ -222,13 +225,43 @@ function UiKit.keycap(parent: Instance, key: string, size: number, zindex: numbe
 	return cap
 end
 
--- 3D bevel like classic Windows controls
+-- Recolours an existing bevel: raised (light top-left) or sunken/pressed.
+local function paintBevel(f: Instance, sunken: boolean)
+	local hi = if sunken then UiKit.C.faceDark else UiKit.C.faceLight
+	local lo = if sunken then UiKit.C.faceLight else UiKit.C.faceDark
+	for _, c in f:GetChildren() do
+		if c:IsA("Frame") then
+			if c.Name == "BevelL" or c.Name == "BevelL2" then
+				c.BackgroundColor3 = hi
+			elseif c.Name == "BevelD" or c.Name == "BevelD2" then
+				c.BackgroundColor3 = lo
+			end
+		end
+	end
+end
+
+-- 3D bevel like classic Windows controls: 2 px, square corners
 function UiKit.bevel(f: GuiObject, sunken: boolean?)
-	local light = UiKit.frame({ Name = "BevelL", Size = UDim2.new(1, 0, 0, 2), BackgroundColor3 = if sunken then UiKit.C.faceDark else UiKit.C.faceLight, ZIndex = f.ZIndex + 1, Parent = f })
-	light.Active = false
-	UiKit.frame({ Name = "BevelL2", Size = UDim2.new(0, 2, 1, 0), BackgroundColor3 = if sunken then UiKit.C.faceDark else UiKit.C.faceLight, ZIndex = f.ZIndex + 1, Parent = f })
-	UiKit.frame({ Name = "BevelD", Size = UDim2.new(1, 0, 0, 2), Position = UDim2.new(0, 0, 1, -2), BackgroundColor3 = if sunken then UiKit.C.faceLight else UiKit.C.faceDark, ZIndex = f.ZIndex + 1, Parent = f })
-	UiKit.frame({ Name = "BevelD2", Size = UDim2.new(0, 2, 1, 0), Position = UDim2.new(1, -2, 0, 0), BackgroundColor3 = if sunken then UiKit.C.faceLight else UiKit.C.faceDark, ZIndex = f.ZIndex + 1, Parent = f })
+	local z = f.ZIndex + 1
+	UiKit.frame({ Name = "BevelL", Size = UDim2.new(1, 0, 0, 2), ZIndex = z, Parent = f })
+	UiKit.frame({ Name = "BevelL2", Size = UDim2.new(0, 2, 1, 0), ZIndex = z, Parent = f })
+	UiKit.frame({ Name = "BevelD", Size = UDim2.new(1, 0, 0, 2), Position = UDim2.new(0, 0, 1, -2), ZIndex = z, Parent = f })
+	UiKit.frame({ Name = "BevelD2", Size = UDim2.new(0, 2, 1, 0), Position = UDim2.new(1, -2, 0, 0), ZIndex = z, Parent = f })
+	paintBevel(f, sunken == true)
+end
+
+-- Square amber outline for the gamepad-selected control (assigned to
+-- GuiObject.SelectionImageObject). One shared template, never parented.
+local ring: Frame? = nil
+function UiKit.selectionRing(): Frame
+	local existing = ring
+	if existing then
+		return existing
+	end
+	local r = UiKit.frame({ Name = "SelectionRing", Size = UDim2.new(1, 6, 1, 6), Position = UDim2.fromOffset(-3, -3), BackgroundTransparency = 1 })
+	UiKit.stroke(r, UiKit.C.amber, 0, 2)
+	ring = r
+	return r
 end
 
 local clickSound: Sound? = nil
@@ -276,10 +309,21 @@ function UiKit.button(o: ButtonOpts): TextButton
 		TextWrapped = true,
 		ZIndex = o.zindex or 1,
 		Selectable = true,
+		SelectionImageObject = UiKit.selectionRing(),
 		Parent = o.parent,
 	}) :: TextButton
-	if o.bevel ~= false then
+	local bevelled = o.bevel ~= false
+	if bevelled then
 		UiKit.bevel(b)
+		-- pressed state: the bevel sinks while the pointer is held down
+		b.MouseButton1Down:Connect(function()
+			if b.Active then
+				paintBevel(b, true)
+			end
+		end)
+		b.MouseButton1Up:Connect(function()
+			paintBevel(b, false)
+		end)
 	end
 	local base = b.BackgroundColor3
 	b.MouseEnter:Connect(function()
@@ -289,6 +333,9 @@ function UiKit.button(o: ButtonOpts): TextButton
 	end)
 	b.MouseLeave:Connect(function()
 		b.BackgroundColor3 = base
+		if bevelled then
+			paintBevel(b, false)
+		end
 	end)
 	b.SelectionGained:Connect(function()
 		b.BackgroundColor3 = base:Lerp(UiKit.C.amber, 0.35)
@@ -303,9 +350,13 @@ function UiKit.button(o: ButtonOpts): TextButton
 				return
 			end
 			UiKit.click()
-			local scale = b:FindFirstChildOfClass("UIScale") or UiKit.new("UIScale", { Parent = b })
-			scale.Scale = 0.96
-			TweenService:Create(scale, UiKit.POP, { Scale = 1 }):Play()
+			-- brief pressed flash so gamepad / keyboard activation reads too
+			if bevelled then
+				paintBevel(b, true)
+				task.delay(0.08, function()
+					paintBevel(b, false)
+				end)
+			end
 			cb()
 		end)
 	end
@@ -320,7 +371,8 @@ function UiKit.setEnabled(b: GuiButton, enabled: boolean)
 	end
 end
 
--- Classic window: grey body, charcoal-blue title bar with a pixel title, close button.
+-- Classic window: cream bevelled body with a 1 px dark edge, charcoal-blue
+-- title bar with a Silkscreen title and a small square close button.
 export type Window = {
 	frame: Frame,
 	body: Frame,
@@ -329,21 +381,19 @@ export type Window = {
 }
 
 function UiKit.window(parent: Instance, title: string, size: UDim2, position: UDim2, zindex: number, onClose: (() -> ())?): Window
-	local f = UiKit.frame({ Name = "Window", Size = size, Position = position, ZIndex = zindex, Parent = parent })
+	local f = UiKit.frame({ Name = "Window", Size = size, Position = position, ZIndex = zindex, BorderSizePixel = 1, BorderColor3 = UiKit.C.edge, Parent = parent })
 	UiKit.bevel(f)
 	local bar = UiKit.frame({ Name = "TitleBar", Size = UDim2.new(1, -6, 0, 24), Position = UDim2.fromOffset(3, 3), BackgroundColor3 = UiKit.C.title1, ZIndex = zindex + 1, Parent = f })
 	UiKit.new("UIGradient", {
 		Color = ColorSequence.new(UiKit.C.title1, UiKit.C.title2),
 		Parent = bar,
 	})
-	local t = UiKit.label({
+	local t = UiKit.text("title", {
 		Name = "Title",
 		Text = title,
-		Size = UDim2.new(1, -64, 1, 0),
+		Size = UDim2.new(1, if onClose then -36 else -16, 1, 0),
 		Position = UDim2.fromOffset(8, 0),
 		TextColor3 = UiKit.C.white,
-		Font = UiKit.FONT_PIXEL,
-		TextSize = 16,
 		TextWrapped = false,
 		TextTruncate = Enum.TextTruncate.AtEnd,
 		ZIndex = zindex + 2,
@@ -354,8 +404,8 @@ function UiKit.window(parent: Instance, title: string, size: UDim2, position: UD
 		close = UiKit.button({
 			name = "Close",
 			text = "X",
-			size = UDim2.fromOffset(22, 18),
-			position = UDim2.new(1, -25, 0, 3),
+			size = UDim2.fromOffset(18, 18),
+			position = UDim2.new(1, -21, 0, 3),
 			parent = bar,
 			zindex = zindex + 3,
 			textSize = 16,
@@ -367,10 +417,22 @@ function UiKit.window(parent: Instance, title: string, size: UDim2, position: UD
 	return { frame = f, body = body, title = t, close = close }
 end
 
+-- Focused windows keep the charcoal-blue title bar; the others turn grey.
+function UiKit.setWindowActive(w: Window, active: boolean)
+	local bar = w.frame:FindFirstChild("TitleBar")
+	local grad = bar and bar:FindFirstChildOfClass("UIGradient")
+	if grad then
+		grad.Color = if active then ColorSequence.new(UiKit.C.title1, UiKit.C.title2) else ColorSequence.new(UiKit.C.titleOff1, UiKit.C.titleOff2)
+	end
+	w.title.TextColor3 = if active then UiKit.C.white else UiKit.C.faceLight:Lerp(UiKit.C.face, 0.4)
+end
+
 function UiKit.progress(parent: Instance, size: UDim2, position: UDim2, zindex: number): (Frame, Frame)
 	local back = UiKit.frame({ Name = "Progress", Size = size, Position = position, BackgroundColor3 = UiKit.C.field, ZIndex = zindex, Parent = parent })
 	UiKit.bevel(back, true)
-	local fill = UiKit.frame({ Name = "Fill", Size = UDim2.fromScale(0, 1), BackgroundColor3 = UiKit.C.good, ZIndex = zindex + 1, Parent = back })
+	-- the fill runs inside the sunken bevel; callers size it 0..1 on X
+	local track = UiKit.frame({ Name = "Track", Size = UDim2.new(1, -4, 1, -4), Position = UDim2.fromOffset(2, 2), BackgroundTransparency = 1, ZIndex = zindex + 2, Parent = back })
+	local fill = UiKit.frame({ Name = "Fill", Size = UDim2.fromScale(0, 1), BackgroundColor3 = UiKit.C.good, ZIndex = zindex + 2, Parent = track })
 	return back, fill
 end
 

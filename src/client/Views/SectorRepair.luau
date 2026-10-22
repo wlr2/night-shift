@@ -1,51 +1,132 @@
 --!strict
 -- SECTOR REPAIR view: TARGET ORDER on top, current slots below. Click two
--- slots to swap them. Sectors show number+letter AND colour.
+-- slots to swap them. Sectors show number+letter AND colour; slot state is
+-- spelled out (OK / SWAP / HINT) rather than coloured.
+
+local GuiService = game:GetService("GuiService")
+local UserInputService = game:GetService("UserInputService")
 
 local UiKit = require(script.Parent.Parent.Ui.UiKit)
 local C = UiKit.C
+local S = UiKit.SPACE
+local DIM = UiKit.C.textDim -- secondary text, 5:1 on the face
 
 local SWATCH: { [string]: Color3 } = {
-	amber = Color3.fromRGB(230, 160, 40),
-	teal = Color3.fromRGB(40, 170, 170),
-	rose = Color3.fromRGB(220, 90, 120),
-	lime = Color3.fromRGB(140, 200, 60),
-	violet = Color3.fromRGB(140, 90, 200),
-	sky = Color3.fromRGB(80, 150, 230),
-	sand = Color3.fromRGB(210, 190, 140),
-	slate = Color3.fromRGB(110, 120, 140),
+	amber = Color3.fromRGB(222, 160, 58),
+	teal = Color3.fromRGB(52, 160, 160),
+	rose = Color3.fromRGB(206, 96, 120),
+	lime = Color3.fromRGB(136, 188, 70),
+	violet = Color3.fromRGB(136, 96, 188),
+	sky = Color3.fromRGB(86, 146, 214),
+	sand = Color3.fromRGB(204, 186, 140),
+	slate = Color3.fromRGB(110, 120, 136),
 }
+
+local TARGET_H = 52
+local SLOT_H = 100
 
 local View = {}
 local first: number? = nil
+local lastKey = ""
 
-local function cell(parent: Instance, s: { label: string, color: string }, x: number, y: number, w: number, z: number): Frame
-	local f = UiKit.frame({ Size = UDim2.fromOffset(w, 64), Position = UDim2.fromOffset(x, y), BackgroundColor3 = C.field, ZIndex = z, Parent = parent })
-	UiKit.bevel(f, true)
-	UiKit.frame({ Size = UDim2.new(1, -8, 0, 14), Position = UDim2.fromOffset(4, 4), BackgroundColor3 = SWATCH[s.color] or C.faceDark, ZIndex = z + 1, Parent = f })
-	UiKit.label({ Text = s.label, Size = UDim2.new(1, 0, 0, 36), Position = UDim2.fromOffset(0, 22), TextXAlignment = Enum.TextXAlignment.Center, Font = UiKit.FONT_MONO, TextSize = 22, ZIndex = z + 1, Parent = f })
-	return f
+-- Gamepad: every update rebuilds the view, so focus moves to the control
+-- that replaces the one that had it.
+local function focusName(root: Instance): string?
+	local sel = GuiService.SelectedObject
+	return if sel and sel:IsDescendantOf(root) then sel.Name else nil
+end
+
+local function refocus(root: Instance, name: string?, first: string?)
+	local b = if name then root:FindFirstChild(name, true) else nil
+	-- a stage change clears the area and drops focus: a pad user gets `first`
+	if not b and first and GuiService.SelectedObject == nil and string.sub(UserInputService:GetLastInputType().Name, 1, 7) == "Gamepad" then
+		b = root:FindFirstChild(first, true)
+	end
+	if b and b:IsA("GuiObject") then
+		GuiService.SelectedObject = b
+	end
+end
+
+-- colour bar + mono label, shared by the target cells and the slots
+local function sector(parent: Instance, s: { label: string, color: string }, labelY: number, labelSize: number, ink: Color3, z: number)
+	UiKit.frame({ Name = "Swatch", Size = UDim2.new(1, -12, 0, 10), Position = UDim2.fromOffset(6, 6), BackgroundColor3 = SWATCH[s.color] or C.faceDark, ZIndex = z, Parent = parent })
+	UiKit.text("mono", {
+		Text = s.label,
+		TextSize = labelSize,
+		Size = UDim2.new(1, 0, 0, labelSize + 6),
+		Position = UDim2.fromOffset(0, labelY),
+		TextColor3 = ink,
+		TextXAlignment = Enum.TextXAlignment.Center,
+		TextWrapped = false,
+		ZIndex = z,
+		Parent = parent,
+	})
 end
 
 function View.render(root: Frame, v: { [string]: any }, api: { act: (string, any, any) -> () }, z: number)
+	local focus = focusName(root)
 	UiKit.clear(root)
+	local w = if root.Size.X.Offset > 0 then root.Size.X.Offset else 620
+	local h = if root.Size.Y.Offset > 0 then root.Size.Y.Offset else 250
 	local n = #v.target
-	local w = math.min(92, math.floor(600 / n) - 8)
-	local x0 = math.floor((620 - n * (w + 8)) / 2)
-	UiKit.label({ Text = "TARGET ORDER", Size = UDim2.new(1, 0, 0, 20), Position = UDim2.fromOffset(x0, 0), Font = UiKit.FONT_BOLD, ZIndex = z, Parent = root })
+	-- a new stage (new target order) drops a half-made swap
+	local labels = {}
 	for i, s in v.target do
-		cell(root, s, x0 + (i - 1) * (w + 8), 22, w, z)
-		UiKit.label({ Text = tostring(i), Size = UDim2.fromOffset(w, 16), Position = UDim2.fromOffset(x0 + (i - 1) * (w + 8), 88), TextXAlignment = Enum.TextXAlignment.Center, TextSize = 13, ZIndex = z, Parent = root })
+		labels[i] = s.label
 	end
-	UiKit.label({ Text = "DRIVE SECTORS (click two to swap)", Size = UDim2.new(1, 0, 0, 20), Position = UDim2.fromOffset(x0, 112), Font = UiKit.FONT_BOLD, ZIndex = z, Parent = root })
+	local key = table.concat(labels, ",")
+	if key ~= lastKey or (first and first > #v.current) then
+		first = nil
+		lastKey = key
+	end
+	local cw = math.min(92, math.floor((w - 20) / math.max(1, n)) - S.s)
+	local x0 = (w - (n * (cw + S.s) - S.s)) // 2
+	local y0 = math.max(0, (h - (20 + TARGET_H + 26 + 24 + SLOT_H)) // 2)
+
+	-- target order: sunken read-only cells with slot numbers under them
+	UiKit.text("title", { Text = "TARGET ORDER", Size = UDim2.fromOffset(200, 18), Position = UDim2.fromOffset(x0, y0), TextWrapped = false, ZIndex = z, Parent = root })
+	for i, s in v.target do
+		local x = x0 + (i - 1) * (cw + S.s)
+		local f = UiKit.frame({ Name = "Target" .. i, Size = UDim2.fromOffset(cw, TARGET_H), Position = UDim2.fromOffset(x, y0 + 20), BackgroundColor3 = C.field, ZIndex = z, Parent = root })
+		UiKit.bevel(f, true)
+		sector(f, s, 20, 20, C.text, z + 2)
+		UiKit.text("mono", {
+			Text = "SLOT " .. i,
+			TextSize = 14,
+			Size = UDim2.fromOffset(cw, 18),
+			Position = UDim2.fromOffset(x, y0 + 20 + TARGET_H + S.xs),
+			TextColor3 = DIM,
+			TextXAlignment = Enum.TextXAlignment.Center,
+			TextWrapped = false,
+			ZIndex = z,
+			Parent = root,
+		})
+	end
+
+	-- drive sectors: raised slot buttons
+	local sy = y0 + 20 + TARGET_H + 26
+	UiKit.text("title", { Text = "DRIVE SECTORS", Size = UDim2.fromOffset(160, 18), Position = UDim2.fromOffset(x0, sy), TextWrapped = false, ZIndex = z, Parent = root })
+	UiKit.text("caption", {
+		Text = if first then string.format("Slot %d selected. Pick the slot to swap it with.", first) else "Select two slots to swap them.",
+		Size = UDim2.fromOffset(math.max(0, w - (x0 + 168)), 18),
+		Position = UDim2.fromOffset(x0 + 168, sy),
+		TextColor3 = if first then C.text else DIM,
+		TextWrapped = false,
+		TextTruncate = Enum.TextTruncate.AtEnd,
+		ZIndex = z,
+		Parent = root,
+	})
 	local hl = v.highlight
 	for i, s in v.current do
+		local isFirst = first == i
+		local hinted = typeof(hl) == "table" and (hl[1] == i or hl[2] == i)
 		local b = UiKit.button({
+			name = "Slot" .. i,
 			text = "",
-			size = UDim2.fromOffset(w, 90),
-			position = UDim2.fromOffset(x0 + (i - 1) * (w + 8), 136),
+			size = UDim2.fromOffset(cw, SLOT_H),
+			position = UDim2.fromOffset(x0 + (i - 1) * (cw + S.s), sy + 24),
 			parent = root,
-			color = if first == i then Color3.fromRGB(255, 240, 170) else C.face,
+			color = if isFirst then C.select else C.face,
 			zindex = z,
 			onClick = function()
 				if first == nil then
@@ -61,22 +142,28 @@ function View.render(root: Frame, v: { [string]: any }, api: { act: (string, any
 				end
 			end,
 		})
-		local inner = cell(b, s, 4, 4, w - 8, z + 2)
-		local _ = inner
-		UiKit.label({
-			Text = if s.ok then "OK" else "",
-			Size = UDim2.new(1, 0, 0, 18),
-			Position = UDim2.new(0, 0, 1, -20),
+		sector(b, s, 24, 22, if isFirst then C.white else C.text, z + 2)
+		-- status line: SWAP (picked), HINT, OK (aligned)
+		local status = if isFirst then "SWAP" elseif hinted then "HINT" elseif s.ok then "OK" else ""
+		UiKit.text("title", {
+			Name = "State",
+			Text = status,
+			Size = UDim2.fromOffset(52, 18),
+			Position = UDim2.new(0.5, -26, 1, -(S.s + 20)),
+			BackgroundTransparency = if hinted and not isFirst then 0 else 1,
+			BackgroundColor3 = C.amber,
+			TextColor3 = if isFirst then C.amber elseif s.ok and not hinted then C.good else C.text,
 			TextXAlignment = Enum.TextXAlignment.Center,
-			TextColor3 = C.good,
-			Font = UiKit.FONT_BOLD,
+			TextWrapped = false,
 			ZIndex = z + 3,
 			Parent = b,
 		})
-		if typeof(hl) == "table" and (hl[1] == i or hl[2] == i) then
-			UiKit.new("UIStroke", { Color = Color3.fromRGB(255, 170, 0), Thickness = 3, ApplyStrokeMode = Enum.ApplyStrokeMode.Border, Parent = b })
+		if hinted then
+			local edge = UiKit.frame({ Name = "HintEdge", Size = UDim2.new(1, -4, 1, -4), Position = UDim2.fromOffset(2, 2), BackgroundTransparency = 1, ZIndex = z + 3, Parent = b })
+			UiKit.stroke(edge, C.warn, 0, 2)
 		end
 	end
+	refocus(root, focus, "Slot1")
 end
 
 function View.reset()
