@@ -84,9 +84,9 @@ Layout.BREAKER = {
 Layout.THERMOSTAT = Vector3.new(25, 4.6, 8.9)
 Layout.DOOR_LIGHT = Vector3.new(22.4, 8.2, 6)
 Layout.TIME_CLOCK = Vector3.new(6.25, 4.2, 18.5)
-Layout.KITCHEN_TRASH = Vector3.new(-23.6, 0, -6.2)
+Layout.KITCHEN_TRASH = Vector3.new(-24.0, 0, -6.2)
 Layout.DUMPSTER = Vector3.new(47, 0, 13.4)
-Layout.PRINTER = Vector3.new(-9, 3.6, 13.1)
+Layout.PRINTER = Vector3.new(-9, 3.72, 13.1)
 Layout.OUTBOX = Vector3.new(17.5, 3.1, -6.9) -- tray on the workstation desk edge
 Layout.ESCAPE_ZONE = { minX = 8, maxX = 18, minZ = 26, maxZ = 33 }
 

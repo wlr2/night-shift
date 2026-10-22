@@ -222,6 +222,24 @@ local ART_YAW: { [string]: number } = {
 	characters__male__character_01 = 180,
 	characters__male__character_04 = 180,
 	characters__male__character_05 = 180,
+	-- office chairs: the source seat faces -Z
+	office__chairs__office_chair_grey = 180,
+	office__chairs__office_chair_black = 180,
+	office__chairs__office_chair_blue = 180,
+	office__chairs__office_chair_black_alt = 180,
+	office__chairs__office_chair_grey_alt = -90,
+}
+
+-- Props placed by their centre (wall fixtures). Everything else is lifted so
+-- the bottom of its mesh rests on the given position (several source models
+-- are centred vertically and would otherwise sink into floors and desks).
+local CENTRE_PLACED: { [string]: boolean } = {
+	classic64__blend__panel_electrical_closed = true,
+	classic64__blend__panel_electric = true,
+	classic64__blend__panel_thermostat = true,
+	classic64__blend__electrical_junctionbox_small = true,
+	classic64__blend__fire_extenguisher_case = true,
+	office__extras__wall_clock = true,
 }
 
 type PropOpts = {
@@ -243,6 +261,10 @@ local function prop(key: string, pos: Vector3, front: Vector3, o: PropOpts?): Ba
 	end
 	local s = opts.scale or 1
 	local cf = Layout.facing(pos, front, (opts.yaw or 0) + (ART_YAW[key] or 0))
+	local minY: number = info.min.Y
+	if not CENTRE_PLACED[key] and minY < -0.02 then
+		cf = cf * CFrame.new(0, -minY * s, 0)
+	end
 	local anchor = Instance.new("Part")
 	anchor.Name = key
 	anchor.Anchored = true
@@ -414,7 +436,7 @@ local function buildStructure()
 	for _, x in Layout.WINDOWS_X do
 		part("WindowGlass", Vector3.new(6, 4.3, 0.15), CFrame.new(x, 5.45, M.minZ - 0.5), group("Structure"), {
 			color = C.glass,
-			material = Enum.Material.Glass,
+			material = Enum.Material.SmoothPlastic,
 			transparency = 0.6,
 			shadow = false,
 		})
@@ -449,7 +471,7 @@ local function buildStructure()
 		local lit = i % 2 == 0
 		part("FacadeWindow", Vector3.new(3, 3, 0.2), CFrame.new(x, 6 + (i % 3) * 5, -29.9), group("Structure"), {
 			color = if lit then C.amber else Color3.fromRGB(28, 32, 38),
-			material = if lit then Enum.Material.Neon else Enum.Material.Glass,
+			material = if lit then Enum.Material.Neon else Enum.Material.SmoothPlastic,
 			transparency = if lit then 0.5 else 0,
 			collide = false,
 		})
@@ -464,7 +486,7 @@ local function buildStructure()
 	wall("KitchenWest", "Z", K.minX - 0.5, K.minZ, K.maxZ, ceil, { { from = -10, to = -7, bottom = 3.6, top = 6.6 } }, kitchenWall)
 	part("KitchenWindow", Vector3.new(0.15, 3, 3), CFrame.new(K.minX - 0.5, 5.1, -8.5), group("Structure"), {
 		color = Color3.fromRGB(150, 165, 175),
-		material = Enum.Material.Glass,
+		material = Enum.Material.SmoothPlastic,
 		transparency = 0.35,
 		shadow = false,
 	})
@@ -521,7 +543,7 @@ local function buildDesks(refs: Refs)
 		{ { key = "office__book_things__file_binder", dx = -2.4, dz = -0.6, yaw = 100 } },
 		{ { key = "office__stationary__paper_stack_large", dx = -1.6, dz = -0.2, yaw = -8 }, { key = "office__extras__circular_desklamp", dx = -3.0, dz = -0.9, yaw = 0 } },
 		{ { key = "office__extras__mug_alt2", dx = -2.0, dz = 0.3, yaw = 160 } },
-		{ { key = "office__book_things__books_alt", dx = -2.6, dz = -0.6, yaw = 0 }, { key = "office__extras__square_desklamp", dx = -3.0, dz = -1.0, yaw = 0 } },
+		{ { key = "office__extras__square_desklamp", dx = -3.0, dz = -1.0, yaw = 0 } },
 		{ { key = "office__stationary__paper_single_sheet", dx = -1.8, dz = 0.4, yaw = 25 } },
 	}
 	local lampDesks: { [number]: boolean } = { [3] = true, [5] = true }
@@ -532,7 +554,7 @@ local function buildDesks(refs: Refs)
 		prop(d.art, d.pos, f, { collide = true, pad = 0.1 })
 		-- seated side faces the desk: chair front points back toward the desk.
 		-- Chairs get a slim collision box so the first-person camera never clips them.
-		prop(d.chair, d.pos + f * 2.7 + right * 0.4, -f, { yaw = (i * 17) % 30 - 15, collide = true, pad = 0.5 })
+		prop(d.chair, d.pos + f * 3.1 + right * 0.4, -f, { yaw = (i * 17) % 30 - 15, collide = true, pad = 0.5 })
 		-- monitor, keyboard, mouse
 		prop("office__computers__computer_monitor", d.pos - f * 0.7 + Vector3.new(0, top, 0), f)
 		prop("office__computers__computer_keyboard", d.pos + f * 0.7 + Vector3.new(0, top, 0), f)
@@ -576,10 +598,10 @@ local function buildDesks(refs: Refs)
 
 	-- low grey partitions between the two desk rows and at the cluster ends
 	for _, x in { -14, -5.6, 2.8 } do
-		prop("office__dividers__divider_black_low", Vector3.new(x, 0, 0), Vector3.new(0, 0, 1), { collide = true, scale = 0.8 })
+		prop("office__dividers__divider_black_low", Vector3.new(x, 0, 0), Vector3.new(0, 0, 1), { collide = true, scale = 0.76 })
 	end
-	prop("office__dividers__divider_black_low_half", Vector3.new(-18.6, 0, -3.2), Vector3.new(1, 0, 0), { collide = true, scale = 0.8 })
-	prop("office__dividers__divider_black_low", Vector3.new(7.3, 0, 0), Vector3.new(1, 0, 0), { collide = true, scale = 0.8 })
+	prop("office__dividers__divider_black_low_half", Vector3.new(-18.6, 0, -3.2), Vector3.new(1, 0, 0), { collide = true, scale = 0.76 })
+	prop("office__dividers__divider_black_low", Vector3.new(7.3, 0, 0), Vector3.new(1, 0, 0), { collide = true, scale = 0.76 })
 
 	-- the chair that can "shift" on its own (dynamic mesh)
 	local shift = prop("office__chairs__conference_chair_grey", Vector3.new(-9.8, 0, 7.4), Vector3.new(0, 0, -1), { dynamic = true })
@@ -599,7 +621,6 @@ local function buildWorkstation(refs: Refs)
 	prop("office__computers__computer_monitor", W.monitor, -f, { scale = 1.15 })
 	prop("office__computers__computer_keyboard", W.monitor - f * 1.4 + Vector3.new(0, 0, 0), -f)
 	prop("office__computers__computer_mouse", W.monitor - f * 1.5 + Vector3.new(1.1, 0, 1.1), -f)
-	prop("office__computers__desktop_brick", Vector3.new(15.6, Layout.DESK_TOP, -13.2), Vector3.new(0, 0, 1))
 	prop("office__extras__circular_desklamp", W.lamp, Vector3.new(0, 0, 1))
 	prop("office__extras__mug_alt", Vector3.new(19.2, Layout.DESK_TOP, -13.3), Vector3.new(0, 0, 1))
 	prop("office__extras__desk_phone_with_cable", Vector3.new(21.1, Layout.DESK_TOP, -12.4), Vector3.new(-1, 0, 0))
@@ -693,22 +714,20 @@ end
 local function buildRooms(refs: Refs)
 	local M = Layout.MAIN
 	-- south wall: bookcase, cabinets, printer
-	prop("office__book_things__book_case_with_back_small", Vector3.new(-18, 0, M.maxZ - 0.9), Vector3.new(0, 0, -1), { collide = true })
-	prop("office__book_things__books", Vector3.new(-18, 3.3, M.maxZ - 0.9), Vector3.new(0, 0, -1))
-	prop("office__file_cabinets__file_cabinet_largest", Vector3.new(-13, 0, M.maxZ - 1.3), Vector3.new(0, 0, -1), { collide = true })
-	prop("office__file_cabinets__file_cabinet_larger_open", Vector3.new(-4, 0, M.maxZ - 1.3), Vector3.new(0, 0, -1), { collide = true })
+	prop("office__book_things__book_case_with_back_small", Vector3.new(-17.0, 0, M.maxZ - 0.8), Vector3.new(0, 0, -1), { collide = true, scale = 0.8 })
+	prop("office__book_things__books", Vector3.new(-17.0, 2.64, M.maxZ - 0.8), Vector3.new(0, 0, -1))
+	prop("office__file_cabinets__file_cabinet_largest", Vector3.new(-12.75, 0, M.maxZ - 1.55), Vector3.new(0, 0, -1), { collide = true })
+	prop("office__file_cabinets__file_cabinet_larger_open", Vector3.new(-4, 0, M.maxZ - 1.55), Vector3.new(0, 0, -1), { collide = true })
 	prop("office__file_cabinets__file_cabinet_smaller_with_shelfs", Vector3.new(3.5, 0, M.maxZ - 1.2), Vector3.new(0, 0, -1), { collide = true })
 	prop("office__book_things__file_binder_alt", Vector3.new(3.2, 3.7, M.maxZ - 1.2), Vector3.new(0, 0, -1))
 	prop("office__book_things__file_binder_alt2", Vector3.new(3.6, 3.7, M.maxZ - 1.2), Vector3.new(0, 0, -1))
-	prop("office__extras__whiteboard", Vector3.new(M.minX + 0.6, 0, 7), Vector3.new(1, 0, 0), { collide = true })
-	prop("office__extras__wall_clock", Vector3.new(4, 7.2, M.minZ + 0.1), Vector3.new(0, 0, 1))
-	prop("office__couches__armchair_pattern", Vector3.new(-19.6, 0, 11.4), Vector3.new(1, 0, -0.4), { collide = true, pad = 0.4 })
-	prop("classic64__blend__fire_extenguisher_case", Vector3.new(M.maxX - 0.1, 3.4, -3), Vector3.new(-1, 0, 0))
-	prop("classic64__blend__sign_nosmoking", Vector3.new(-1, 6.2, M.maxZ - 0.1), Vector3.new(0, 0, -1), { scale = 1.6 })
-	prop("office__extras__water_cooler_bottle_attached", Vector3.new(M.maxX - 1, 0, 1.6), Vector3.new(-1, 0, 0), { collide = true })
-	prop("classic64__blend__door_brown_a", Vector3.new(-20.8, 0, M.maxZ - 0.05), Vector3.new(0, 0, -1), { scale = 1.0 })
+	prop("office__extras__whiteboard", Vector3.new(M.minX + 1.4, 0, 6), Vector3.new(1, 0, 0), { collide = true, scale = 0.78 })
+	prop("office__extras__wall_clock", Vector3.new(4, 7.2, M.minZ + 0.13), Vector3.new(0, 0, 1))
+	prop("classic64__blend__fire_extenguisher_case", Vector3.new(M.maxX - 0.4, 3.4, -3), Vector3.new(-1, 0, 0), { collide = true })
+	prop("office__extras__water_cooler_bottle_attached", Vector3.new(M.maxX - 1, 0, 1.6), Vector3.new(-1, 0, 0), { collide = true, scale = 0.8 })
+	prop("classic64__blend__door_brown_a", Vector3.new(-20.4, 0, M.maxZ - 0.1), Vector3.new(0, 0, -1), { scale = 1.0 })
 	prop("classic64__blend__papers_envolope_redacted", Vector3.new(20.4, Layout.DESK_TOP, -11.2), Vector3.new(-1, 0, 1), { scale = 1.6 })
-	prop("classic64__blend__panel_electrical_closed", Vector3.new(-30.9, 4.2, -5.6), Vector3.new(1, 0, 0), { scale = 2.2 })
+	prop("classic64__blend__panel_electrical_closed", Vector3.new(-30.66, 5.1, -4.9), Vector3.new(1, 0, 0), { scale = 2.2, collide = true })
 
 	-- printer (simple shapes) on a cabinet by the south wall
 	local P = Layout.PRINTER
@@ -722,7 +741,7 @@ local function buildRooms(refs: Refs)
 		material = Enum.Material.Neon,
 		collide = false,
 	})
-	prop("office__file_cabinets__file_cabinet_small", Vector3.new(P.X, 0, P.Z), Vector3.new(0, 0, -1), { collide = true, scale = 1 })
+	prop("office__file_cabinets__file_cabinet_small", Vector3.new(P.X, 0, P.Z), Vector3.new(0, 0, -1), { collide = true, scale = 0.75 })
 
 	-- notice board with the procedures (evidence against false instructions)
 	local board = part("NoticeBoard", Vector3.new(4.2, 3.2, 0.15), CFrame.new(12.5, 5.6, M.minZ + 0.1), group("Interactive"), {
@@ -739,12 +758,12 @@ local function buildRooms(refs: Refs)
 		tile = 4,
 	})
 	box("CounterTop", Vector3.new(K.minX, 3.05, K.minZ), Vector3.new(K.minX + 2.7, 3.15, K.maxZ - 2), group("Structure"), { color = C.trim, collide = false })
-	prop("office__extras__coffee_machine", Vector3.new(K.minX + 1.2, 3.1, -9.5), Vector3.new(1, 0, 0), { scale = 0.65 })
+	prop("office__extras__coffee_machine", Vector3.new(K.minX + 1.2, 3.1, -9.5), Vector3.new(1, 0, 0), { scale = 0.23 })
 	prop("office__extras__mug_alt3", Vector3.new(K.minX + 1.5, 3.1, -7.8), Vector3.new(1, 0, 0))
 	prop("office__extras__mug_alt2", Vector3.new(K.minX + 1.2, 3.1, -7.3), Vector3.new(1, 0, 0))
-	prop("cute3d__blend__fridge", Vector3.new(K.minX + 2, 0, K.minZ + 1.6), Vector3.new(1, 0, 0), { collide = true, pad = 0.3 })
+	prop("cute3d__blend__fridge", Vector3.new(K.minX + 4.5, 0, K.minZ + 2.45), Vector3.new(0, 0, 1), { collide = true, pad = 0.2, scale = 0.8 })
 	local trashPos = Layout.KITCHEN_TRASH
-	prop("urban__litter__trashcan__trash_can", trashPos, Vector3.new(1, 0, 0), { collide = true, scale = 0.75 })
+	prop("urban__litter__trashcan__trash_can", trashPos, Vector3.new(1, 0, 0), { collide = true, scale = 0.6 })
 	refs.kitchenTrash = part("KitchenTrash", Vector3.new(2.6, 3.5, 2.4), CFrame.new(trashPos + Vector3.new(0, 1.75, 0)), group("Interactive"), {
 		transparency = 1,
 		collide = false,
@@ -752,7 +771,7 @@ local function buildRooms(refs: Refs)
 
 	-- lobby + time clock + front doors
 	local L = Layout.LOBBY
-	prop("office__couches__couch_pattern", Vector3.new(17.6, 0, 16.4), Vector3.new(-1, 0, 0), { collide = true, pad = 0.4 })
+	prop("office__couches__couch_pattern", Vector3.new(17.4, 0, 19.0), Vector3.new(-1, 0, 0), { collide = true, pad = 0.4 })
 	prop("oldstuff__telephone", Vector3.new(8, 3.1, 21.6), Vector3.new(0, 0, -1))
 	box("ReceptionDesk", Vector3.new(L.minX, 0, 20.4), Vector3.new(L.minX + 4.2, 3.1, 22.5), group("Structure"), {
 		color = Color3.fromRGB(120, 90, 66),
@@ -760,7 +779,7 @@ local function buildRooms(refs: Refs)
 		tile = 4,
 	})
 	box("ReceptionTop", Vector3.new(L.minX, 3.05, 20.3), Vector3.new(L.minX + 4.3, 3.15, 22.6), group("Structure"), { color = C.trim, collide = false })
-	prop("office__extras__wall_clock", Vector3.new(13, 8.4, L.minZ + 0.6), Vector3.new(0, 0, 1))
+	prop("office__extras__wall_clock", Vector3.new(13, 9.2, L.minZ + 1.13), Vector3.new(0, 0, 1))
 	prop("classic64__blend__papers_log_1_stack", Vector3.new(7.4, 3.1, 21.0), Vector3.new(0, 0, -1))
 	local tc = part("TimeClock", Vector3.new(0.7, 1.8, 1.4), CFrame.new(Layout.TIME_CLOCK), group("Interactive"), {
 		color = Color3.fromRGB(196, 190, 170),
@@ -777,7 +796,7 @@ local function buildRooms(refs: Refs)
 		local x0 = FD.minX + i * half
 		local door = part("FrontDoor" .. (i + 1), Vector3.new(half - 0.1, FD.height, 0.25), CFrame.new(x0 + half / 2, FD.height / 2, FD.z + 0.5), group("Interactive"), {
 			color = C.glass,
-			material = Enum.Material.Glass,
+			material = Enum.Material.SmoothPlastic,
 			transparency = 0.5,
 		})
 		table.insert(refs.frontDoors, door)
@@ -797,7 +816,6 @@ local function buildRooms(refs: Refs)
 	-- utility hall: breakers, thermostat, heater, a pipe run and a duct
 	local H = Layout.HALL
 	local B = Layout.BREAKER
-	prop("classic64__blend__panel_electrical_open", B.panel - Vector3.new(0, 1.5, 0), Vector3.new(0, 0, 1), { scale = 2.2 })
 	local backing = part("BreakerBacking", Vector3.new(3.4, 2.4, 0.2), CFrame.new(B.panel + Vector3.new(0, 0, 0.1)), group("Interactive"), {
 		color = Color3.fromRGB(80, 84, 88),
 		surface = "metal_panel",
@@ -831,16 +849,10 @@ local function buildRooms(refs: Refs)
 		transparency = 1,
 		collide = false,
 	})
-	prop("classic64__blend__panel_heater", Vector3.new(32.5, 0.4, H.maxZ - 0.3), Vector3.new(0, 0, -1), { scale = 1.6 })
-	prop("classic64__blend__panel_electric", Vector3.new(24.2, 3.2, H.minZ + 0.25), Vector3.new(0, 0, 1), { scale = 1.4 })
+	prop("classic64__blend__panel_heater", Vector3.new(32.5, 0, H.maxZ - 0.55), Vector3.new(0, 0, -1), { scale = 1.6, collide = true })
+	prop("classic64__blend__panel_electric", Vector3.new(24.2, 3.2, H.minZ + 0.52), Vector3.new(0, 0, 1), { scale = 1.4, collide = true })
 	prop("classic64__blend__electrical_junctionbox_small", Vector3.new(31.4, 5.2, H.minZ + 0.1), Vector3.new(0, 0, 1), { scale = 3 })
-	for x = 23, 35, 3.5 do
-		prop("urban__pipes__pipe", Vector3.new(x, 8.2, H.minZ + 0.55), Vector3.new(0, 0, 1), { yaw = 0, scale = 1 })
-	end
-	prop("urban__vents__duct_long", Vector3.new(28, 8.3, H.maxZ - 1.0), Vector3.new(0, 0, 1))
-	prop("urban__vents__duct_long", Vector3.new(31.5, 8.3, H.maxZ - 1.0), Vector3.new(0, 0, 1))
-	prop("urban__vents__duct_corner_rounded", Vector3.new(24.6, 8.3, H.maxZ - 1.0), Vector3.new(0, 0, 1))
-	prop("urban__vents__vent_cover", Vector3.new(26, 9, 4.2), Vector3.new(0, 0, 1))
+-- (ducts and pipes removed: the source models are 3.5+ studs tall and pierce the 9-stud hall ceiling)
 
 	-- procedures notice at the rear door
 	local rearNotice = part("RearDoorNotice", Vector3.new(0.1, 1.6, 1.3), CFrame.new(35.85, 4.6, 8.3), group("Interactive"), {
@@ -885,34 +897,31 @@ end
 local function buildAlley(refs: Refs)
 	local A = Layout.ALLEY
 	local D = Layout.DUMPSTER
-	prop("urban__litter__dumpsters__dumpster_lid_closed", D, Vector3.new(0, 0, -1), { collide = true, pad = 0.2 })
+	prop("urban__litter__dumpsters__dumpster_lid_closed", D, Vector3.new(1, 0, 0), { collide = true, pad = 0.2, scale = 0.7 })
 	refs.dumpster = part("DumpsterPrompt", Vector3.new(7, 6, 3), CFrame.new(D + Vector3.new(0, 3, -2.4)), group("Interactive"), {
 		transparency = 1,
 		collide = false,
 	})
-	prop("urban__litter__dumpsters__dumpster_trashpile_1", Vector3.new(53, 0, 13.6), Vector3.new(0, 0, -1), { collide = false })
-	prop("urban__litter__trash__trashbag_1", Vector3.new(42.5, 0, 14.6), Vector3.new(0, 0, -1))
-	prop("urban__litter__trash__trashbag_2_white", Vector3.new(43.8, 0, 14.4), Vector3.new(1, 0, -1))
-	prop("urban__litter__metal_trashcan__metaltrashcan_closed", Vector3.new(38.6, 0, 14.6), Vector3.new(0, 0, -1), { collide = true })
-	prop("urban__litter__metal_trashcan__metaltrashcan_overflowing", Vector3.new(39.2, 0, -4.6), Vector3.new(0, 0, 1), { collide = true })
-	prop("classic64__blend__wood_pallet", Vector3.new(60, 0, 14), Vector3.new(0, 0, 1), { scale = 1.6 })
-	prop("classic64__blend__wood_pallet", Vector3.new(60.4, 0.55, 13.8), Vector3.new(1, 0, 0.3), { scale = 1.6 })
+	prop("urban__litter__trash__trashbag_2_white", Vector3.new(54.6, 0, 14.6), Vector3.new(1, 0, -1), { scale = 0.5 })
+	prop("urban__litter__metal_trashcan__metaltrashcan_closed", Vector3.new(38.6, 0, 14.4), Vector3.new(0, 0, -1), { collide = true })
+	prop("urban__litter__metal_trashcan__metaltrashcan_overflowing", Vector3.new(39.2, 0, -4.6), Vector3.new(0, 0, 1), { collide = true, scale = 0.75 })
+	prop("classic64__blend__wood_pallet", Vector3.new(59.2, 0, 13.2), Vector3.new(0, 0, 1), { scale = 0.77 })
 	prop("oldstuff__barrel", Vector3.new(62.5, 0, -4), Vector3.new(0, 0, 1), { collide = true })
-	prop("classic64__blend__manhole_cover", Vector3.new(50, 0.02, 5), Vector3.new(0, 0, 1), { scale = 1.2 })
+	prop("classic64__blend__manhole_cover", Vector3.new(50, 0.02, 5), Vector3.new(0, 0, 1), { scale = 0.4 })
 	for _, z in { -2, 12 } do
 		prop("classic64__blend__yellow_post", Vector3.new(37.6, 0, z), Vector3.new(0, 0, 1), { collide = true })
 	end
-	prop("urban__traffic_lights__street_light", Vector3.new(45, 0, -5.2), Vector3.new(0, 0, 1))
+	prop("urban__traffic_lights__street_light", Vector3.new(45, 0, -4.7), Vector3.new(0, 0, 1), { collide = true })
 	pointLight("alley", Vector3.new(45, 21.5, -4), C.cold, 34, 1.0)
 	prop("urban__cones_barriers__bollards__concrete_retro_bollard_light", Vector3.new(38.5, 0, 9.5), Vector3.new(-1, 0, 0), { collide = true })
 	pointLight("alley", Vector3.new(38.5, 4.2, 9.5), C.amber, 9, 0.5)
 	-- broken wooden hoarding at the alley mouth: the figure comes from beyond
-	prop("urban__fences__plackard_wall__plackard_closed", Vector3.new(64.5, 0, -2.6), Vector3.new(-1, 0, 0), { collide = true })
-	prop("urban__fences__plackard_wall__plackard_broken", Vector3.new(64.5, 0, 13.4), Vector3.new(-1, 0, 0), { collide = true })
+	prop("urban__fences__plackard_wall__plackard_closed", Vector3.new(64.5, 0, -2.75), Vector3.new(-1, 0, 0), { collide = true, scale = 0.6 })
+	prop("urban__fences__plackard_wall__plackard_broken", Vector3.new(64.5, 0, 12.75), Vector3.new(-1, 0, 0), { collide = true, scale = 0.6 })
 	-- outdoor street (front) dressing
-	prop("urban__traffic_lights__street_light", Vector3.new(19, 0, 31), Vector3.new(0, 0, -1))
+	prop("urban__traffic_lights__street_light", Vector3.new(18.2, 0, 31), Vector3.new(0, 0, -1), { collide = true })
 	pointLight("exterior", Vector3.new(19, 21.5, 30), C.cold, 30, 0.9)
-	prop("urban__litter__metal_trashcan__metaltrashcan_closed", Vector3.new(8, 0, 25), Vector3.new(0, 0, -1), { collide = true })
+	prop("urban__litter__metal_trashcan__metaltrashcan_closed", Vector3.new(8, 0, 25.9), Vector3.new(0, 0, -1), { collide = true })
 
 	-- the figure (dynamic mesh, welded to the NPC root by the Threat system)
 	refs.threatAnchorKey = "characters__male__character_04"
@@ -971,7 +980,7 @@ local function buildLights(refs: Refs)
 		Vector3.new(-26, 7.5, -8),
 		Vector3.new(16, 7.8, -7),
 	} do
-		local l = pointLight("emergency", p, Color3.fromRGB(255, 60, 50), 18, 0)
+		local l = pointLight("emergency", p, Color3.fromRGB(196, 110, 96), 18, 0)
 		table.insert(emergency, l)
 	end
 	refs.emergencyLights = emergency

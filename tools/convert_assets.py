@@ -105,6 +105,11 @@ sel(["characters__male__character_04"], targetHeight=6.3)  # the former employee
 sel(["characters__male__character_01", "characters__male__character_05"], targetHeight=5.6)
 
 # Objects whose source units do not match the metre convention get explicit heights.
+# URBAN scenes keep their objects far from the scene origin (49-121 studs);
+# re-centre them so each prop renders on its anchor.
+for _k in SELECTION:
+    if _k.startswith("urban__"):
+        SELECTION[_k]["recenter"] = True
 SELECTION["oldstuff__barrel"]["targetHeight"] = 3.0
 SELECTION["oldstuff__telephone"]["targetHeight"] = 0.55
 SELECTION["cute3d__blend__fridge"]["targetHeight"] = 6.4
@@ -117,7 +122,7 @@ SURFACE_TEXTURES = {
     "wall_lower": "horror__horror_wall_04",     # warm plaster (counters only)
     "wall_concrete": "horror__horror_wall_09",  # utility hall
     "wall_kitchen": "horror__horror_wall_01",
-    "ceiling_tile": "horror__horror_floor_12",  # grey acoustic tile grid
+    "ceiling_tile": "horror__horror_wall_03",   # clean speckled acoustic ceiling
     "floor_tile": "horror__horror_floor_12",    # kitchenette tiles
     "floor_lobby": "horror__horror_floor_11",   # lobby stone tiles
     "floor_concrete": "horror__horror_floor_01",
@@ -560,7 +565,10 @@ def prepare_model(key: str, prims, opts, atlas: Atlas):
     mx = [max(p[i] for p in allp) for i in range(3)]
     height = mx[1] - mn[1]
     scale = opts["targetHeight"] / height if ("targetHeight" in opts and height > 0) else STUDS_PER_METER
-    origin = ((mn[0] + mx[0]) / 2, mn[1], (mn[2] + mx[2]) / 2) if "targetHeight" in opts else (0.0, 0.0, 0.0)
+    # Re-centre on the footprint (x/z centre, y = base) for characters and for
+    # source scenes whose objects sit far from the scene origin (URBAN pack).
+    recenter = "targetHeight" in opts or opts.get("recenter", False)
+    origin = ((mn[0] + mx[0]) / 2, mn[1], (mn[2] + mx[2]) / 2) if recenter else (0.0, 0.0, 0.0)
     out = []
     for pr in prims:
         pos = [((p[0] - origin[0]) * scale, (p[1] - origin[1]) * scale, (p[2] - origin[2]) * scale) for p in pr["pos"]]
