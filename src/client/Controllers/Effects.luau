@@ -1,12 +1,14 @@
 --!strict
--- Cosmetic reactions to server Fx cues: sounds, flickers, monitor wake-ups,
--- the chase alert, colour stings. The server already decided everything;
--- this only makes it readable and felt.
+-- Cosmetic reactions to server Fx cues: sounds, fixture flickers, monitor
+-- wake-ups, the chase alert and soft colour stings. The server already
+-- decided everything; this only makes it readable and felt. Stings ease in
+-- and fade (no hard full-screen flashes) and flickers stay under 3 a second.
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local TweenService = game:GetService("TweenService")
 
+local Fonts = require(ReplicatedStorage.Shared.Fonts)
 local Layout = require(ReplicatedStorage.Shared.Layout)
 local State = require(script.Parent.State)
 local Atmosphere = require(script.Parent.Atmosphere)
@@ -19,12 +21,20 @@ local Effects = {}
 
 local DOOR_POS = Vector3.new(Layout.REAR_DOOR.x, 3.5, (Layout.REAR_DOOR.minZ + Layout.REAR_DOOR.maxZ) / 2)
 
-local function sting(color: Color3, seconds: number)
-	local cc = Atmosphere.cc()
-	local base = cc.TintColor
-	cc.TintColor = color
-	TweenService:Create(cc, TweenInfo.new(seconds, Enum.EasingStyle.Sine), { TintColor = base }):Play()
-end
+-- Sting tints are muted casts toward a mood, never saturated washes.
+local STING = {
+	cold = Color3.fromRGB(214, 222, 240), -- power cut, the missing crew
+	uneasy = Color3.fromRGB(238, 222, 214), -- something approaches
+	threat = Color3.fromRGB(242, 206, 200), -- it is inside
+	danger = Color3.fromRGB(244, 196, 190), -- chase, downed, final purge
+	peek = Color3.fromRGB(228, 224, 242),
+	relief = Color3.fromRGB(248, 232, 210), -- sign-off complete
+}
+
+-- monitor phosphor: soft green on a dark tube, like the story screens
+local PHOSPHOR = Color3.fromRGB(150, 220, 160)
+local TUBE = Color3.fromRGB(12, 20, 16)
+local TUBE_GLOW = Color3.fromRGB(130, 176, 146)
 
 local function interactive(name: string): BasePart?
 	local map = workspace:FindFirstChild("Map")
@@ -33,48 +43,81 @@ local function interactive(name: string): BasePart?
 	return if p and p:IsA("BasePart") then p else nil
 end
 
+local function myPosition(): Vector3?
+	local character = player.Character
+	local root = character and character:FindFirstChild("HumanoidRootPart")
+	return if root and root:IsA("BasePart") then root.Position else nil
+end
+
+-- An unattended monitor wakes with a short message, then fades back out.
 local function monitorWake(desk: number, text: string, seconds: number)
 	local screen = interactive("SourceScreen_" .. desk)
 	if not screen then
 		return
 	end
 	local sg = Instance.new("SurfaceGui")
+	sg.Name = "WakeText"
 	sg.Face = Enum.NormalId.Back
 	sg.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
 	sg.PixelsPerStud = 80
 	sg.LightInfluence = 0
-	sg.Brightness = 1.5
-	sg.Parent = screen
+	sg.Brightness = 1.2
 	local t = Instance.new("TextLabel")
 	t.Size = UDim2.fromScale(1, 1)
-	t.BackgroundColor3 = Color3.fromRGB(10, 30, 60)
-	t.TextColor3 = Color3.fromRGB(220, 230, 255)
-	t.Font = Enum.Font.Arcade
+	t.BorderSizePixel = 0
+	t.BackgroundColor3 = TUBE
+	t.BackgroundTransparency = 1
+	t.TextColor3 = PHOSPHOR
+	t.TextTransparency = 1
+	t.FontFace = Fonts.PIXEL
 	t.TextScaled = true
+	t.TextWrapped = true
 	t.Text = text
+	local pad = Instance.new("UIPadding")
+	pad.PaddingLeft = UDim.new(0, 6)
+	pad.PaddingRight = UDim.new(0, 6)
+	pad.PaddingTop = UDim.new(0, 6)
+	pad.PaddingBottom = UDim.new(0, 6)
+	pad.Parent = t
+	local cap = Instance.new("UITextSizeConstraint")
+	cap.MaxTextSize = 30
+	cap.Parent = t
 	t.Parent = sg
+	sg.Parent = screen
 	local glow = Instance.new("PointLight")
-	glow.Color = Color3.fromRGB(120, 150, 255)
-	glow.Range = 7
-	glow.Brightness = 0.8
+	glow.Color = TUBE_GLOW
+	glow.Range = 6
+	glow.Brightness = 0
+	glow.Shadows = false
 	glow.Parent = screen
+	local on = TweenInfo.new(0.35, Enum.EasingStyle.Sine)
+	TweenService:Create(t, on, { TextTransparency = 0, BackgroundTransparency = 0 }):Play()
+	TweenService:Create(glow, on, { Brightness = 0.5 }):Play()
 	Sfx.play("chime", { pos = screen.Position, volume = 0.3, speed = 0.6 })
 	task.delay(seconds, function()
-		sg:Destroy()
-		glow:Destroy()
+		local off = TweenInfo.new(0.8, Enum.EasingStyle.Sine)
+		TweenService:Create(t, off, { TextTransparency = 1, BackgroundTransparency = 1 }):Play()
+		TweenService:Create(glow, off, { Brightness = 0 }):Play()
+		task.delay(0.85, function()
+			sg:Destroy()
+			glow:Destroy()
+		end)
 	end)
 end
 
 local handlers: { [string]: (data: any) -> () } = {
 	PowerWarning = function(data)
+		-- the office fixtures stutter until the breaker trips
 		Atmosphere.flicker(data.seconds or 4, 0.4)
 	end,
 	LightFlicker = function(data)
-		Atmosphere.flicker(data.seconds or 1.5, 0.3)
+		-- harmless: only the fixtures around you
+		Atmosphere.flicker(data.seconds or 1.5, 0.3, myPosition())
 	end,
 	PowerOff = function()
+		-- the blackout grade itself follows the LightsOn attribute (Atmosphere)
 		Sfx.play("breaker", { volume = 0.8, speed = 0.7 })
-		sting(Color3.fromRGB(190, 200, 255), 2)
+		Atmosphere.sting(STING.cold, 2.5)
 	end,
 	BreakerReset = function()
 		Sfx.play("breaker", { volume = 0.6 })
@@ -105,25 +148,25 @@ local handlers: { [string]: (data: any) -> () } = {
 		end
 	end,
 	FigureApproach = function()
-		sting(Color3.fromRGB(255, 200, 190), 3)
+		Atmosphere.sting(STING.uneasy, 3)
 		Sfx.play("footsteps", { pos = Layout.THREAT_ROUTE[2], volume = 0.6, speed = 0.7, duration = 6 })
 	end,
 	FigureInside = function()
-		sting(Color3.fromRGB(255, 170, 160), 4)
+		Atmosphere.sting(STING.threat, 4)
 		Atmosphere.flicker(1.2, 0.3)
 	end,
 	FigurePeek = function()
-		sting(Color3.fromRGB(230, 220, 255), 2.5)
+		Atmosphere.sting(STING.peek, 2.5)
 	end,
 	CrewSeen = function()
-		sting(Color3.fromRGB(220, 230, 255), 4)
+		Atmosphere.sting(STING.cold, 4)
 		Atmosphere.flicker(0.8, 0.2)
 	end,
 	ChaseStart = function(data)
 		if data.target == player.UserId then
 			Hud.toast("RUN! Back inside through the rear door!", "bad")
 		end
-		sting(Color3.fromRGB(255, 150, 140), 5)
+		Atmosphere.sting(STING.danger, 5)
 	end,
 	MonitorWake = function(data)
 		monitorWake(data.desk, data.text, data.seconds or 6)
@@ -133,11 +176,12 @@ local handlers: { [string]: (data: any) -> () } = {
 		Sfx.play("phone", { pos = Layout.PRINTER, volume = 0.4, speed = 0.5 })
 		if led then
 			task.spawn(function()
+				-- under 3 blinks a second
 				for _ = 1, 8 do
-					led.Transparency = 0.7
-					task.wait(0.15)
-					led.Transparency = 0
-					task.wait(0.15)
+					led.LocalTransparencyModifier = 0.7
+					task.wait(0.17)
+					led.LocalTransparencyModifier = 0
+					task.wait(0.17)
 				end
 			end)
 		end
@@ -172,15 +216,14 @@ local handlers: { [string]: (data: any) -> () } = {
 	PcShutdown = function()
 		Sfx.play("click", { volume = 0.3, speed = 0.6 })
 	end,
-	Downed = function(data)
-		sting(Color3.fromRGB(255, 120, 120), 2)
-		local _ = data
+	Downed = function()
+		Atmosphere.sting(STING.danger, 2)
 	end,
 	Revived = function(data)
 		Hud.toast(data.name .. " is back on their feet" .. (if data.by then " (thanks to " .. data.by .. ")" else "") .. ".", "good")
 	end,
 	FinalPurge = function()
-		sting(Color3.fromRGB(255, 140, 130), 6)
+		Atmosphere.sting(STING.danger, 6)
 		Atmosphere.flicker(2.5, 0.35)
 		Hud.toast("FINAL PURGE queued. Your own records are on the list. Get to the workstation!", "bad")
 	end,
@@ -194,7 +237,7 @@ local handlers: { [string]: (data: any) -> () } = {
 		Sfx.play("chime", { pos = Layout.WORKSTATION.monitor, volume = 0.8, speed = 0.7 })
 	end,
 	ClockOutStart = function()
-		sting(Color3.fromRGB(255, 170, 150), 6)
+		Atmosphere.sting(STING.relief, 6)
 		Hud.toast("Sign-off complete. CLOCK OUT at the lobby time clock and get out!", "good")
 	end,
 	ClockedOut = function(data)
