@@ -1,5 +1,9 @@
 # Claude Code cloud handoff
 
+**Current state:** branch `claude/presentation-pass` holds the presentation pass. Start with `docs/PRESENTATION_PASS.md` (what is done, and the remaining map-cleanup list), `docs/ART_DIRECTION.md` (rules) and `docs/STUDIO_TEST_CHECKLIST.md` (local Studio verification).
+
+Checks: `bash tools/audit/run.sh` (layout), `bash tools/smoke/run.sh` (client UI smoke), `python3 tools/check_ui_props.py --api API-Dump.json`, `python3 tools/check_presentation.py`.
+
 Read `docs/NEXT_SESSION.md`, `studio/export-manifest.json`, and `assets/README.md` first.
 
 This repository contains a native snapshot and editable source exported from the user's selected **NightShift.rbxlx** Studio session. All 195 saved script sources were checked against the live Studio contents after normalizing CRLF/LF. `src/` is the authoritative Studio baseline; `studio/NightShift.snapshot.rbxlx` preserves the native edit state. `build/NightShift.rbxlx` is the playable saved place. The map and desktop UI are built at runtime, so an empty edit-mode viewport is expected.
