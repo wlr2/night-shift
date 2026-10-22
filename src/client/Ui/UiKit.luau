@@ -1,13 +1,19 @@
 --!strict
--- Tiny UI toolkit for the early-2000s desktop: grey bevelled windows, blue
--- title bars, chunky buttons with pressed/hover/disabled states, and one
--- animation vocabulary for the whole UI.
+-- Tiny UI toolkit for the workstation desktop and the HUD: cream/grey
+-- bevelled windows, charcoal-blue title bars, chunky buttons and one
+-- typographic hierarchy for the whole game (see docs/ART_DIRECTION.md):
+--   PIXEL   Silkscreen    short retro labels, window titles, status, keycaps
+--   BODY    Ubuntu        dialogue, instructions, buttons, longer text
+--   MONO    Inconsolata   file listings, tables, checksums
+--   LETTER  Merriweather  recovered memos and story fragments only
+-- Props named "Font" that hold a Font object are applied to FontFace.
 
 local SoundService = game:GetService("SoundService")
 local TweenService = game:GetService("TweenService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Config = require(ReplicatedStorage.Shared.Config)
+local Fonts = require(ReplicatedStorage.Shared.Fonts)
 
 local UiKit = {}
 
@@ -15,35 +21,75 @@ UiKit.FAST = TweenInfo.new(0.12, Enum.EasingStyle.Quad, Enum.EasingDirection.Out
 UiKit.POP = TweenInfo.new(0.22, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
 UiKit.FADE = TweenInfo.new(0.35, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
 
-UiKit.C = {
-	face = Color3.fromRGB(212, 208, 200),
-	faceDark = Color3.fromRGB(128, 128, 128),
-	faceLight = Color3.fromRGB(255, 255, 255),
-	text = Color3.fromRGB(16, 16, 16),
-	title1 = Color3.fromRGB(0, 70, 200),
-	title2 = Color3.fromRGB(70, 150, 255),
-	desktop = Color3.fromRGB(0, 96, 104),
-	taskbar = Color3.fromRGB(36, 84, 196),
-	start = Color3.fromRGB(60, 150, 60),
-	good = Color3.fromRGB(40, 140, 60),
-	bad = Color3.fromRGB(190, 40, 40),
-	warn = Color3.fromRGB(220, 160, 30),
-	info = Color3.fromRGB(40, 80, 160),
-	select = Color3.fromRGB(10, 36, 106),
-	white = Color3.fromRGB(255, 255, 255),
-	field = Color3.fromRGB(255, 255, 255),
-}
+UiKit.FONT = Fonts.BODY
+UiKit.FONT_BOLD = Fonts.BODY_BOLD
+UiKit.FONT_MONO = Fonts.MONO
+UiKit.FONT_PIXEL = Fonts.PIXEL
+UiKit.FONT_PIXEL_BOLD = Fonts.PIXEL_BOLD
+UiKit.FONT_LETTER = Fonts.LETTER
 
-UiKit.FONT = Enum.Font.Arial
-UiKit.FONT_BOLD = Enum.Font.ArialBold
-UiKit.FONT_MONO = Enum.Font.Code
+-- Typographic roles. Silkscreen sizes stay on multiples of 8 so the pixels
+-- stay crisp; readable text never goes below MIN_TEXT.
+export type TypeRole = { font: Font, size: number }
+UiKit.MIN_TEXT = 13
+UiKit.TYPE = {
+	display = { font = UiKit.FONT_PIXEL, size = 32 }, -- loading / ending card, one or two words
+	title = { font = UiKit.FONT_PIXEL, size = 16 }, -- window titles, section labels, status lines
+	key = { font = UiKit.FONT_PIXEL, size = 16 }, -- keycaps
+	heading = { font = UiKit.FONT_BOLD, size = 18 }, -- headings inside windows and panels
+	body = { font = UiKit.FONT, size = 16 }, -- instructions, descriptions
+	dialogue = { font = UiKit.FONT, size = 18 }, -- boss lines, subtitles, toasts
+	button = { font = UiKit.FONT_BOLD, size = 16 },
+	caption = { font = UiKit.FONT, size = 14 }, -- secondary detail
+	mono = { font = UiKit.FONT_MONO, size = 16 }, -- listings, checksums, tables
+	letter = { font = UiKit.FONT_LETTER, size = 17 }, -- story fragments only
+} :: { [string]: TypeRole }
+
+-- Spacing grid (px): padding, gaps and margins use these steps only.
+UiKit.SPACE = { xs = 4, s = 8, m = 12, l = 16, xl = 24 }
+
+UiKit.C = {
+	face = Color3.fromRGB(208, 204, 194),
+	faceDark = Color3.fromRGB(122, 120, 114),
+	faceLight = Color3.fromRGB(242, 240, 234),
+	text = Color3.fromRGB(26, 28, 30),
+	textDim = Color3.fromRGB(96, 98, 100),
+	title1 = Color3.fromRGB(60, 72, 82),
+	title2 = Color3.fromRGB(88, 104, 116),
+	desktop = Color3.fromRGB(64, 84, 92),
+	taskbar = Color3.fromRGB(208, 204, 194),
+	start = Color3.fromRGB(208, 204, 194),
+	good = Color3.fromRGB(56, 118, 74),
+	bad = Color3.fromRGB(156, 56, 50),
+	warn = Color3.fromRGB(176, 136, 56),
+	info = Color3.fromRGB(62, 88, 118),
+	select = Color3.fromRGB(60, 76, 92),
+	white = Color3.fromRGB(244, 242, 236),
+	field = Color3.fromRGB(246, 244, 236),
+	amber = Color3.fromRGB(200, 166, 107),
+	cream = Color3.fromRGB(183, 176, 156),
+	charcoal = Color3.fromRGB(53, 63, 70),
+	hud = Color3.fromRGB(20, 24, 28),
+	hudLine = Color3.fromRGB(150, 160, 166),
+	hudText = Color3.fromRGB(236, 232, 222),
+	hudDim = Color3.fromRGB(168, 176, 182),
+	-- art-direction palette (docs/ART_DIRECTION.md)
+	fog = Color3.fromRGB(168, 186, 195), -- #A8BAC3
+	slate = Color3.fromRGB(119, 139, 150), -- #778B96
+	burgundy = Color3.fromRGB(96, 73, 77), -- #60494D
+}
 
 export type Props = { [string]: any }
 
 function UiKit.new(className: string, props: Props, children: { Instance }?): any
 	local inst = Instance.new(className)
 	for k, v in props do
-		if k ~= "Parent" then
+		if k == "Parent" then
+			continue
+		end
+		if k == "Font" and typeof(v) == "Font" then
+			(inst :: any).FontFace = v
+		else
 			(inst :: any)[k] = v
 		end
 	end
@@ -74,6 +120,106 @@ function UiKit.label(props: Props): TextLabel
 	p.TextWrapped = if p.TextWrapped == nil then true else p.TextWrapped
 	p.BorderSizePixel = 0
 	return UiKit.new("TextLabel", p)
+end
+
+-- Label in one of the TYPE roles; props override the role defaults.
+-- Scaled text gets a size constraint so it never drops below MIN_TEXT.
+function UiKit.text(role: string, props: Props): TextLabel
+	local r = UiKit.TYPE[role] or UiKit.TYPE.body
+	local p = table.clone(props)
+	p.Font = p.Font or r.font
+	p.TextSize = p.TextSize or r.size
+	local l = UiKit.label(p)
+	if l.TextScaled and not l:FindFirstChildOfClass("UITextSizeConstraint") then
+		UiKit.new("UITextSizeConstraint", { MaxTextSize = r.size, MinTextSize = math.min(UiKit.MIN_TEXT, r.size), Parent = l })
+	end
+	return l
+end
+
+-- Scales a ScreenGui designed in pixels at `refHeight` to the viewport,
+-- clamped so phones stay legible and large monitors do not look tiny.
+function UiKit.autoScale(gui: LayerCollector, refHeight: number?, minScale: number?, maxScale: number?): UIScale
+	local ref = refHeight or 900
+	local lo = minScale or 0.6
+	local hi = maxScale or 1.5
+	local scale = gui:FindFirstChildOfClass("UIScale") or UiKit.new("UIScale", { Parent = gui })
+	local function update()
+		local cam = workspace.CurrentCamera
+		if cam then
+			scale.Scale = math.clamp(cam.ViewportSize.Y / ref, lo, hi)
+		end
+	end
+	local function hook()
+		local cam = workspace.CurrentCamera
+		if cam then
+			cam:GetPropertyChangedSignal("ViewportSize"):Connect(update)
+		end
+		update()
+	end
+	workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(hook)
+	hook()
+	return scale
+end
+
+-- 1px outline used by HUD panels, keycaps and prompt cards
+function UiKit.stroke(parent: GuiObject, color: Color3?, transparency: number?, thickness: number?): UIStroke
+	return UiKit.new("UIStroke", {
+		Color = color or UiKit.C.hudLine,
+		Transparency = transparency or 0.45,
+		Thickness = thickness or 1,
+		ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+		Parent = parent,
+	})
+end
+
+function UiKit.padding(parent: GuiObject, x: number, y: number?)
+	local py = y or x
+	UiKit.new("UIPadding", {
+		PaddingLeft = UDim.new(0, x),
+		PaddingRight = UDim.new(0, x),
+		PaddingTop = UDim.new(0, py),
+		PaddingBottom = UDim.new(0, py),
+		Parent = parent,
+	})
+end
+
+-- Square HUD plate: dark translucent, thin outline, consistent padding.
+function UiKit.panel(props: Props): Frame
+	local p = table.clone(props)
+	p.BackgroundColor3 = p.BackgroundColor3 or UiKit.C.hud
+	p.BackgroundTransparency = if p.BackgroundTransparency == nil then 0.22 else p.BackgroundTransparency
+	local f = UiKit.frame(p)
+	UiKit.stroke(f)
+	UiKit.padding(f, 10, 8)
+	return f
+end
+
+-- Small keycap: cream key, charcoal pixel letter, darker base edge.
+function UiKit.keycap(parent: Instance, key: string, size: number, zindex: number?): Frame
+	local z = zindex or 1
+	local cap = UiKit.frame({
+		Name = "Key",
+		Size = UDim2.fromOffset(size, size),
+		BackgroundColor3 = Color3.fromRGB(228, 222, 204),
+		ZIndex = z,
+		Parent = parent,
+	})
+	UiKit.stroke(cap, Color3.fromRGB(70, 78, 84), 0.1)
+	UiKit.frame({ Name = "Base", Size = UDim2.new(1, 0, 0, 3), Position = UDim2.new(0, 0, 1, -3), BackgroundColor3 = Color3.fromRGB(150, 144, 126), ZIndex = z + 1, Parent = cap })
+	local l = UiKit.label({
+		Name = "Letter",
+		Text = key,
+		Size = UDim2.new(1, 0, 1, -3),
+		Font = UiKit.FONT_PIXEL,
+		TextColor3 = Color3.fromRGB(40, 46, 52),
+		TextScaled = true,
+		TextXAlignment = Enum.TextXAlignment.Center,
+		ZIndex = z + 2,
+		Parent = cap,
+	})
+	UiKit.new("UITextSizeConstraint", { MaxTextSize = 16, MinTextSize = 8, Parent = l })
+	UiKit.padding(l, 3, 2)
+	return cap
 end
 
 -- 3D bevel like classic Windows controls
@@ -108,7 +254,7 @@ export type ButtonOpts = {
 	color: Color3?,
 	textColor: Color3?,
 	textSize: number?,
-	font: Enum.Font?,
+	font: Font?,
 	zindex: number?,
 	onClick: (() -> ())?,
 	name: string?,
@@ -138,14 +284,14 @@ function UiKit.button(o: ButtonOpts): TextButton
 	local base = b.BackgroundColor3
 	b.MouseEnter:Connect(function()
 		if b.Active then
-			b.BackgroundColor3 = base:Lerp(Color3.new(1, 1, 1), 0.15)
+			b.BackgroundColor3 = base:Lerp(Color3.new(1, 1, 1), 0.12)
 		end
 	end)
 	b.MouseLeave:Connect(function()
 		b.BackgroundColor3 = base
 	end)
 	b.SelectionGained:Connect(function()
-		b.BackgroundColor3 = base:Lerp(Color3.new(1, 1, 0.6), 0.3)
+		b.BackgroundColor3 = base:Lerp(UiKit.C.amber, 0.35)
 	end)
 	b.SelectionLost:Connect(function()
 		b.BackgroundColor3 = base
@@ -158,7 +304,7 @@ function UiKit.button(o: ButtonOpts): TextButton
 			end
 			UiKit.click()
 			local scale = b:FindFirstChildOfClass("UIScale") or UiKit.new("UIScale", { Parent = b })
-			scale.Scale = 0.94
+			scale.Scale = 0.96
 			TweenService:Create(scale, UiKit.POP, { Scale = 1 }):Play()
 			cb()
 		end)
@@ -174,7 +320,7 @@ function UiKit.setEnabled(b: GuiButton, enabled: boolean)
 	end
 end
 
--- Classic window: grey body, blue gradient title bar, close button.
+-- Classic window: grey body, charcoal-blue title bar with a pixel title, close button.
 export type Window = {
 	frame: Frame,
 	body: Frame,
@@ -185,7 +331,7 @@ export type Window = {
 function UiKit.window(parent: Instance, title: string, size: UDim2, position: UDim2, zindex: number, onClose: (() -> ())?): Window
 	local f = UiKit.frame({ Name = "Window", Size = size, Position = position, ZIndex = zindex, Parent = parent })
 	UiKit.bevel(f)
-	local bar = UiKit.frame({ Name = "TitleBar", Size = UDim2.new(1, -6, 0, 26), Position = UDim2.fromOffset(3, 3), BackgroundColor3 = UiKit.C.title1, ZIndex = zindex + 1, Parent = f })
+	local bar = UiKit.frame({ Name = "TitleBar", Size = UDim2.new(1, -6, 0, 24), Position = UDim2.fromOffset(3, 3), BackgroundColor3 = UiKit.C.title1, ZIndex = zindex + 1, Parent = f })
 	UiKit.new("UIGradient", {
 		Color = ColorSequence.new(UiKit.C.title1, UiKit.C.title2),
 		Parent = bar,
@@ -193,10 +339,10 @@ function UiKit.window(parent: Instance, title: string, size: UDim2, position: UD
 	local t = UiKit.label({
 		Name = "Title",
 		Text = title,
-		Size = UDim2.new(1, -70, 1, 0),
+		Size = UDim2.new(1, -64, 1, 0),
 		Position = UDim2.fromOffset(8, 0),
 		TextColor3 = UiKit.C.white,
-		Font = UiKit.FONT_BOLD,
+		Font = UiKit.FONT_PIXEL,
 		TextSize = 16,
 		TextWrapped = false,
 		TextTruncate = Enum.TextTruncate.AtEnd,
@@ -208,22 +354,23 @@ function UiKit.window(parent: Instance, title: string, size: UDim2, position: UD
 		close = UiKit.button({
 			name = "Close",
 			text = "X",
-			size = UDim2.fromOffset(24, 20),
-			position = UDim2.new(1, -27, 0, 3),
+			size = UDim2.fromOffset(22, 18),
+			position = UDim2.new(1, -25, 0, 3),
 			parent = bar,
 			zindex = zindex + 3,
-			textSize = 14,
+			textSize = 16,
+			font = UiKit.FONT_PIXEL,
 			onClick = onClose,
 		})
 	end
-	local body = UiKit.frame({ Name = "Body", Size = UDim2.new(1, -12, 1, -38), Position = UDim2.fromOffset(6, 32), BackgroundTransparency = 1, ZIndex = zindex + 1, Parent = f })
+	local body = UiKit.frame({ Name = "Body", Size = UDim2.new(1, -12, 1, -36), Position = UDim2.fromOffset(6, 30), BackgroundTransparency = 1, ZIndex = zindex + 1, Parent = f })
 	return { frame = f, body = body, title = t, close = close }
 end
 
 function UiKit.progress(parent: Instance, size: UDim2, position: UDim2, zindex: number): (Frame, Frame)
 	local back = UiKit.frame({ Name = "Progress", Size = size, Position = position, BackgroundColor3 = UiKit.C.field, ZIndex = zindex, Parent = parent })
 	UiKit.bevel(back, true)
-	local fill = UiKit.frame({ Name = "Fill", Size = UDim2.fromScale(0, 1), BackgroundColor3 = Color3.fromRGB(40, 170, 60), ZIndex = zindex + 1, Parent = back })
+	local fill = UiKit.frame({ Name = "Fill", Size = UDim2.fromScale(0, 1), BackgroundColor3 = UiKit.C.good, ZIndex = zindex + 1, Parent = back })
 	return back, fill
 end
 

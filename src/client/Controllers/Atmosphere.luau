@@ -1,8 +1,12 @@
 --!strict
--- Mood: muted colour grade, soft bloom, haze, rain outside and on the glass,
--- restrained film grain, ambient loops, a personal dim light for blackouts,
--- blinking door indicator, and gradual "dread" as more data is erased.
--- Everything here is cosmetic and client-local.
+-- Mood: a restrained night grade, cold pale fog kept outside the glass, rain
+-- in the alley and on the windows, a little film grain, ambient loops, a
+-- personal dim light for blackouts, the blinking door indicator and a gradual
+-- "dread" shift as more data is erased. Everything here is cosmetic and
+-- client-local.
+--
+-- Palette: outdoor fog #A8BAC3, cold ambient #778B96, shadowed walls #353F46,
+-- carpet/curtains #60494D, cream trim #B7B09C, amber practicals #C8A66B.
 
 local CollectionService = game:GetService("CollectionService")
 local Lighting = game:GetService("Lighting")
@@ -20,6 +24,12 @@ local player = Players.LocalPlayer
 
 local Atmosphere = {}
 
+local SILKSCREEN = "rbxassetid://12187371840"
+local TINT_WARM = Color3.fromRGB(250, 246, 238)
+local TINT_COLD = Color3.fromRGB(214, 226, 240)
+local FOG = Color3.fromRGB(168, 186, 195)
+local FOG_DECAY = Color3.fromRGB(96, 110, 120)
+
 local cc: ColorCorrectionEffect
 local bloom: BloomEffect
 local atmos: Atmosphere
@@ -33,11 +43,18 @@ Atmosphere.cc = function(): ColorCorrectionEffect
 	return cc
 end
 
+-- Surface textures are near-neutral; these tints set the final albedo.
 local function applySurfaces()
 	local tints: { [string]: Color3 } = {
-		carpet = Color3.fromRGB(150, 156, 176),
-		ceiling_tile = Color3.fromRGB(150, 146, 136),
-		wall_office = Color3.fromRGB(232, 222, 200),
+		carpet = Color3.fromRGB(226, 198, 202), -- dusty burgundy
+		ceiling_tile = Color3.fromRGB(214, 212, 204),
+		wall_office = Color3.fromRGB(226, 220, 206),
+		wall_kitchen = Color3.fromRGB(212, 216, 210),
+		wall_concrete = Color3.fromRGB(190, 196, 200),
+		floor_tile = Color3.fromRGB(205, 206, 202),
+		floor_lobby = Color3.fromRGB(206, 200, 190),
+		floor_concrete = Color3.fromRGB(190, 194, 192),
+		brick_alley = Color3.fromRGB(196, 206, 212),
 	}
 	local function apply(t: Instance)
 		if not t:IsA("Texture") then
@@ -74,17 +91,17 @@ local function makeRain(region: { minX: number, maxX: number, minZ: number, maxZ
 	p.Position = Vector3.new((region.minX + region.maxX) / 2, height, (region.minZ + region.maxZ) / 2)
 	p.Parent = workspace
 	local e = Instance.new("ParticleEmitter")
-	e.Rate = 260
+	e.Rate = 240
 	e.Lifetime = NumberRange.new(0.9, 1.1)
 	e.Speed = NumberRange.new(55, 65)
 	e.EmissionDirection = Enum.NormalId.Bottom
 	e.SpreadAngle = Vector2.new(4, 4)
 	e.Size = NumberSequence.new(0.06)
 	e.Squash = NumberSequence.new(-3.5)
-	e.Transparency = NumberSequence.new(0.55)
-	e.LightEmission = 0.15
-	e.LightInfluence = 0.6
-	e.Color = ColorSequence.new(Color3.fromRGB(170, 185, 200))
+	e.Transparency = NumberSequence.new(0.6)
+	e.LightEmission = 0.1
+	e.LightInfluence = 0.7
+	e.Color = ColorSequence.new(FOG)
 	e.Orientation = Enum.ParticleOrientation.FacingCameraWorldUp
 	e.Parent = p
 	table.insert(rainEmitters, e)
@@ -163,7 +180,7 @@ local function buildGrain()
 	label.ImageContent = Content.fromObject(grainImages[1])
 	label.ScaleType = Enum.ScaleType.Tile
 	label.TileSize = UDim2.fromOffset(192, 192)
-	label.ImageTransparency = 0.955
+	label.ImageTransparency = 0.96
 	label.Active = false
 	label.Interactable = false
 	label.Parent = gui
@@ -177,7 +194,7 @@ local function buildGrain()
 			i = i % #grainImages + 1
 			label.ImageContent = Content.fromObject(grainImages[i])
 			label.Position = UDim2.fromOffset(math.random(-40, 0), math.random(-40, 0))
-			label.ImageTransparency = 0.955 - dread * 0.02
+			label.ImageTransparency = 0.96 - dread * 0.02
 		end
 	end)
 end
@@ -185,46 +202,49 @@ end
 local function setupLighting()
 	cc = Instance.new("ColorCorrectionEffect")
 	cc.Name = "NightGrade"
-	cc.Saturation = -0.28
-	cc.Contrast = 0.12
-	cc.Brightness = 0.02
-	cc.TintColor = Color3.fromRGB(255, 244, 228)
+	cc.Saturation = -0.18
+	cc.Contrast = 0.06
+	cc.Brightness = 0
+	cc.TintColor = TINT_WARM
 	cc.Parent = Lighting
 	bloom = Instance.new("BloomEffect")
 	bloom.Name = "SoftBloom"
-	bloom.Intensity = 0.55
-	bloom.Size = 30
-	bloom.Threshold = 1.6
+	bloom.Intensity = 0.25
+	bloom.Size = 24
+	bloom.Threshold = 2
 	bloom.Parent = Lighting
 	for _, e in Lighting:GetChildren() do
 		if e:IsA("SunRaysEffect") or e:IsA("DepthOfFieldEffect") then
 			e.Enabled = false
 		end
 	end
+	-- distance fog: pale blue-grey, thin enough that the 44-stud office stays
+	-- clear while the street and alley fade out
 	local existing = Lighting:FindFirstChildOfClass("Atmosphere")
 	atmos = existing or Instance.new("Atmosphere")
-	atmos.Density = 0.36
-	atmos.Offset = 0.1
-	atmos.Color = Color3.fromRGB(60, 66, 80)
-	atmos.Decay = Color3.fromRGB(30, 32, 40)
+	atmos.Density = 0.22
+	atmos.Offset = 0
+	atmos.Color = FOG
+	atmos.Decay = FOG_DECAY
 	atmos.Glare = 0
-	atmos.Haze = 2.2
+	atmos.Haze = 1.0
 	atmos.Parent = Lighting
 	Lighting.ClockTime = 1.5
-	Lighting.Brightness = 0.2
-	Lighting.Ambient = Color3.fromRGB(26, 26, 32)
-	Lighting.OutdoorAmbient = Color3.fromRGB(22, 24, 30)
-	Lighting.EnvironmentDiffuseScale = 0.15
-	Lighting.EnvironmentSpecularScale = 0.15
+	Lighting.Brightness = 0.25
+	Lighting.Ambient = Color3.fromRGB(46, 54, 60) -- charcoal-blue shadow floor (#353F46 minus a step)
+	Lighting.OutdoorAmbient = Color3.fromRGB(108, 124, 134) -- cold slate outside the windows (#778B96)
+	Lighting.EnvironmentDiffuseScale = 0.2
+	Lighting.EnvironmentSpecularScale = 0.2
+	Lighting.ExposureCompensation = 0
 end
 
 local function updateDread()
 	local v = workspace:GetAttribute("Dread")
 	dread = if typeof(v) == "number" then v else 0
 	-- colder and greyer as the purge nears; rain picks up
-	cc.Saturation = -0.28 - dread * 0.22
-	cc.TintColor = Color3.fromRGB(255, 244, 228):Lerp(Color3.fromRGB(210, 225, 255), dread)
-	atmos.Density = 0.36 + dread * 0.12
+	cc.Saturation = -0.18 - dread * 0.22
+	cc.TintColor = TINT_WARM:Lerp(TINT_COLD, dread)
+	atmos.Density = 0.22 + dread * 0.12
 	for _, e in rainEmitters do
 		e.Rate = 220 + dread * 260
 	end
@@ -239,11 +259,11 @@ function Atmosphere.flicker(seconds: number, strength: number?)
 	task.spawn(function()
 		local t0 = os.clock()
 		while os.clock() - t0 < seconds and flashOverride == token do
-			cc.Brightness = if math.random() < 0.5 then -s else 0.02
+			cc.Brightness = if math.random() < 0.5 then -s else 0
 			task.wait(0.04 + math.random() * 0.12)
 		end
 		if flashOverride == token then
-			cc.Brightness = 0.02
+			cc.Brightness = 0
 			flashOverride = nil
 		end
 	end)
@@ -275,7 +295,7 @@ local function personalLight(character: Model)
 		l.Name = "PhoneGlow"
 		l.Range = 9
 		l.Brightness = 0.22
-		l.Color = Color3.fromRGB(200, 210, 255)
+		l.Color = Color3.fromRGB(190, 205, 220)
 		l.Shadows = false
 		l.Parent = root
 	end
@@ -321,7 +341,7 @@ local function screenTexts()
 			t.Size = UDim2.fromScale(1, 1)
 			t.BackgroundTransparency = 1
 			t.TextColor3 = Color3.fromRGB(120, 255, 140)
-			t.Font = Enum.Font.Arcade
+			t.FontFace = Font.new(SILKSCREEN)
 			t.TextScaled = true
 			t.Text = ""
 			t.Parent = sg

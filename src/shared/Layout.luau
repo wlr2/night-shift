@@ -39,12 +39,12 @@ export type DeskDef = {
 }
 
 Layout.DESKS = {
-	{ index = 1, pos = Vector3.new(-14, 0, -2.6), front = Vector3.new(0, 0, -1), art = "office__desks__desk1_weathered", chair = "office__chairs__office_chair_black" },
-	{ index = 2, pos = Vector3.new(-5.6, 0, -2.6), front = Vector3.new(0, 0, -1), art = "office__desks__desk2_weathered", chair = "office__chairs__office_chair_blue" },
-	{ index = 3, pos = Vector3.new(2.8, 0, -2.6), front = Vector3.new(0, 0, -1), art = "office__desks__desk1_alt_weathered", chair = "office__chairs__office_chair_grey_alt" },
-	{ index = 4, pos = Vector3.new(-14, 0, 2.6), front = Vector3.new(0, 0, 1), art = "office__desks__desk2_alt_weathered", chair = "office__chairs__office_chair_orange" },
-	{ index = 5, pos = Vector3.new(-5.6, 0, 2.6), front = Vector3.new(0, 0, 1), art = "office__desks__desk1_alt2_weathered", chair = "office__chairs__office_chair_black_alt" },
-	{ index = 6, pos = Vector3.new(2.8, 0, 2.6), front = Vector3.new(0, 0, 1), art = "office__desks__desk2_alt3_weathered", chair = "office__chairs__office_chair_blue_alt" },
+	{ index = 1, pos = Vector3.new(-14, 0, -2.6), front = Vector3.new(0, 0, -1), art = "office__desks__desk2", chair = "office__chairs__office_chair_black" },
+	{ index = 2, pos = Vector3.new(-5.6, 0, -2.6), front = Vector3.new(0, 0, -1), art = "office__desks__desk2_alt", chair = "office__chairs__office_chair_grey" },
+	{ index = 3, pos = Vector3.new(2.8, 0, -2.6), front = Vector3.new(0, 0, -1), art = "office__desks__desk2_alt2", chair = "office__chairs__office_chair_blue" },
+	{ index = 4, pos = Vector3.new(-14, 0, 2.6), front = Vector3.new(0, 0, 1), art = "office__desks__desk2_alt3", chair = "office__chairs__office_chair_grey_alt" },
+	{ index = 5, pos = Vector3.new(-5.6, 0, 2.6), front = Vector3.new(0, 0, 1), art = "office__desks__desk2_alt4", chair = "office__chairs__office_chair_black_alt" },
+	{ index = 6, pos = Vector3.new(2.8, 0, 2.6), front = Vector3.new(0, 0, 1), art = "office__desks__desk2", chair = "office__chairs__office_chair_blue_alt" },
 } :: { DeskDef }
 
 Layout.DESK_SIZE = Vector3.new(7.7, 3.1, 3.8)

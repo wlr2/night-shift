@@ -26,8 +26,9 @@
       },
       "$properties": {
         "CharacterWalkSpeed": 16,
-        "CameraMaxZoomDistance": 14,
-        "CameraMinZoomDistance": 0.5
+        "CameraMaxZoomDistance": 0.5,
+        "CameraMinZoomDistance": 0.5,
+        "CameraMode": "LockFirstPerson"
       }
     },
     "Workspace": {
@@ -38,21 +39,22 @@
     "Lighting": {
       "$properties": {
         "ClockTime": 1.5,
-        "Brightness": 0,
+        "Brightness": 0.25,
         "GlobalShadows": true,
         "Technology": "Future",
         "Ambient": [
-          0.08,
-          0.08,
-          0.1
+          0.1804,
+          0.2118,
+          0.2353
         ],
         "OutdoorAmbient": [
-          0.06,
-          0.07,
-          0.09
+          0.4235,
+          0.4863,
+          0.5255
         ],
         "EnvironmentDiffuseScale": 0.2,
-        "EnvironmentSpecularScale": 0.2
+        "EnvironmentSpecularScale": 0.2,
+        "ExposureCompensation": 0
       }
     },
     "Players": {

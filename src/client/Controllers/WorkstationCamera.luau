@@ -1,7 +1,12 @@
 --!strict
--- Seated camera: looks at the physical monitor while the desktop is open
--- (the room is behind you - that is the point). Standing, the Leave button,
--- death or a server-ended session restores the normal camera and input.
+-- First-person play plus the seated workstation camera.
+--
+-- Walking: the player is locked to first person (StarterPlayer.CameraMode and
+-- a runtime guard), the cursor is locked and hidden; the HUD draws a dot.
+-- Seated: a scriptable camera looks at the physical monitor while the desktop
+-- is open (the room is behind you - that is the point) and the cursor is
+-- freed for UI input. Standing, the Leave button, death or a server-ended
+-- session restores first-person mouse control instantly.
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -24,10 +29,21 @@ local function seatedCFrame(t: number): CFrame
 	local W = Layout.WORKSTATION
 	local f = W.facing
 	local target = W.monitor + Vector3.new(0, 1.15, 0)
+	-- eye sits in front of the seated head, above the keyboard: nothing to clip
 	local eye = target - f * 2.7 + Vector3.new(0, 0.55, 0)
 	-- slow breathing sway, tiny so text stays readable
 	local sway = Vector3.new(math.sin(t * 0.6) * 0.02, math.sin(t * 0.9) * 0.015, 0)
 	return CFrame.lookAt(eye + sway, target)
+end
+
+local function firstPersonInput()
+	UserInputService.MouseIconEnabled = false
+	UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
+end
+
+local function uiInput()
+	UserInputService.MouseIconEnabled = true
+	UserInputService.MouseBehavior = Enum.MouseBehavior.Default
 end
 
 local function restore()
@@ -50,8 +66,8 @@ local function restore()
 		cam.FieldOfView = saved.fov
 		saved = nil
 	end
-	UserInputService.MouseIconEnabled = true
-	UserInputService.MouseBehavior = Enum.MouseBehavior.Default
+	player.CameraMode = Enum.CameraMode.LockFirstPerson
+	firstPersonInput()
 end
 
 local function engage()
@@ -63,10 +79,16 @@ local function engage()
 	saved = { fov = cam.FieldOfView }
 	cam.CameraType = Enum.CameraType.Scriptable
 	cam.FieldOfView = 55
-	UserInputService.MouseIconEnabled = true
-	UserInputService.MouseBehavior = Enum.MouseBehavior.Default
+	uiInput()
 	swayConn = RunService.RenderStepped:Connect(function()
 		cam.CFrame = seatedCFrame(os.clock())
+		-- the camera scripts may try to re-lock the cursor; the desktop needs it free
+		if UserInputService.MouseBehavior ~= Enum.MouseBehavior.Default then
+			UserInputService.MouseBehavior = Enum.MouseBehavior.Default
+		end
+		if not UserInputService.MouseIconEnabled then
+			UserInputService.MouseIconEnabled = true
+		end
 	end)
 end
 
@@ -91,6 +113,10 @@ function WorkstationCamera.isActive(): boolean
 end
 
 function WorkstationCamera.init()
+	player.CameraMode = Enum.CameraMode.LockFirstPerson
+	player.CameraMinZoomDistance = 0.5
+	player.CameraMaxZoomDistance = 0.5
+	firstPersonInput()
 	State.SessionChanged:Connect(function(payload)
 		if payload.active then
 			engage()
@@ -100,11 +126,21 @@ function WorkstationCamera.init()
 	end)
 	player.CharacterAdded:Connect(function(c)
 		restore()
+		firstPersonInput()
 		hookCharacter(c)
 	end)
 	if player.Character then
 		hookCharacter(player.Character)
 	end
+	-- keep the cursor hidden while walking (menus and chat restore it themselves)
+	RunService.Heartbeat:Connect(function()
+		if active then
+			return
+		end
+		if UserInputService.MouseIconEnabled and UserInputService.MouseBehavior == Enum.MouseBehavior.LockCenter then
+			UserInputService.MouseIconEnabled = false
+		end
+	end)
 end
 
 return WorkstationCamera
